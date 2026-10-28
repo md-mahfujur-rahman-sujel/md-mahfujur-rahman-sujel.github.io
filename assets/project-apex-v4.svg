@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-label="Apex Arcade — 50-game browser arcade built with React and TypeScript">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#05080D"/><stop offset=".55" stop-color="#090F16"/><stop offset="1" stop-color="#05080D"/></linearGradient>
+<linearGradient id="head" x1="0" x2="1"><stop offset="0" stop-color="#A9C7FF"/><stop offset=".7" stop-color="#4F8DFF"/><stop offset="1" stop-color="#16263A"/></linearGradient>
+<linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#16263A" stop-opacity=".20"/><stop offset="1" stop-color="#67C7EB" stop-opacity=".04"/></linearGradient>
+<linearGradient id="shine" x1="0" x2="1"><stop offset="0" stop-color="#EEF6FF" stop-opacity="0"/><stop offset=".5" stop-color="#EEF6FF" stop-opacity=".35"/><stop offset="1" stop-color="#EEF6FF" stop-opacity="0"/></linearGradient>
+<linearGradient id="scan" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A9C7FF" stop-opacity="0"/><stop offset=".5" stop-color="#A9C7FF" stop-opacity=".20"/><stop offset="1" stop-color="#A9C7FF" stop-opacity="0"/></linearGradient>
+<radialGradient id="bloom"><stop offset="0" stop-color="#4F8DFF" stop-opacity=".22"/><stop offset="1" stop-color="#4F8DFF" stop-opacity="0"/></radialGradient>
+<pattern id="grid" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0V26" fill="none" stroke="#16263A" stroke-opacity=".18"/></pattern>
+<clipPath id="win"><rect width="400" height="320" rx="18"/></clipPath>
+<clipPath id="prev"><rect x="22" y="58" width="356" height="104" rx="10"/></clipPath>
+<filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<style>
+.s{font-family:'Segoe UI',system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif}
+.m{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+.pulse{animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.3}}
+.p2{animation-delay:.8s}.p3{animation-delay:1.6s}
+.arrow{animation:arrow 2.2s ease-in-out infinite}
+@keyframes arrow{50%{transform:translateX(5px)}}
+.orbs{animation:spin 8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.shinex{animation:shinex var(--sd,4.6s) linear infinite}
+@keyframes shinex{from{transform:translateX(0)}to{transform:translateX(520px)}}
+.scany{animation:scany var(--sy,5.5s) ease-in-out infinite}
+@keyframes scany{0%,100%{transform:translateY(0)}50%{transform:translateY(88px)}}
+@media (prefers-reduced-motion:reduce){.pulse,.arrow,.orbs,.shinex,.scany{animation:none!important}}
+</style>
+</defs>
+<g clip-path="url(#win)">
+<rect width="400" height="320" fill="url(#bg)"/>
+<rect width="400" height="320" fill="url(#grid)"/>
+<ellipse cx="330" cy="80" rx="220" ry="150" fill="url(#bloom)"/>
+
+<rect width="400" height="42" fill="url(#head)"/>
+<text class="s" x="20" y="28" font-size="20" font-weight="800" fill="#080D13">Apex Arcade</text>
+<text class="m" x="382" y="27" text-anchor="end" font-size="9" fill="#EEF6FF" fill-opacity=".8">node 01 · web</text>
+<rect class="shinex" style="--sd:4.6s" x="-120" y="0" width="120" height="42" fill="url(#shine)" opacity=".5"/>
+
+<circle cx="5" cy="160" r="4.5" fill="#FBCA03" filter="url(#glow)"/>
+<circle cx="395" cy="160" r="4.5" fill="#FBCA03" filter="url(#glow)"/>
+<path d="M9 160h9M391 160h-9" stroke="#FBCA03" stroke-width="1.5" opacity=".8"/>
+
+<rect x="22" y="58" width="356" height="104" rx="10" fill="#070C12" stroke="#16263A" stroke-opacity=".7"/>
+<g clip-path="url(#prev)">
+<text class="m" x="36" y="78" font-size="9" letter-spacing="1.6" fill="#7E93A8">ARCADE · 50 GAMES</text>
+<text class="m" x="364" y="78" text-anchor="end" font-size="9" fill="#A9C7FF">SAMPLE SCORE 1,240</text>
+<g>
+<rect x="36" y="86" width="72" height="30" rx="6" fill="#080D13" stroke="#16263A" stroke-opacity=".7"/>
+<rect x="118" y="86" width="72" height="30" rx="6" fill="#080D13" stroke="#16263A" stroke-opacity=".7"/>
+<rect x="200" y="86" width="72" height="30" rx="6" fill="#080D13" stroke="#16263A" stroke-opacity=".7"/>
+<rect x="282" y="86" width="72" height="30" rx="6" fill="#080D13" stroke="#16263A" stroke-opacity=".7"/>
+<rect x="36" y="122" width="72" height="30" rx="6" fill="#080D13" stroke="#16263A" stroke-opacity=".7"/>
+<rect x="118" y="122" width="72" height="30" rx="6" fill="#080D13" stroke="#16263A" stroke-opacity=".7"/>
+<rect x="200" y="122" width="72" height="30" rx="6" fill="#080D13" stroke="#16263A" stroke-opacity=".7"/>
+<rect x="282" y="122" width="72" height="30" rx="6" fill="#080D13" stroke="#16263A" stroke-opacity=".7"/>
+</g>
+<g fill="none" stroke-width="2" stroke-linecap="round">
+<path d="M62 94l16 14M78 94L62 108" stroke="#A9C7FF"/>
+<circle cx="154" cy="101" r="7" stroke="#67C7EB"/>
+<path d="M236 108l-9-14 18 2z" stroke="#3B82F6" stroke-linejoin="round"/>
+<rect x="316" y="94" width="14" height="14" rx="2" transform="rotate(45 323 101)" stroke="#4F8DFF"/>
+<path d="M52 137h8M60 130v14M70 130v14" stroke="#67C7EB"/>
+<circle cx="146" cy="137" r="2.5" fill="#A9C7FF" stroke="none"/><circle cx="158" cy="137" r="2.5" fill="#A9C7FF" stroke="none"/><circle cx="170" cy="137" r="2.5" fill="#A9C7FF" stroke="none"/>
+<path d="M210 137h14M217 130l7 7-7 7" stroke="#3B82F6"/>
+<path d="M296 144l7-9 7 5 7-10 7 14" stroke="#4F8DFF"/>
+</g>
+<rect class="pulse" x="36" y="86" width="72" height="30" rx="6" fill="#A9C7FF" fill-opacity=".08"/>
+<rect class="pulse p2" x="200" y="122" width="72" height="30" rx="6" fill="#67C7EB" fill-opacity=".08"/>
+<rect class="scany" style="--sy:5.5s" x="0" y="58" width="400" height="16" fill="url(#scan)"/>
+</g>
+
+<text class="s" x="22" y="190" font-size="15" fill="#B9C7D6">React launcher for 50 browser games</text>
+<text class="s" x="22" y="211" font-size="15" fill="#B9C7D6">with history, favorites and score cards.</text>
+
+<g class="s" font-size="12.5" fill="#EEF6FF">
+<rect x="22" y="230" width="58" height="26" rx="13" fill="#A9C7FF" fill-opacity=".10" stroke="#4F8DFF"/>
+<text x="51" y="247" text-anchor="middle">React</text>
+<rect x="88" y="230" width="92" height="26" rx="13" fill="#A9C7FF" fill-opacity=".10" stroke="#4F8DFF"/>
+<text x="134" y="247" text-anchor="middle">TypeScript</text>
+<rect x="188" y="230" width="51" height="26" rx="13" fill="#A9C7FF" fill-opacity=".10" stroke="#4F8DFF"/>
+<text x="213.5" y="247" text-anchor="middle">Vite</text>
+<rect x="247" y="230" width="44" height="26" rx="13" fill="#A9C7FF" fill-opacity=".10" stroke="#4F8DFF"/>
+<text x="269" y="247" text-anchor="middle">PWA</text>
+</g>
+
+<rect x="22" y="270" width="356" height="34" rx="17" fill="#A9C7FF" fill-opacity=".12" stroke="#A9C7FF" stroke-opacity=".55"/>
+<rect x="22" y="270" width="34" height="34" rx="17" fill="#A9C7FF" fill-opacity=".18"/>
+<path d="M34 283h8l3 3h7v9H34z" fill="none" stroke="#A9C7FF" stroke-width="1.5"/>
+<text class="s" x="68" y="292" font-size="13" font-weight="700" letter-spacing=".6" fill="#A9C7FF">open repository</text>
+<g class="arrow"><path d="M346 287h12M352 282l5 5-5 5" fill="none" stroke="#A9C7FF" stroke-width="1.8" stroke-linecap="round"/></g>
+</g>
+<rect x=".5" y=".5" width="399" height="319" rx="18" fill="none" stroke="#16263A" stroke-opacity=".45"/>
+</svg>

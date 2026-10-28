@@ -1,0 +1,254 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 150" role="img" aria-label="Skybot, the red and gold profile mascot, flying across a night-sky strip">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#05080D"/><stop offset=".55" stop-color="#090F16"/><stop offset="1" stop-color="#05080D"/></linearGradient>
+<linearGradient id="goldline" x1="0" x2="1"><stop offset="0" stop-color="#FBCA03" stop-opacity="0"/><stop offset=".5" stop-color="#FBCA03" stop-opacity=".9"/><stop offset="1" stop-color="#B97D10" stop-opacity="0"/></linearGradient>
+<radialGradient id="maroon"><stop offset="0" stop-color="#6A0C0B" stop-opacity=".5"/><stop offset="1" stop-color="#6A0C0B" stop-opacity="0"/></radialGradient>
+<radialGradient id="blue"><stop offset="0" stop-color="#3B82F6" stop-opacity=".22"/><stop offset="1" stop-color="#3B82F6" stop-opacity="0"/></radialGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#16263A" stroke-opacity=".2"/></pattern>
+<clipPath id="win"><rect width="1280" height="150" rx="16"/></clipPath>
+<style>
+.m{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+.fly{animation:fly 24s ease-in-out infinite}
+@keyframes fly{0%{transform:translate(110px,86px)}14%{transform:translate(380px,58px)}28%{transform:translate(650px,90px)}42%{transform:translate(930px,60px)}56%{transform:translate(1170px,84px)}70%{transform:translate(900px,64px)}84%{transform:translate(520px,90px)}100%{transform:translate(110px,86px)}}
+/* turn: the squash bottoms out at .44 while the mirror snaps, so width never crosses zero */
+.turn{animation:turn 24s ease-in-out infinite}
+@keyframes turn{0%,49%{transform:scaleX(1)}53%,56%{transform:scaleX(.44)}60%,93%{transform:scaleX(1)}96%,98%{transform:scaleX(.44)}100%{transform:scaleX(1)}}
+.mirror{animation:mirror 24s steps(1,end) infinite}
+@keyframes mirror{0%{transform:scaleX(1)}56%{transform:scaleX(-1)}98%{transform:scaleX(1)}}
+.glint{animation:glint 24s linear infinite}
+@keyframes glint{0%,51%{filter:brightness(1)}54%{filter:brightness(1.4)}58%,94%{filter:brightness(1)}97%{filter:brightness(1.4)}100%{filter:brightness(1)}}
+.bob{animation:bob 2.6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-4px)}}
+.sk-flame{transform-origin:0 26px;animation:flick .16s ease-in-out infinite alternate}
+@keyframes flick{from{transform:scaleY(.82)}to{transform:scaleY(1.14)}}
+.tw{animation:tw 3.4s ease-in-out infinite}
+.tw2{animation-delay:1.1s}.tw3{animation-delay:2.2s}
+@keyframes tw{50%{opacity:.15}}
+@media (prefers-reduced-motion:reduce){.fly,.turn,.mirror,.glint,.bob,.sk-flame,.tw{animation:none!important}}
+</style>
+</defs>
+<g clip-path="url(#win)">
+<rect width="1280" height="150" fill="url(#bg)"/>
+<rect width="1280" height="150" fill="url(#grid)"/>
+<ellipse cx="260" cy="40" rx="360" ry="110" fill="url(#blue)"/>
+<ellipse cx="1130" cy="150" rx="330" ry="90" fill="url(#maroon)"/>
+<rect width="1280" height="1.5" fill="url(#goldline)"/>
+<g fill="#A9C7FF" opacity=".55">
+<circle class="tw" cx="210" cy="30" r="1.6"/><circle class="tw tw2" cx="470" cy="22" r="1.3"/><circle class="tw tw3" cx="740" cy="40" r="1.6"/>
+<circle class="tw tw2" cx="1010" cy="24" r="1.4"/><circle class="tw" cx="1210" cy="46" r="1.5"/><circle class="tw tw3" cx="320" cy="124" r="1.3"/>
+<circle class="tw" cx="830" cy="128" r="1.5"/><circle class="tw tw2" cx="1090" cy="118" r="1.3"/><circle class="tw tw3" cx="600" cy="132" r="1.4"/>
+</g>
+<text class="m" x="24" y="27" font-size="10" letter-spacing="2" fill="#B97D10">SKYBOT · ON PATROL</text>
+<text class="m" x="1256" y="27" text-anchor="end" font-size="10" letter-spacing="2" fill="#7E93A8">AUTOPILOT</text>
+
+<g class="fly" transform="translate(110 86)"><g class="turn"><g class="mirror"><g class="bob"><g class="glint"><g transform="scale(.78)">
+<defs>
+  <linearGradient id="sk-red" x1=".12" y1="0" x2=".88" y2="1">
+    <stop offset="0" stop-color="#F6464A"/><stop offset=".3" stop-color="#E72030"/><stop offset=".62" stop-color="#D4051F"/><stop offset="1" stop-color="#A20E1D"/>
+  </linearGradient>
+  <linearGradient id="sk-red2" x1=".15" y1="0" x2=".85" y2="1">
+    <stop offset="0" stop-color="#F44A42"/><stop offset=".45" stop-color="#CE1C28"/><stop offset="1" stop-color="#8A0918"/>
+  </linearGradient>
+  <linearGradient id="sk-red3" x1="0" y1="0" x2=".9" y2=".9">
+    <stop offset="0" stop-color="#FF8068"/><stop offset=".42" stop-color="#DF202C"/><stop offset="1" stop-color="#B00D1E"/>
+  </linearGradient>
+  <linearGradient id="sk-gold" x1=".02" y1=".02" x2=".92" y2=".98">
+    <stop offset="0" stop-color="#FFF4B4"/><stop offset=".26" stop-color="#FFE071"/><stop offset=".54" stop-color="#FDC923"/><stop offset=".8" stop-color="#F8BE0C"/><stop offset="1" stop-color="#DC9A06"/>
+  </linearGradient>
+  <linearGradient id="sk-gold2" x1=".12" y1="0" x2=".85" y2="1">
+    <stop offset="0" stop-color="#FFD65A"/><stop offset=".5" stop-color="#F2A80C"/><stop offset="1" stop-color="#BE7502"/>
+  </linearGradient>
+  <linearGradient id="sk-gold3" x1="0" y1="0" x2=".4" y2="1">
+    <stop offset="0" stop-color="#FFEE9E"/><stop offset=".55" stop-color="#F7BE22"/><stop offset="1" stop-color="#D98E04"/>
+  </linearGradient>
+  <linearGradient id="sk-crest" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#EE2733"/><stop offset=".55" stop-color="#DA0A22"/><stop offset="1" stop-color="#B70F20"/>
+  </linearGradient>
+  <linearGradient id="sk-eye" x1=".2" y1="0" x2=".4" y2="1">
+    <stop offset="0" stop-color="#FFFFFF"/><stop offset=".46" stop-color="#F2FDFF"/><stop offset="1" stop-color="#B9F6FE"/>
+  </linearGradient>
+  <radialGradient id="sk-arc"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".55" stop-color="#E8FCFF"/><stop offset="1" stop-color="#8FE6F7"/></radialGradient>
+  <radialGradient id="sk-rep">
+    <stop offset="0" stop-color="#FFFFFF"/><stop offset=".34" stop-color="#F2FEFF"/>
+    <stop offset=".62" stop-color="#9FE8FA" stop-opacity=".92"/><stop offset=".82" stop-color="#4FA8F0" stop-opacity=".55"/>
+    <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="sk-flame" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#F2FDFF" stop-opacity=".98"/><stop offset=".42" stop-color="#8FE6F7" stop-opacity=".85"/><stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
+  </linearGradient>
+  <clipPath id="sk-face"><path d="M-10.0-51.3C-14.6-50.2-19.0-47.8-22.4-44.3L-22.1-38.0C-22.0-28.0-21.8-22.0-21.4-18.6C-20.6-15.2-19.2-12.4-17.0-9.8C-14.6-7.0-12.2-4.0-9.4-1.9C-7.2-2.3-5.0-2.5-3.2-2.6L-2.8-3.7L2.8-3.7L3.2-2.6C5.0-2.5 7.2-2.3 9.4-1.9C12.2-4.0 14.6-7.0 17.0-9.8C19.2-12.4 20.6-15.2 21.4-18.6C21.8-22.0 22.0-28.0 22.1-38.0L22.4-44.3C19.0-47.8 14.6-50.2 10.0-51.3L8.4-48.7L6.3-39.7L-6.3-39.7L-8.4-48.7Z"/></clipPath>
+  <filter id="sk-b3" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="3"/></filter>
+  <filter id="sk-b15" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="1.5"/></filter>
+  <filter id="sk-b08" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation=".8"/></filter>
+  <filter id="sk-glow" x="-90%" y="-90%" width="280%" height="280%"><feGaussianBlur stdDeviation="2.2"/></filter>
+</defs>
+<g id="fig">
+  <!-- boot thrusters -->
+  <ellipse cx="-11.9" cy="49.6" rx="7.0" ry="7.0" fill="#3B82F6" opacity=".22" filter="url(#sk-b3)"/>
+  <ellipse cx="11.9" cy="49.6" rx="7.0" ry="7.0" fill="#3B82F6" opacity=".22" filter="url(#sk-b3)"/>
+  <g class="sk-flame" style="transform-origin:-11.9px 48.2px">
+    <path d="M-17.3 48.2H-6.5C-7.1 51.2-8.9 54.0-11.9 56.6C-14.9 54.0-16.7 51.2-17.3 48.2Z" fill="url(#sk-flame)"/>
+    <path d="M-15.3 48.4H-8.5C-9.1 50.8-10.2 52.6-11.9 54.4C-13.6 52.6-14.7 50.8-15.3 48.4Z" fill="#FFFFFF" opacity=".85"/>
+  </g>
+  <g class="sk-flame" style="transform-origin:11.9px 48.2px">
+    <path d="M6.5 48.2H17.3C16.7 51.2 14.9 54.0 11.9 56.6C8.9 54.0 7.1 51.2 6.5 48.2Z" fill="url(#sk-flame)"/>
+    <path d="M8.5 48.4H15.3C14.7 50.8 13.6 52.6 11.9 54.4C10.2 52.6 9.1 50.8 8.5 48.4Z" fill="#FFFFFF" opacity=".85"/>
+  </g>
+
+  <!-- legs -->
+  <g id="leg-l">
+    <path d="M-11.8 23.4C-8.6 22.6-5.2 22.6-2.6 23.4C-2.2 27.4-2.6 31.2-3.6 34.8L-12.0 34.8C-13.0 31.2-13.0 27.0-11.8 23.4Z" fill="url(#sk-red2)" stroke="#170C1E" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M-11.2 25.0C-8.4 24.4-5.6 24.4-3.2 25.0C-2.9 28.4-3.2 31.6-4.0 34.4L-11.2 34.4C-12.0 31.6-12.0 28.0-11.2 25.0Z" fill="url(#sk-gold)" stroke="#170C1E" stroke-width="1.2" stroke-linejoin="round"/>
+    <path d="M-10.9 27.6C-8.2 28.4-5.8 28.4-3.6 27.6M-10.6 30.8C-8.0 31.6-5.6 31.6-3.8 30.8" fill="none" stroke="#170C1E" stroke-width=".75" opacity=".6"/>
+    <path d="M-10.4 25.8C-9.7 28.2-9.8 31.0-10.6 33.4" fill="none" stroke="#FFF0A8" stroke-width=".8" opacity=".5"/>
+    <path d="M-12.6 34.2L-3.2 34.2C-2.8 37.8-3.2 41.0-4.2 43.8L-13.4 43.8C-14.4 41.0-14.4 37.6-12.6 34.2Z" fill="url(#sk-red)" stroke="#170C1E" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M-8.0 37.0L-7.8 42.8" stroke="#170C1E" stroke-width=".8" opacity=".5"/>
+    <ellipse cx="-11.6" cy="38.6" rx="1.2" ry="2.8" fill="#FFFFFF" opacity=".18" transform="rotate(8 -11.6 38.6)" filter="url(#sk-b08)"/>
+    <path d="M-12.0 32.0L-7.0 32.6L-6.8 36.1L-8.2 37.2L-12.6 36.2Z" fill="url(#sk-red3)" stroke="#170C1E" stroke-width="1.0" stroke-linejoin="round"/>
+    <path d="M-5.0 38.6L-3.6 38.6L-4.0 41.5L-5.6 41.5Z" fill="#790D1B" stroke="#170C1E" stroke-width=".65"/>
+    <path d="M-14.2 42.6L-3.6 42.6C-3.0 45.4-3.6 47.8-5.4 48.8L-16.6 48.8C-18.4 47.6-18.8 45.2-17.6 42.8Z" fill="url(#sk-red3)" stroke="#170C1E" stroke-width="1.7" stroke-linejoin="round"/>
+    <path d="M-15.6 44.6C-11.6 45.6-7.4 45.6-4.0 44.6" fill="none" stroke="#170C1E" stroke-width=".85" opacity=".65"/>
+    <ellipse cx="-11.4" cy="49.0" rx="4.8" ry="1.4" fill="#2A0B14" stroke="#170C1E" stroke-width=".9"/>
+    <ellipse cx="-11.4" cy="49.0" rx="2.8" ry=".75" fill="#67C7EB" opacity=".9"/>
+  </g>
+  <g id="leg-r">
+    <path d="M11.8 23.4C8.6 22.6 5.2 22.6 2.6 23.4C2.2 27.4 2.6 31.2 3.6 34.8L12.0 34.8C13.0 31.2 13.0 27.0 11.8 23.4Z" fill="url(#sk-red2)" stroke="#170C1E" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M11.2 25.0C8.4 24.4 5.6 24.4 3.2 25.0C2.9 28.4 3.2 31.6 4.0 34.4L11.2 34.4C12.0 31.6 12.0 28.0 11.2 25.0Z" fill="url(#sk-gold)" stroke="#170C1E" stroke-width="1.2" stroke-linejoin="round"/>
+    <path d="M10.9 27.6C8.2 28.4 5.8 28.4 3.6 27.6M10.6 30.8C8.0 31.6 5.6 31.6 3.8 30.8" fill="none" stroke="#170C1E" stroke-width=".75" opacity=".6"/>
+    <path d="M10.4 25.8C9.7 28.2 9.8 31.0 10.6 33.4" fill="none" stroke="#FFF0A8" stroke-width=".8" opacity=".5"/>
+    <path d="M12.6 34.2L3.2 34.2C2.8 37.8 3.2 41.0 4.2 43.8L13.4 43.8C14.4 41.0 14.4 37.6 12.6 34.2Z" fill="url(#sk-red)" stroke="#170C1E" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M8.0 37.0L7.8 42.8" stroke="#170C1E" stroke-width=".8" opacity=".5"/>
+    <ellipse cx="11.6" cy="38.6" rx="1.2" ry="2.8" fill="#FFFFFF" opacity=".14" transform="rotate(-8 11.6 38.6)" filter="url(#sk-b08)"/>
+    <path d="M12.0 32.0L7.0 32.6L6.8 36.1L8.2 37.2L12.6 36.2Z" fill="url(#sk-red3)" stroke="#170C1E" stroke-width="1.0" stroke-linejoin="round"/>
+    <path d="M5.0 38.6L3.6 38.6L4.0 41.5L5.6 41.5Z" fill="#790D1B" stroke="#170C1E" stroke-width=".65"/>
+    <path d="M14.2 42.6L3.6 42.6C3.0 45.4 3.6 47.8 5.4 48.8L16.6 48.8C18.4 47.6 18.8 45.2 17.6 42.8Z" fill="url(#sk-red3)" stroke="#170C1E" stroke-width="1.7" stroke-linejoin="round"/>
+    <path d="M15.6 44.6C11.6 45.6 7.4 45.6 4.0 44.6" fill="none" stroke="#170C1E" stroke-width=".85" opacity=".65"/>
+    <ellipse cx="11.4" cy="49.0" rx="4.8" ry="1.4" fill="#2A0B14" stroke="#170C1E" stroke-width=".9"/>
+    <ellipse cx="11.4" cy="49.0" rx="2.8" ry=".75" fill="#67C7EB" opacity=".9"/>
+  </g>
+
+  <!-- torso -->
+  <path d="M-9.2 0.4C-4.0-0.6 4.0-0.6 9.2 0.4C10.6 2.4 11.4 5.6 11.5 9.0C11.6 12.4 11.3 15.6 10.6 18.4C10.0 21.0 9.2 23.2 8.0 24.8C5.4 25.6 2.7 26.0 0 26.0C-2.7 26.0-5.4 25.6-8.0 24.8C-9.2 23.2-10.0 21.0-10.6 18.4C-11.3 15.6-11.6 12.4-11.5 9.0C-11.4 5.6-10.6 2.4-9.2 0.4Z" fill="url(#sk-red2)" stroke="#170C1E" stroke-width="1.7" stroke-linejoin="round"/>
+  <ellipse cx="-6.4" cy="4.2" rx="4.2" ry="3.4" fill="#FF8A78" opacity=".2" transform="rotate(-18 -6.4 4.2)" filter="url(#sk-b15)"/>
+  <path d="M-8.6 1.6C-4.4 0.6 4.4 0.6 8.6 1.6" fill="none" stroke="#170C1E" stroke-width=".9" opacity=".6"/>
+  <path d="M-10.8 6.4C-7.6 8.2-5.2 9.0-3.4 9.0M10.8 6.4C7.6 8.2 5.2 9.0 3.4 9.0" fill="none" stroke="#170C1E" stroke-width=".85" opacity=".55"/>
+  <rect x="-7.8" y="3.4" width="1.7" height="1.1" rx=".5" fill="#8FE6F7" stroke="#170C1E" stroke-width=".5" transform="rotate(-10 -6.95 3.95)"/>
+  <rect x="6.1" y="3.4" width="1.7" height="1.1" rx=".5" fill="#8FE6F7" stroke="#170C1E" stroke-width=".5" transform="rotate(10 6.95 3.95)"/>
+  <rect x="-10.2" y="12.6" width="1.7" height="1.1" rx=".5" fill="#8FE6F7" stroke="#170C1E" stroke-width=".5" transform="rotate(-18 -9.35 13.15)"/>
+  <rect x="8.5" y="12.6" width="1.7" height="1.1" rx=".5" fill="#8FE6F7" stroke="#170C1E" stroke-width=".5" transform="rotate(18 9.35 13.15)"/>
+  <!-- abs plate -->
+  <path d="M-6.4 15.8H6.4C6.9 15.8 7.2 16.1 7.2 16.6V22.6C7.2 23.1 6.9 23.4 6.3 23.4H-6.3C-6.9 23.4-7.2 23.1-7.2 22.6V16.6C-7.2 16.1-6.9 15.8-6.4 15.8Z" fill="#C41722" stroke="#170C1E" stroke-width=".95" stroke-linejoin="round"/>
+  <path d="M-6.6 18.4H6.6M-6.6 20.9H6.6" stroke="#170C1E" stroke-width=".8" opacity=".65"/>
+  <path d="M0 16.4V22.8" stroke="#170C1E" stroke-width=".65" opacity=".35"/>
+  <path d="M-5.4 16.8H5.4" stroke="#FF8A78" stroke-width=".5" opacity=".26"/>
+  <!-- arc reactor -->
+  <ellipse cx="0" cy="9.9" rx="6.2" ry="6.2" fill="#3B82F6" opacity=".2" filter="url(#sk-glow)"/>
+  <circle cx="0" cy="9.9" r="3.5" fill="#170C1E"/>
+  <circle cx="0" cy="9.9" r="2.8" fill="#241326"/>
+  <circle cx="0" cy="9.9" r="2.25" fill="none" stroke="#9BE7F6" stroke-width=".9" opacity=".9"/>
+  <circle cx="0" cy="9.9" r="1.7" fill="url(#sk-arc)"/>
+  <ellipse cx="-.55" cy="9.3" rx=".7" ry=".5" fill="#FFFFFF"/>
+
+  <!-- arms -->
+  <g id="arm-l">
+    <g class="sk-rep">
+      <ellipse cx="-19.6" cy="34.4" rx="7.6" ry="6.8" fill="#3B82F6" opacity=".34" filter="url(#sk-b3)"/>
+      <ellipse cx="-19.6" cy="34.4" rx="5.6" ry="5.0" fill="#5FC8F5" opacity=".5" filter="url(#sk-b3)"/>
+      <ellipse cx="-19.6" cy="34.4" rx="4.6" ry="4.0" fill="#D8F5FF" opacity=".55" filter="url(#sk-b15)"/>
+    </g>
+    <!-- pauldron -->
+    <path d="M-11.0 2.2C-15.0 1.2-18.6 2.4-20.2 5.4C-21.2 7.4-20.8 9.4-19.2 10.4C-16.4 11.0-13.2 10.6-11.0 9.2Z" fill="url(#sk-red3)" stroke="#170C1E" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M-18.8 3.6C-17.2 2.4-15.0 1.9-12.8 2.2" fill="none" stroke="#FF8A78" stroke-width=".9" opacity=".5" stroke-linecap="round"/>
+    <circle cx="-12.9" cy="6.5" r="1.5" fill="#8A0918" stroke="#170C1E" stroke-width=".9"/>
+    <circle cx="-12.9" cy="6.5" r=".6" fill="#2A0B14"/>
+    <!-- gold bicep -->
+    <path d="M-19.4 8.6L-13.0 8.6C-12.5 11.2-12.7 13.8-13.5 16.2L-18.9 16.2C-19.8 13.8-19.9 11.2-19.4 8.6Z" fill="url(#sk-gold2)" stroke="#170C1E" stroke-width="1.2" stroke-linejoin="round"/>
+    <path d="M-18.6 10.6L-13.6 10.6M-18.4 13.4L-13.6 13.4" stroke="#170C1E" stroke-width=".65" opacity=".6"/>
+    <!-- forearm -->
+    <path d="M-20.6 15.0L-14.6 15.0C-13.8 18.4-14.0 21.8-15.2 24.8L-22.4 24.8C-23.4 21.6-23.2 18.2-21.8 15.2Z" fill="url(#sk-red2)" stroke="#170C1E" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M-21.2 17.4C-19.0 18.2-16.6 18.3-14.4 17.8" fill="none" stroke="#170C1E" stroke-width=".85" opacity=".7"/>
+    <path d="M-21.8 21.6C-19.6 22.4-16.8 22.4-14.6 21.6" fill="none" stroke="#170C1E" stroke-width=".75" opacity=".55"/>
+    <ellipse cx="-20.9" cy="18.4" rx="1.1" ry="2.8" fill="#FFFFFF" opacity=".2" transform="rotate(10 -20.9 18.4)" filter="url(#sk-b08)"/>
+    <!-- fist -->
+    <path d="M-22.8 23.6L-14.8 23.6C-13.8 25.6-13.8 28.0-14.8 30.0C-16.2 31.4-18.4 32.0-20.6 31.6C-22.6 31.0-23.8 29.4-23.8 27.2C-23.8 25.8-23.4 24.6-22.8 23.6Z" fill="url(#sk-red)" stroke="#170C1E" stroke-width="1.7" stroke-linejoin="round"/>
+    <path d="M-22.6 26.6C-20.2 27.4-17.0 27.4-15.0 26.6M-22.2 29.2C-20.0 30.0-17.2 30.0-15.4 29.2" fill="none" stroke="#170C1E" stroke-width=".75" opacity=".65"/>
+    <ellipse cx="-21.4" cy="25.2" rx="1.9" ry="1.1" fill="#FFFFFF" opacity=".22" transform="rotate(-20 -21.4 25.2)" filter="url(#sk-b08)"/>
+  </g>
+  <g id="arm-r">
+    <g class="sk-rep sk-rep-r">
+      <ellipse cx="19.6" cy="34.4" rx="7.6" ry="6.8" fill="#3B82F6" opacity=".3" filter="url(#sk-b3)"/>
+      <ellipse cx="19.6" cy="34.4" rx="5.6" ry="5.0" fill="#5FC8F5" opacity=".44" filter="url(#sk-b3)"/>
+      <ellipse cx="19.6" cy="34.4" rx="4.6" ry="4.0" fill="#D8F5FF" opacity=".48" filter="url(#sk-b15)"/>
+    </g>
+    <path d="M11.0 2.2C15.0 1.2 18.6 2.4 20.2 5.4C21.2 7.4 20.8 9.4 19.2 10.4C16.4 11.0 13.2 10.6 11.0 9.2Z" fill="url(#sk-red3)" stroke="#170C1E" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M18.8 3.6C17.2 2.4 15.0 1.9 12.8 2.2" fill="none" stroke="#FF8A78" stroke-width=".9" opacity=".3" stroke-linecap="round"/>
+    <circle cx="12.9" cy="6.5" r="1.5" fill="#8A0918" stroke="#170C1E" stroke-width=".9"/>
+    <circle cx="12.9" cy="6.5" r=".6" fill="#2A0B14"/>
+    <path d="M19.4 8.6L13.0 8.6C12.5 11.2 12.7 13.8 13.5 16.2L18.9 16.2C19.8 13.8 19.9 11.2 19.4 8.6Z" fill="url(#sk-gold2)" stroke="#170C1E" stroke-width="1.2" stroke-linejoin="round"/>
+    <path d="M18.6 10.6L13.6 10.6M18.4 13.4L13.6 13.4" stroke="#170C1E" stroke-width=".65" opacity=".6"/>
+    <path d="M20.6 15.0L14.6 15.0C13.8 18.4 14.0 21.8 15.2 24.8L22.4 24.8C23.4 21.6 23.2 18.2 21.8 15.2Z" fill="url(#sk-red2)" stroke="#170C1E" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M21.2 17.4C19.0 18.2 16.6 18.3 14.4 17.8" fill="none" stroke="#170C1E" stroke-width=".85" opacity=".7"/>
+    <path d="M21.8 21.6C19.6 22.4 16.8 22.4 14.6 21.6" fill="none" stroke="#170C1E" stroke-width=".75" opacity=".55"/>
+    <ellipse cx="20.9" cy="18.4" rx="1.1" ry="2.8" fill="#FFFFFF" opacity=".15" transform="rotate(-10 20.9 18.4)" filter="url(#sk-b08)"/>
+    <path d="M22.8 23.6L14.8 23.6C13.8 25.6 13.8 28.0 14.8 30.0C16.2 31.4 18.4 32.0 20.6 31.6C22.6 31.0 23.8 29.4 23.8 27.2C23.8 25.8 23.4 24.6 22.8 23.6Z" fill="url(#sk-red)" stroke="#170C1E" stroke-width="1.7" stroke-linejoin="round"/>
+    <path d="M22.6 26.6C20.2 27.4 17.0 27.4 15.0 26.6M22.2 29.2C20.0 30.0 17.2 30.0 15.4 29.2" fill="none" stroke="#170C1E" stroke-width=".75" opacity=".65"/>
+    <ellipse cx="21.4" cy="25.2" rx="1.9" ry="1.1" fill="#FFFFFF" opacity=".16" transform="rotate(20 21.4 25.2)" filter="url(#sk-b08)"/>
+  </g>
+
+  <!-- head -->
+  <g id="head">
+    <!-- side pods, tucked behind the shell -->
+    <rect x="-28.0" y="-30.0" width="3.6" height="14.0" rx="1.7" fill="url(#sk-red3)" stroke="#170C1E" stroke-width="1.2"/>
+    <rect x="-27.3" y="-27.6" width="1.3" height="6.6" rx=".65" fill="#7E0716" opacity=".6"/>
+    <rect x="24.4" y="-30.0" width="3.6" height="14.0" rx="1.7" fill="url(#sk-red3)" stroke="#170C1E" stroke-width="1.2"/>
+    <rect x="26.0" y="-27.6" width="1.3" height="6.6" rx=".65" fill="#7E0716" opacity=".6"/>
+
+    <!-- shell: circular dome, straight temples, rounded jaw -->
+    <path d="M0-59.2A33 33 0 0 0-25.0-47.7L-25.0-15.4L-22.2-13.0C-21.6-10.6-21.2-8.6-20.2-7.2C-18.8-5.2-16.0-3.0-11.9-1.2C-7.9 0.5-3.9 1.2 0 1.2C3.9 1.2 7.9 0.5 11.9-1.2C16.0-3.0 18.8-5.2 20.2-7.2C21.2-8.6 21.6-10.6 22.2-13.0L25.0-15.4L25.0-47.7A33 33 0 0 0 0-59.2Z" fill="url(#sk-red)" stroke="#170C1E" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M21.8-46.0C23.4-40.2 24.2-33.4 24.0-27.0L23.6-16.2L21.0-13.4C20.4-10.6 19.4-8.4 17.6-6.4C15.8-4.4 13.4-2.8 10.6-1.6L12.6-5.6C15.6-7.6 17.8-10.4 19.0-14.0C20.6-19.0 21.4-25.6 21.6-32.6C21.8-38.0 21.9-42.6 21.8-46.0Z" fill="#7E0716" opacity=".35"/>
+    <path d="M-21.8-48.8C-18.4-53.0-13.6-55.8-8.2-57.0" fill="none" stroke="#FF8A78" stroke-width="1.2" opacity=".48" stroke-linecap="round"/>
+    <path d="M21.8-48.8C18.4-53.0 13.6-55.8 8.2-57.0" fill="none" stroke="#FF8A78" stroke-width="1.2" opacity=".2" stroke-linecap="round"/>
+    <ellipse cx="-12.4" cy="-54.4" rx="4.2" ry="1.6" fill="#FFFFFF" opacity=".16" transform="rotate(-26 -12.4 -54.4)" filter="url(#sk-b08)"/>
+
+    <!-- forehead keystone: red crest showing through the faceplate notch -->
+    <path d="M-9.5-53.4L-8.4-48.7L-6.3-39.7L6.3-39.7L8.4-48.7L9.5-53.4Z" fill="url(#sk-crest)"/>
+    <path d="M-7.8-51.6C-7.3-46.6-6.6-42.8-5.6-40.2L-3.2-39.2C-4.0-42.4-4.7-46.4-5.2-51.2Z" fill="#5C0A18" opacity=".2" filter="url(#sk-b15)"/>
+
+    <!-- faceplate -->
+    <path d="M-10.0-51.3C-14.6-50.2-19.0-47.8-22.4-44.3L-22.1-38.0C-22.0-28.0-21.8-22.0-21.4-18.6C-20.6-15.2-19.2-12.4-17.0-9.8C-14.6-7.0-12.2-4.0-9.4-1.9C-7.2-2.3-5.0-2.5-3.2-2.6L-2.8-3.7L2.8-3.7L3.2-2.6C5.0-2.5 7.2-2.3 9.4-1.9C12.2-4.0 14.6-7.0 17.0-9.8C19.2-12.4 20.6-15.2 21.4-18.6C21.8-22.0 22.0-28.0 22.1-38.0L22.4-44.3C19.0-47.8 14.6-50.2 10.0-51.3L8.4-48.7L6.3-39.7L-6.3-39.7L-8.4-48.7Z" fill="url(#sk-gold)" stroke="#170C1E" stroke-width="1.25" stroke-linejoin="round"/>
+    <g clip-path="url(#sk-face)"><path d="M-10.0-51.3C-14.6-50.2-19.0-47.8-22.4-44.3L-22.1-38.0C-22.0-28.0-21.8-22.0-21.4-18.6C-20.6-15.2-19.2-12.4-17.0-9.8C-14.6-7.0-12.2-4.0-9.4-1.9C-7.2-2.3-5.0-2.5-3.2-2.6L-2.8-3.7L2.8-3.7L3.2-2.6C5.0-2.5 7.2-2.3 9.4-1.9C12.2-4.0 14.6-7.0 17.0-9.8C19.2-12.4 20.6-15.2 21.4-18.6C21.8-22.0 22.0-28.0 22.1-38.0L22.4-44.3C19.0-47.8 14.6-50.2 10.0-51.3L8.4-48.7L6.3-39.7L-6.3-39.7L-8.4-48.7Z" fill="none" stroke="#9A6200" stroke-width="4.0" opacity=".3" filter="url(#sk-b15)"/></g>
+    <!-- ink across the top of the notch -->
+    <path d="M-8.4-48.6C-4.6-49.5 4.6-49.5 8.4-48.6" fill="none" stroke="#170C1E" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- cream light plane over the left brow -->
+    <path d="M-20.6-43.2C-19.0-46.0-16.2-48.4-12.6-49.8L-8.0-41.0C-11.4-39.4-14.6-37.0-17.2-34.0C-18.8-32.2-20.0-30.4-20.8-28.6C-21.0-33.6-20.9-38.8-20.6-43.2Z" fill="#FFF8D2" opacity=".2"/>
+    <!-- AO under the notch -->
+    <path d="M-7.4-38.8C-4.8-37.8-2.4-37.4 0-37.4C2.4-37.4 4.8-37.8 7.4-38.8" fill="none" stroke="#8A5A00" stroke-width=".85" opacity=".32"/>
+    <!-- cheek planes -->
+    <path d="M-21.0-29.6C-20.8-23.6-20.2-19.4-18.8-16.0C-17.4-12.8-15.4-10.0-12.8-7.4L-10.8-5.8L-11.6-9.4C-13.8-11.6-15.4-14.4-16.6-17.8C-17.6-21.2-18.2-25.2-18.4-29.6Z" fill="#FFF6C6" opacity=".07"/>
+    <path d="M21.0-29.6C20.8-23.6 20.2-19.4 18.8-16.0C17.4-12.8 15.4-10.0 12.8-7.4L10.8-5.8L11.6-9.4C13.8-11.6 15.4-14.4 16.6-17.8C17.6-21.2 18.2-25.2 18.4-29.6Z" fill="#B8790A" opacity=".1"/>
+    <path d="M-20.4-36.0C-20.2-33.6-20.1-31.4-20.1-29.2M20.4-36.0C20.2-33.6 20.1-31.4 20.1-29.2" fill="none" stroke="#6B4A12" stroke-width=".5" opacity=".42" stroke-linecap="round"/>
+
+    <!-- eyes: long tapered bars with heavy ink above, no bridge -->
+    <path d="M-19.9-25.5L-5.4-22.6L-5.6-19.3L-20.0-20.6Z" fill="#170C1E"/>
+    <path d="M19.9-25.5L5.4-22.6L5.6-19.3L20.0-20.6Z" fill="#170C1E"/>
+    <path d="M-18.7-24.3L-6.1-21.8L-6.3-20.2L-19.0-21.3Z" fill="url(#sk-eye)"/>
+    <path d="M18.7-24.3L6.1-21.8L6.3-20.2L19.0-21.3Z" fill="url(#sk-eye)"/>
+    <path d="M-18.0-23.3L-7.4-21.2" fill="none" stroke="#FFFFFF" stroke-width=".6" opacity=".75" stroke-linecap="round"/>
+    <path d="M18.0-23.3L7.4-21.2" fill="none" stroke="#FFFFFF" stroke-width=".6" opacity=".75" stroke-linecap="round"/>
+
+    <g clip-path="url(#sk-face)">
+      <path d="M-22.4-19.0L-11.0-4.8L-18.6-7.4L-24.0-15.0Z" fill="#9A6200" opacity=".38"/>
+      <path d="M22.4-19.0L11.0-4.8L18.6-7.4L24.0-15.0Z" fill="#6B4A12" opacity=".48"/>
+      <path d="M-20.0-18.8L-16.8-17.6L-12.0-6.2Z" fill="#FFF4B4" opacity=".7"/>
+    </g>
+    <path d="M-21.4-17.8L-11.0-4.8L-9.6-6.4H9.6L11.0-4.8L21.4-17.8" fill="none" stroke="#170C1E" stroke-width=".9" stroke-linejoin="round"/>
+    <ellipse cx="0" cy="-4.1" rx="5.4" ry="1.3" fill="#FFF4B4" opacity=".24" filter="url(#sk-b15)"/>
+
+    <!-- final soft spec on the dome -->
+    <ellipse cx="-14.0" cy="-40.0" rx="3.8" ry="1.6" fill="#FFFFFF" opacity=".13" transform="rotate(-34 -14.0 -40.0)" filter="url(#sk-b15)"/>
+  </g>
+</g>
+</g></g></g></g></g></g>
+</g>
+<rect x=".5" y=".5" width="1279" height="149" rx="16" fill="none" stroke="#16263A" stroke-opacity=".6"/>
+</svg>

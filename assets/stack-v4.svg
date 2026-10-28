@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 176" role="img" aria-label="Toolchain: JavaScript, TypeScript, React, HTML, CSS, Bootstrap, Figma, Java, Spring Boot, MySQL, Kotlin, Git, GitHub, Android Studio, UI/UX">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#05080D"/><stop offset=".55" stop-color="#090F16"/><stop offset="1" stop-color="#05080D"/></linearGradient>
+<linearGradient id="fadeL" x1="0" x2="1"><stop offset="0" stop-color="#070C12"/><stop offset="1" stop-color="#070C12" stop-opacity="0"/></linearGradient>
+<linearGradient id="fadeR" x1="1" x2="0"><stop offset="0" stop-color="#070C12"/><stop offset="1" stop-color="#070C12" stop-opacity="0"/></linearGradient>
+<linearGradient id="play" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A9C7FF" stop-opacity="0"/><stop offset=".5" stop-color="#A9C7FF" stop-opacity=".5"/><stop offset="1" stop-color="#A9C7FF" stop-opacity="0"/></linearGradient>
+<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#16263A" stroke-opacity=".14"/></pattern>
+<clipPath id="win"><rect width="1280" height="176" rx="16"/></clipPath>
+<clipPath id="track"><rect x="144" y="40" width="1120" height="98"/></clipPath>
+<style>
+.s{font-family:'Segoe UI',system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif}
+.m{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+.pulse{animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25}}
+.marq1{animation:marq1 28s linear infinite}
+@keyframes marq1{from{transform:translateX(0)}to{transform:translateX(-685px)}}
+.marq2{animation:marq2 34s linear infinite}
+@keyframes marq2{from{transform:translateX(-796px)}to{transform:translateX(0)}}
+.play{animation:play 12s linear infinite}
+@keyframes play{0%,100%{transform:translateX(0)}50%{transform:translateX(1120px)}}
+@media (prefers-reduced-motion:reduce){.pulse,.marq1,.marq2,.play{animation:none!important}}
+</style>
+</defs>
+<g clip-path="url(#win)">
+<rect width="1280" height="176" fill="url(#bg)"/>
+<rect width="1280" height="176" fill="url(#grid)"/>
+
+<rect width="1280" height="36" fill="#080E15" fill-opacity=".9"/>
+<rect y="35" width="1280" height="1" fill="#16263A"/>
+<circle cx="20" cy="18" r="4" fill="#A9C7FF"/>
+<text class="m" x="34" y="22" font-size="11" letter-spacing="2" fill="#EEF6FF">TOOLCHAIN</text>
+<text class="m" x="140" y="22" font-size="10" fill="#7E93A8">15 modules · 2 tracks</text>
+<circle class="pulse" cx="1122" cy="18" r="3" fill="#67C7EB"/>
+<text class="m" x="1131" y="22" font-size="10" fill="#67C7EB">SYNCED</text>
+<text class="m" x="1260" y="22" text-anchor="end" font-size="10" fill="#7E93A8">scroll →</text>
+
+<rect x="144" y="64" width="1120" height="1" fill="#16263A" opacity=".5"/>
+<rect x="144" y="114" width="1120" height="1" fill="#16263A" opacity=".5"/>
+
+<rect x="16" y="52" width="2.5" height="24" rx="1.2" fill="#A9C7FF"/>
+<text class="m" x="26" y="68" font-size="9.5" letter-spacing="1.5" fill="#4F8DFF">FRONTEND</text>
+<rect x="16" y="102" width="2.5" height="24" rx="1.2" fill="#67C7EB"/>
+<text class="m" x="26" y="118" font-size="9.5" letter-spacing="1.5" fill="#67C7EB">BACKEND + TOOLS</text>
+
+<g clip-path="url(#track)">
+<g class="marq1">
+<g id="row1">
+<rect x="0" y="48" width="114" height="32" rx="16" fill="#080D13" stroke="#4F8DFF" stroke-opacity=".55"/><circle cx="17" cy="64" r="4" fill="#A9C7FF"/><text class="s" x="29" y="69" font-size="14" fill="#EEF6FF">JavaScript</text>
+<rect x="124" y="48" width="114" height="32" rx="16" fill="#080D13" stroke="#67C7EB" stroke-opacity=".5"/><circle cx="141" cy="64" r="4" fill="#67C7EB"/><text class="s" x="153" y="69" font-size="14" fill="#EEF6FF">TypeScript</text>
+<rect x="248" y="48" width="76" height="32" rx="16" fill="#080D13" stroke="#3B82F6" stroke-opacity=".55"/><circle cx="265" cy="64" r="4" fill="#3B82F6"/><text class="s" x="277" y="69" font-size="14" fill="#EEF6FF">React</text>
+<rect x="334" y="48" width="68" height="32" rx="16" fill="#080D13" stroke="#4F8DFF" stroke-opacity=".55"/><circle cx="351" cy="64" r="4" fill="#4F8DFF"/><text class="s" x="363" y="69" font-size="14" fill="#EEF6FF">HTML</text>
+<rect x="412" y="48" width="61" height="32" rx="16" fill="#080D13" stroke="#A9C7FF" stroke-opacity=".5"/><circle cx="429" cy="64" r="4" fill="#A9C7FF"/><text class="s" x="441" y="69" font-size="14" fill="#EEF6FF">CSS</text>
+<rect x="483" y="48" width="106" height="32" rx="16" fill="#080D13" stroke="#67C7EB" stroke-opacity=".5"/><circle cx="500" cy="64" r="4" fill="#67C7EB"/><text class="s" x="512" y="69" font-size="14" fill="#EEF6FF">Bootstrap</text>
+<rect x="599" y="48" width="76" height="32" rx="16" fill="#080D13" stroke="#3B82F6" stroke-opacity=".55"/><circle cx="616" cy="64" r="4" fill="#3B82F6"/><text class="s" x="628" y="69" font-size="14" fill="#EEF6FF">Figma</text>
+</g>
+<use href="#row1" x="685"/>
+<use href="#row1" x="1370"/>
+</g>
+</g>
+
+<g clip-path="url(#track)">
+<g class="marq2">
+<g id="row2">
+<rect x="0" y="98" width="68" height="32" rx="16" fill="#080D13" stroke="#4F8DFF" stroke-opacity=".55"/><circle cx="17" cy="114" r="4" fill="#4F8DFF"/><text class="s" x="29" y="119" font-size="14" fill="#EEF6FF">Java</text>
+<rect x="78" y="98" width="122" height="32" rx="16" fill="#080D13" stroke="#A9C7FF" stroke-opacity=".5"/><circle cx="95" cy="114" r="4" fill="#A9C7FF"/><text class="s" x="107" y="119" font-size="14" fill="#EEF6FF">Spring Boot</text>
+<rect x="210" y="98" width="76" height="32" rx="16" fill="#080D13" stroke="#67C7EB" stroke-opacity=".5"/><circle cx="227" cy="114" r="4" fill="#67C7EB"/><text class="s" x="239" y="119" font-size="14" fill="#EEF6FF">MySQL</text>
+<rect x="296" y="98" width="84" height="32" rx="16" fill="#080D13" stroke="#3B82F6" stroke-opacity=".55"/><circle cx="313" cy="114" r="4" fill="#3B82F6"/><text class="s" x="325" y="119" font-size="14" fill="#EEF6FF">Kotlin</text>
+<rect x="390" y="98" width="61" height="32" rx="16" fill="#080D13" stroke="#4F8DFF" stroke-opacity=".55"/><circle cx="407" cy="114" r="4" fill="#4F8DFF"/><text class="s" x="419" y="119" font-size="14" fill="#EEF6FF">Git</text>
+<rect x="461" y="98" width="84" height="32" rx="16" fill="#080D13" stroke="#A9C7FF" stroke-opacity=".5"/><circle cx="478" cy="114" r="4" fill="#A9C7FF"/><text class="s" x="490" y="119" font-size="14" fill="#EEF6FF">GitHub</text>
+<rect x="555" y="98" width="145" height="32" rx="16" fill="#080D13" stroke="#67C7EB" stroke-opacity=".5"/><circle cx="572" cy="114" r="4" fill="#67C7EB"/><text class="s" x="584" y="119" font-size="14" fill="#EEF6FF">Android Studio</text>
+<rect x="710" y="98" width="76" height="32" rx="16" fill="#080D13" stroke="#3B82F6" stroke-opacity=".55"/><circle cx="727" cy="114" r="4" fill="#3B82F6"/><text class="s" x="739" y="119" font-size="14" fill="#EEF6FF">UI/UX</text>
+</g>
+<use href="#row2" x="796"/>
+<use href="#row2" x="1592"/>
+</g>
+</g>
+
+<rect x="144" y="40" width="46" height="98" fill="url(#fadeL)"/>
+<rect x="1218" y="40" width="46" height="98" fill="url(#fadeR)"/>
+<rect x="144" y="40" width="1" height="98" fill="#16263A" opacity=".6"/>
+
+<rect class="play" x="144" y="40" width="2" height="98" fill="url(#play)" opacity=".9"/>
+
+<rect y="140" width="1280" height="36" fill="#080E15" fill-opacity=".7"/>
+<rect y="140" width="1280" height="1" fill="#16263A" fill-opacity=".55"/>
+<text class="m" x="16" y="163" font-size="10" fill="#7E93A8">stack.json · 15/15 loaded</text>
+<text class="m" x="640" y="163" text-anchor="middle" font-size="10" fill="#4F8DFF">web · mobile · tools</text>
+<text class="m" x="1264" y="163" text-anchor="end" font-size="10" fill="#7E93A8">auto-synced</text>
+</g>
+<rect x=".5" y=".5" width="1279" height="175" rx="16" fill="none" stroke="#16263A" stroke-opacity=".45"/>
+</svg>

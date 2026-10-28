@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 36" aria-hidden="true">
+<defs>
+<linearGradient id="rail" x1="0" x2="1"><stop offset="0" stop-color="#16263A" stop-opacity="0"/><stop offset=".25" stop-color="#16263A" stop-opacity=".55"/><stop offset=".5" stop-color="#4F8DFF" stop-opacity=".8"/><stop offset=".75" stop-color="#16263A" stop-opacity=".55"/><stop offset="1" stop-color="#16263A" stop-opacity="0"/></linearGradient>
+<linearGradient id="pulse" x1="0" x2="1"><stop offset="0" stop-color="#67C7EB" stop-opacity="0"/><stop offset=".5" stop-color="#67C7EB"/><stop offset="1" stop-color="#67C7EB" stop-opacity="0"/></linearGradient>
+<linearGradient id="pulse2" x1="0" x2="1"><stop offset="0" stop-color="#A9C7FF" stop-opacity="0"/><stop offset=".5" stop-color="#A9C7FF"/><stop offset="1" stop-color="#A9C7FF" stop-opacity="0"/></linearGradient>
+<filter id="glow" x="-100%" y="-400%" width="300%" height="900%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<style>
+.p{animation:p 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.p2{animation-delay:.6s}.p3{animation-delay:1.2s}.p4{animation-delay:1.8s}
+@keyframes p{50%{opacity:.25}}
+.pulseA{animation:pulseA 5.5s linear infinite}
+@keyframes pulseA{from{transform:translateX(0)}to{transform:translateX(1500px)}}
+.pulseB{animation:pulseB 7.5s linear infinite}
+@keyframes pulseB{from{transform:translateX(1280px)}to{transform:translateX(-180px)}}
+@media (prefers-reduced-motion:reduce){.p,.pulseA,.pulseB{animation:none!important}}
+</style>
+</defs>
+<rect y="17" width="1280" height="2" fill="url(#rail)"/>
+<rect x="640" y="13" width="10" height="10" rx="2" transform="rotate(45 645 18)" fill="#070C12" stroke="#FBCA03" stroke-width="1.2"/>
+<circle cx="645" cy="18" r="2" fill="#FBCA03" filter="url(#glow)"/>
+
+<g fill="#16263A">
+<rect x="120" y="14" width="1" height="8"/><rect x="320" y="14" width="1" height="8"/><rect x="520" y="14" width="1" height="8"/>
+<rect x="760" y="14" width="1" height="8"/><rect x="960" y="14" width="1" height="8"/><rect x="1160" y="14" width="1" height="8"/>
+</g>
+<g>
+<circle class="p" cx="120" cy="18" r="2.6" fill="#67C7EB"/>
+<circle class="p p2" cx="320" cy="18" r="2.2" fill="#4F8DFF"/>
+<circle class="p p3" cx="520" cy="18" r="2.6" fill="#3B82F6"/>
+<circle class="p p4" cx="760" cy="18" r="2.2" fill="#A9C7FF"/>
+<circle class="p p2" cx="960" cy="18" r="2.6" fill="#67C7EB"/>
+<circle class="p p3" cx="1160" cy="18" r="2.2" fill="#4F8DFF"/>
+</g>
+
+<rect class="pulseA" x="-220" y="16" width="220" height="4" rx="2" fill="url(#pulse)" opacity=".9"/>
+<rect class="pulseB" x="0" y="16" width="180" height="4" rx="2" fill="url(#pulse2)" opacity=".75"/>
+</svg>
