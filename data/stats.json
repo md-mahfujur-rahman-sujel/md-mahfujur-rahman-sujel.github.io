@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T03:39:27Z",
+  "generatedAt": "2026-10-30T13:08:16Z",
   "sources": {
     "profile": {
       "status": "ok",
@@ -7,17 +7,17 @@
         "https://api.github.com/users/md-mahfujur-rahman-sujel",
         "https://api.github.com/users/md-mahfujur-rahman-sujel/repos?type=owner&per_page=100&sort=full_name"
       ],
-      "fetchedAt": "2026-10-30T03:39:27Z",
+      "fetchedAt": "2026-10-30T13:08:16Z",
       "errors": []
     },
     "contributions": {
       "status": "ok",
       "urls": [
-        "https://github-contributions-api.jogruber.de/v4/md-mahfujur-rahman-sujel?y=last"
+        "https://api.github.com/graphql"
       ],
-      "fetchedAt": "2026-10-30T03:39:27Z",
+      "fetchedAt": "2026-10-30T13:08:16Z",
       "errors": [],
-      "selected": "https://github-contributions-api.jogruber.de/v4/md-mahfujur-rahman-sujel?y=last",
+      "selected": "https://api.github.com/graphql",
       "asOf": "2026-10-30"
     },
     "languages": {
@@ -29,7 +29,7 @@
         "https://api.github.com/repos/md-mahfujur-rahman-sujel/md-mahfujur-rahman-sujel.github.io/languages",
         "https://api.github.com/repos/md-mahfujur-rahman-sujel/Unrot/languages"
       ],
-      "fetchedAt": "2026-10-30T03:39:27Z",
+      "fetchedAt": "2026-10-30T13:08:16Z",
       "errors": []
     },
     "repos": {
@@ -39,7 +39,7 @@
         "https://api.github.com/repos/md-mahfujur-rahman-sujel/Unrot",
         "https://api.github.com/repos/masum-mir/Oppzy"
       ],
-      "fetchedAt": "2026-10-30T03:39:27Z",
+      "fetchedAt": "2026-10-30T13:08:16Z",
       "errors": []
     },
     "events": {
@@ -47,7 +47,7 @@
       "urls": [
         "https://api.github.com/users/md-mahfujur-rahman-sujel/events/public?per_page=100"
       ],
-      "fetchedAt": "2026-10-30T03:39:27Z",
+      "fetchedAt": "2026-10-30T13:08:16Z",
       "errors": [],
       "coverage": "Public events only; GitHub REST limits history to 300 events / 90 days"
     }
@@ -61,7 +61,7 @@
   },
   "contributions": {
     "asOf": "2026-10-30",
-    "total": 49,
+    "total": 54,
     "windowDays": 364,
     "activeDays": 10,
     "peak": {
@@ -1533,7 +1533,7 @@
       },
       {
         "date": "2026-10-30",
-        "count": 4
+        "count": 9
       }
     ],
     "weeks": [
@@ -1743,33 +1743,43 @@
       },
       {
         "start": "2026-10-24",
-        "count": 38
+        "count": 43
       }
-    ]
+    ],
+    "types": {
+      "commits": 47,
+      "issues": 0,
+      "pullRequests": 2,
+      "codeReviews": 0
+    }
   },
   "languages": [
     {
       "name": "HTML",
-      "pct": 42.54
+      "pct": 38.43
     },
     {
       "name": "JavaScript",
-      "pct": 25.38
+      "pct": 26.15
     },
     {
       "name": "TypeScript",
-      "pct": 23.08
+      "pct": 20.72
     },
     {
       "name": "Kotlin",
-      "pct": 8.56
+      "pct": 7.69
+    },
+    {
+      "name": "Python",
+      "pct": 5.09
     },
     {
       "name": "CSS",
-      "pct": 0.44
+      "pct": 1.92
     }
   ],
-  "bytesTotal": 2263669,
+  "bytesTotal": 2521028,
   "repos": [
     {
       "name": "Apex-Arcade",
@@ -1845,6 +1855,20 @@
       "summary": "Deleted branch output"
     },
     {
+      "id": "25620812673",
+      "type": "push",
+      "at": "2026-10-28T14:19:57Z",
+      "repo": "md-mahfujur-rahman-sujel/md-mahfujur-rahman-sujel.github.io",
+      "summary": "Pushed to main"
+    },
+    {
+      "id": "25601844586",
+      "type": "push",
+      "at": "2026-10-28T14:19:55Z",
+      "repo": "md-mahfujur-rahman-sujel/md-mahfujur-rahman-sujel",
+      "summary": "Pushed to main"
+    },
+    {
       "id": "25539909945",
       "type": "create",
       "at": "2026-10-28T14:08:17Z",
@@ -1855,6 +1879,13 @@
       "id": "25510384953",
       "type": "push",
       "at": "2026-10-28T13:57:16Z",
+      "repo": "md-mahfujur-rahman-sujel/md-mahfujur-rahman-sujel",
+      "summary": "Pushed to main"
+    },
+    {
+      "id": "25593892376",
+      "type": "push",
+      "at": "2026-10-28T13:10:43Z",
       "repo": "md-mahfujur-rahman-sujel/md-mahfujur-rahman-sujel",
       "summary": "Pushed to main"
     },
