@@ -1,0 +1,55 @@
+name: Refresh dashboard data
+
+on:
+  schedule:
+    - cron: '23 */3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-dashboard-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Refresh GitHub snapshot
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          status=0
+          python scripts/generate_stats.py || status=$?
+          # Exit 1 means an incomplete snapshot (written and labelled honestly);
+          # anything higher is a hard failure.
+          if [ "$status" -gt 1 ]; then exit "$status"; fi
+
+      - name: Commit changed snapshot
+        run: |
+          if [ ! -f data/stats.json ]; then
+            echo "::error::data/stats.json is missing; refusing to commit."
+            exit 1
+          fi
+          # status --porcelain also catches an untracked snapshot on a first run.
+          if [ -z "$(git status --porcelain -- data/stats.json)" ]; then
+            # The generator retains the previous file when every source is down,
+            # so an unchanged file also means "no newer snapshot".
+            echo "::warning::No newer snapshot was written; the previous snapshot was retained."
+            exit 0
+          fi
+          git add -- data/stats.json
+          git -c user.name='github-actions[bot]' \
+              -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+              commit -m 'Refresh dashboard data snapshot'
+          git push

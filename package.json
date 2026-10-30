@@ -1,0 +1,17 @@
+{
+  "name": "sujel-os-profile",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/serve.cjs 8765",
+    "data:refresh": "python scripts/generate_stats.py",
+    "test": "playwright test",
+    "test:data": "python -m unittest discover -s tests -p test_*.py",
+    "test:performance": "node scripts/lighthouse-check.cjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1",
+    "chrome-launcher": "^1.2.2",
+    "lighthouse": "^13.6.0"
+  }
+}
