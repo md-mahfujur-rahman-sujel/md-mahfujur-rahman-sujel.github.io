@@ -44,9 +44,9 @@ button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px 
   .mobile-workspace.in-view::after{animation-play-state:running}
   .window-caption{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 14px;border-bottom:1px solid var(--rim);font:.6875rem/1.2 var(--mono);color:var(--muted);background:var(--chrome)}
   .window-dots{display:flex;gap:6px}
-  .window-dots i{width:6px;height:6px;border-radius:50%;background:var(--cyan);opacity:.8}
-  .window-dots i:nth-child(2){background:var(--ice)}
-  .window-dots i:nth-child(3){background:var(--accent)}
+  .window-dots i{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  .window-dots i:nth-child(2){background:var(--cyan)}
+  .window-dots i:nth-child(3){background:var(--ice)}
   .hero-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:rgba(5,8,13,.6);border-bottom:1px solid var(--rim)}
   .hero-tabs a{display:flex;align-items:center;justify-content:center;text-align:center;min-height:48px;padding:8px 3px;color:var(--muted);text-decoration:none;font:.6875rem/1.4 var(--mono);overflow-wrap:anywhere;border-bottom:2px solid transparent}
   .hero-tabs a:first-child{background:rgba(59,130,246,.09);color:var(--ice);border-bottom-color:var(--ice)}

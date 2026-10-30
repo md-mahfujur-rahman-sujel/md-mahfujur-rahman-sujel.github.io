@@ -20,7 +20,7 @@ body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;bac
 .head-in{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:13px 0}
 .brand{display:inline-flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;
   font:800 14px/1 var(--mono);letter-spacing:.2em}
-.brand .dot{width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 14px rgba(170,5,5,.95)}
+.brand .dot{width:8px;height:8px;border-radius:50%;background:radial-gradient(circle at 36% 30%,#ff7a7a,#c1121f 58%,#8b0d16);box-shadow:0 0 0 1px rgba(170,5,5,.55),0 0 7px rgba(214,31,43,.5)}
 .nav{display:flex;gap:6px;flex-wrap:wrap}
 .nav a{font:600 11.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
   text-decoration:none;padding:9px 12px;border-radius:999px;border:1px solid transparent;
@@ -60,6 +60,13 @@ h2{margin:0 0 12px;font:700 clamp(22px,2.3vw,29px)/1.2 var(--sans);letter-spacin
 .links a{color:var(--muted);text-decoration:none;font:600 13px/1 var(--mono);letter-spacing:.05em;
   padding:8px 13px;border-radius:999px;border:1px solid rgba(22,38,58,.9)}
 .links a:hover{color:var(--text);border-color:rgba(251,202,3,.55);background:rgba(22,38,58,.45)}
+.links .graph-link{display:inline-flex;align-items:center;gap:9px;padding:11px 18px;color:var(--ice);
+  border-color:rgba(103,199,235,.38);background:linear-gradient(180deg,rgba(59,130,246,.16),rgba(103,199,235,.05));
+  box-shadow:inset 0 1px 0 rgba(169,199,255,.16),0 12px 30px -24px rgba(103,199,235,.9)}
+.links .graph-link svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.6;
+  stroke-linecap:round;stroke-linejoin:round;opacity:.75;transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.links .graph-link:hover{color:var(--text);border-color:rgba(103,199,235,.7);background:linear-gradient(180deg,rgba(59,130,246,.24),rgba(103,199,235,.09))}
+.links .graph-link:hover svg{transform:translate(2px,-2px);opacity:1}
 
 footer{margin:44px 0 64px;padding-top:22px;border-top:1px solid rgba(22,38,58,.6);
   text-align:center;color:var(--dim);font:12.5px/1.9 var(--mono);letter-spacing:.04em}

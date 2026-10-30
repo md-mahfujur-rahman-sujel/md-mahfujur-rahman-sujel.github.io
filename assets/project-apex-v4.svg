@@ -55,15 +55,15 @@
 <rect x="200" y="122" width="72" height="30" rx="6" fill="#080D13" stroke="#16263A" stroke-opacity=".7"/>
 <rect x="282" y="122" width="72" height="30" rx="6" fill="#080D13" stroke="#16263A" stroke-opacity=".7"/>
 </g>
-<g fill="none" stroke-width="2" stroke-linecap="round">
-<path d="M62 94l16 14M78 94L62 108" stroke="#A9C7FF"/>
-<circle cx="154" cy="101" r="7" stroke="#67C7EB"/>
-<path d="M236 108l-9-14 18 2z" stroke="#3B82F6" stroke-linejoin="round"/>
-<rect x="316" y="94" width="14" height="14" rx="2" transform="rotate(45 323 101)" stroke="#4F8DFF"/>
-<path d="M52 137h8M60 130v14M70 130v14" stroke="#67C7EB"/>
-<circle cx="146" cy="137" r="2.5" fill="#A9C7FF" stroke="none"/><circle cx="158" cy="137" r="2.5" fill="#A9C7FF" stroke="none"/><circle cx="170" cy="137" r="2.5" fill="#A9C7FF" stroke="none"/>
-<path d="M210 137h14M217 130l7 7-7 7" stroke="#3B82F6"/>
-<path d="M296 144l7-9 7 5 7-10 7 14" stroke="#4F8DFF"/>
+<g fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="154" cy="101" r="7.4" stroke="#67C7EB"/>
+<path d="M228 94h16l-8 14z" stroke="#A9C7FF"/>
+<rect x="312.5" y="95.5" width="11" height="11" rx="1.4" transform="rotate(45 318 101)" stroke="#A9C7FF"/>
+<rect x="67.4" y="93.5" width="3.4" height="15" rx="1.5" fill="#67C7EB" stroke="none"/><rect x="73.2" y="93.5" width="3.4" height="15" rx="1.5" fill="#67C7EB" stroke="none"/>
+<path d="M72 130.5 73.65 134.73 78.18 134.99 74.66 137.87 75.82 142.26 72 139.8 68.18 142.26 69.34 137.87 65.82 134.99 70.35 134.73Z" stroke="#A9C7FF"/>
+<circle cx="147" cy="137" r="2.2" fill="#A9C7FF" stroke="none"/><circle cx="154" cy="137" r="2.2" fill="#A9C7FF" stroke="none"/><circle cx="161" cy="137" r="2.2" fill="#A9C7FF" stroke="none"/>
+<path d="M228 137h16M237 130l7 7-7 7" stroke="#A9C7FF"/>
+<path d="M304.5 142l4.5-8 4.5 4 4.5-6 4.5 10" stroke="#67C7EB"/>
 </g>
 <rect class="pulse" x="36" y="86" width="72" height="30" rx="6" fill="#A9C7FF" fill-opacity=".08"/>
 <rect class="pulse p2" x="200" y="122" width="72" height="30" rx="6" fill="#67C7EB" fill-opacity=".08"/>
@@ -84,9 +84,9 @@
 <text x="269" y="247" text-anchor="middle">PWA</text>
 </g>
 
-<rect x="22" y="270" width="356" height="34" rx="17" fill="#A9C7FF" fill-opacity=".12" stroke="#A9C7FF" stroke-opacity=".55"/>
-<rect x="22" y="270" width="34" height="34" rx="17" fill="#A9C7FF" fill-opacity=".18"/>
-<path d="M34 283h8l3 3h7v9H34z" fill="none" stroke="#A9C7FF" stroke-width="1.5"/>
+<rect x="22" y="270" width="356" height="34" rx="17" fill="#A9C7FF" fill-opacity=".12" stroke="#A9C7FF" stroke-opacity=".6"/>
+<rect x="28" y="276" width="26" height="26" rx="13" fill="#A9C7FF" fill-opacity=".16" stroke="#A9C7FF" stroke-opacity=".3"/>
+<path d="M34 284h6l2 2h6v9H34z" fill="none" stroke="#A9C7FF" stroke-width="1.5" stroke-linejoin="round"/>
 <text class="s" x="68" y="292" font-size="13" font-weight="700" letter-spacing=".6" fill="#A9C7FF">open repository</text>
 <g class="arrow"><path d="M346 287h12M352 282l5 5-5 5" fill="none" stroke="#A9C7FF" stroke-width="1.8" stroke-linecap="round"/></g>
 </g>

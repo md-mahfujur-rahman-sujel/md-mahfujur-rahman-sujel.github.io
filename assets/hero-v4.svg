@@ -77,21 +77,24 @@ svg.near .rc-ring2{animation-duration:2.4s}
 <ellipse cx="980" cy="330" rx="420" ry="260" fill="url(#bloomMid)"/>
 <ellipse cx="1180" cy="120" rx="280" ry="240" fill="url(#bloomCyan)"/>
 <ellipse cx="140" cy="490" rx="340" ry="150" fill="url(#bloomMaroon)"/>
+<rect class="shine" x="0" y="0" width="1280" height="500" fill="url(#scan)"/>
 
 <g class="rise d1">
 <rect width="1280" height="46" fill="#080E15" fill-opacity=".94"/>
 <rect y="45" width="1280" height="1" fill="url(#goldline)"/>
-<path d="M18 13l10-6 10 6v20l-10 6-10-6z" fill="#080D13" stroke="#A9C7FF" stroke-width="1.4"/>
-<text class="s" x="28" y="27" text-anchor="middle" font-size="10" font-weight="800" fill="#A9C7FF">S</text>
+<path d="M18 13l10-6 10 6v20l-10 6-10-6z" fill="#0B1420" stroke="#274158" stroke-width="1.2"/>
+<path d="M21.2 14.9l6.8-4.1 6.8 4.1v16.2l-6.8 4.1-6.8-4.1z" fill="none" stroke="#A9C7FF" stroke-opacity=".35" stroke-width=".8"/>
+<text class="s" x="28" y="26.8" text-anchor="middle" font-size="10.5" font-weight="800" fill="#A9C7FF">S</text>
 <text class="s" x="53" y="29" font-size="14" font-weight="800" letter-spacing="1.6" fill="#EEF6FF">SUJEL.OS</text>
 <g class="m" font-size="12" fill="#93A6BA"><text x="160" y="29">file</text><text x="198" y="29">edit</text><text x="236" y="29">view</text><text x="278" y="29">run</text></g>
 <text class="m" x="640" y="29" text-anchor="middle" font-size="12.5" fill="#7E93A8">workspace — main</text>
-<rect x="1006" y="11" width="132" height="24" rx="12" fill="#080D13" stroke="#16263A"/>
-<text class="m" x="1022" y="27" font-size="11" fill="#7E93A8">⌘ K</text>
-<text class="m" x="1060" y="27" font-size="11" fill="#93A6BA">quick open</text>
-<circle cx="1182" cy="23" r="5.5" fill="#67C7EB" fill-opacity=".55" stroke="#67C7EB"/>
-<circle cx="1203" cy="23" r="5.5" fill="#A9C7FF" fill-opacity=".55" stroke="#A9C7FF"/>
-<circle cx="1224" cy="23" r="5.5" fill="#3B82F6" fill-opacity=".7" stroke="#3B82F6"/>
+<rect x="1010" y="11" width="128" height="24" rx="12" fill="#080D13" stroke="#1B2C40"/>
+<rect x="1018" y="16" width="28" height="14" rx="4" fill="#0D1826" stroke="#243B52" stroke-width=".9"/>
+<text class="m" x="1032" y="26.5" text-anchor="middle" font-size="9.5" fill="#9FB2C6">⌘K</text>
+<text class="m" x="1054" y="27" font-size="11" fill="#93A6BA">quick open</text>
+<circle cx="1216" cy="23" r="5" fill="#3B82F6"/>
+<circle cx="1234" cy="23" r="5" fill="#67C7EB"/>
+<circle cx="1252" cy="23" r="5" fill="#A9C7FF"/>
 </g>
 
 <g class="rise d2">
@@ -99,21 +102,23 @@ svg.near .rc-ring2{animation-duration:2.4s}
 <rect x="63" y="46" width="1" height="390" fill="#16263A"/>
 <g>
 <rect x="16" y="72" width="32" height="32" rx="9" fill="#3B82F6" fill-opacity=".22" stroke="#3B82F6" stroke-opacity=".8"/>
-<path d="M24 89l8-6 8 6v9H24z" fill="none" stroke="#A9C7FF" stroke-width="1.6"/>
+<path d="M24 87l8-6 8 6v9H24z" fill="none" stroke="#A9C7FF" stroke-width="1.6" stroke-linejoin="round"/>
 <rect x="16" y="118" width="32" height="32" rx="9" fill="#080D13" stroke="#16263A"/>
-<path d="M24 128h7l2 2h7v11H24z" fill="none" stroke="#93A6BA" stroke-width="1.5"/>
+<path d="M24 127h7l2.5 2.5H40V140H24z" fill="none" stroke="#93A6BA" stroke-width="1.6" stroke-linejoin="round"/>
 <rect x="16" y="164" width="32" height="32" rx="9" fill="#080D13" stroke="#16263A"/>
-<path d="M24 172l6 8-6 8M34 188h6" fill="none" stroke="#67C7EB" stroke-width="1.6" stroke-linecap="round"/>
+<path d="M24 172l6 8-6 8M33 188h7" fill="none" stroke="#93A6BA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
 <rect x="16" y="210" width="32" height="32" rx="9" fill="#080D13" stroke="#16263A"/>
-<rect x="25" y="219" width="14" height="14" rx="3" fill="none" stroke="#4F8DFF" stroke-width="1.5"/>
-<path d="M22 226h3M35 226h3M27 216v3M37 216v3M27 233v3M37 233v3" stroke="#4F8DFF" stroke-width="1.4"/>
+<rect x="27" y="221" width="10" height="10" rx="2.5" fill="none" stroke="#93A6BA" stroke-width="1.5"/>
+<path d="M24 226h3M37 226h3M32 218v3M32 231v3" stroke="#93A6BA" stroke-width="1.5" stroke-linecap="round"/>
 <rect x="16" y="256" width="32" height="32" rx="9" fill="#080D13" stroke="#16263A"/>
-<circle cx="32" cy="272" r="5" fill="none" stroke="#93A6BA" stroke-width="1.5"/>
-<path d="M32 264v3M32 277v3M24 272h3M37 272h3" stroke="#93A6BA" stroke-width="1.5"/>
+<circle cx="32" cy="272" r="5.5" fill="none" stroke="#93A6BA" stroke-width="1.5"/>
+<path d="M32 263.5v3M32 277.5v3M23.5 272h3M37.5 272h3" stroke="#93A6BA" stroke-width="1.5" stroke-linecap="round"/>
 </g>
-<circle cx="32" cy="398" r="18" fill="#080D13" stroke="url(#ring)" stroke-width="1.6"/>
-<text class="s" x="32" y="404" text-anchor="middle" font-size="16" font-weight="800" fill="#A9C7FF">S</text>
-<circle class="pulse" cx="46" cy="384" r="3.5" fill="#67C7EB"/>
+<circle cx="32" cy="398" r="17" fill="#0B1420" stroke="url(#ring)" stroke-width="1.4"/>
+<circle cx="32" cy="398" r="12.6" fill="none" stroke="#16263A"/>
+<text class="s" x="32" y="403.5" text-anchor="middle" font-size="14" font-weight="800" fill="#EEF6FF">S</text>
+<circle cx="43.5" cy="409.5" r="4.4" fill="#070C12"/>
+<circle class="pulse" cx="43.5" cy="409.5" r="2.8" fill="#67C7EB"/>
 </g>
 
 <g class="rise d3">
@@ -159,15 +164,19 @@ svg.near .rc-ring2{animation-duration:2.4s}
 <text class="m" x="406" y="71" font-size="11.5" fill="#7E93A8">projects/</text>
 <text class="m" x="470" y="71" font-size="11.5" fill="#7E93A8">stack.json</text>
 <text class="m" x="552" y="71" font-size="11.5" fill="#7E93A8">telemetry.log</text>
-<text class="m" x="1256" y="70" text-anchor="end" font-size="13" fill="#7E93A8">+  ⬒</text>
+<g fill="none" stroke="#93A6BA" stroke-width="1.5" stroke-linecap="round">
+<path d="M1212 60v12M1206 66h12"/>
+<rect x="1229" y="60.5" width="13" height="11" rx="2"/>
+<path d="M1235.5 60.5v11"/>
+</g>
 </g>
 
 <g class="rise d5">
 <rect x="288" y="104" width="568" height="208" rx="14" fill="url(#glass)" stroke="#16263A" stroke-opacity=".5"/>
 <rect x="288" y="104" width="568" height="3" rx="1.5" fill="url(#hairline)"/>
-<rect x="290" y="228" width="62" height="18" rx="9" fill="#080D13" stroke="#16263A"/>
-<circle class="pulse" cx="301" cy="237" r="3" fill="#67C7EB"/>
-<text class="m" x="311" y="241" font-size="9" letter-spacing="1" fill="#67C7EB">ONLINE</text>
+<rect x="301" y="225.5" width="70" height="22" rx="11" fill="#080D13" stroke="#1B2C40"/>
+<circle class="pulse" cx="314" cy="236.5" r="3" fill="#67C7EB"/>
+<text class="m" x="323" y="240" font-size="9" letter-spacing="1.1" fill="#67C7EB">ONLINE</text>
 
 <g transform="translate(336 166)">
 <g class="rc">
@@ -214,9 +223,9 @@ svg.near .rc-ring2{animation-duration:2.4s}
 <rect x="872" y="104" width="388" height="208" rx="14" fill="url(#glassSoft)" stroke="#16263A"/>
 <rect x="872" y="104" width="388" height="3" rx="1.5" fill="#67C7EB" fill-opacity=".7"/>
 <text class="m" x="892" y="128" font-size="10" letter-spacing="2" fill="#7E93A8">SYSTEM MONITOR</text>
-<rect x="1184" y="114" width="56" height="20" rx="10" fill="#3B82F6" fill-opacity=".16" stroke="#3B82F6" stroke-opacity=".7"/>
-<circle class="pulse" cx="1196" cy="124" r="3" fill="#3B82F6"/>
-<text class="m" x="1205" y="128" font-size="9" letter-spacing="1" fill="#EEF6FF">LIVE</text>
+<rect x="1174" y="113" width="66" height="22" rx="11" fill="#3B82F6" fill-opacity=".16" stroke="#3B82F6" stroke-opacity=".7"/>
+<circle class="pulse" cx="1188" cy="124" r="3" fill="#3B82F6"/>
+<text class="m" x="1197" y="127.5" font-size="9" letter-spacing="1.1" fill="#EEF6FF">LIVE</text>
 <g transform="translate(966 212)">
 <circle r="58" fill="#080D13" stroke="#16263A" stroke-opacity=".8"/>
 <circle r="44" fill="none" stroke="#16263A" stroke-opacity=".55"/>
@@ -295,7 +304,6 @@ svg.near .rc-ring2{animation-duration:2.4s}
 <text class="m" x="1260" y="471" text-anchor="end" font-size="10.5" fill="#7E93A8">CSE · EWU · BD</text>
 </g>
 
-<rect class="shine" x="0" y="0" width="1280" height="500" fill="url(#scan)"/>
 <rect class="scanx" x="-160" y="46" width="160" height="390" fill="url(#scanline)"/>
 </g>
 <rect x=".5" y=".5" width="1279" height="499" rx="20" fill="none" stroke="#16263A" stroke-opacity=".45"/>
