@@ -70,7 +70,7 @@ button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px 
   .identity-tags li{padding:4px 9px;border:1px solid var(--rim);color:var(--muted);font:.6875rem/1.5 var(--mono);border-radius:4px;letter-spacing:.09em}
   .component-heading{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}
   .component-heading h2,.component-heading h3,.micro-label{margin:0;font:600 .6875rem/1.6 var(--mono);letter-spacing:.11em;color:var(--muted)}
-  .system-monitor,.metric-card,.stack-component,.contribution-card,.language-card,.weekly-card,.streak-card,.activity-component{padding:18px 16px;border:1px solid var(--rim);border-radius:10px;background:rgba(8,14,21,.9);min-width:0}
+  .system-monitor,.metric-card,.stack-component,.contribution-card,.calendar-card,.language-card,.weekly-card,.streak-card,.activity-component{padding:18px 16px;border:1px solid var(--rim);border-radius:10px;background:rgba(8,14,21,.9);min-width:0}
   .system-monitor{padding:14px 12px}
   .monitor-body{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;align-items:center}
   .radar{width:96px;height:96px;fill:none;stroke:var(--rim);stroke-width:1.1}
@@ -163,6 +163,23 @@ button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px 
   .streak-strip{display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:5px;height:30px;align-items:end;margin:16px 0 9px}
   .streak-strip span{display:block;height:var(--height);min-height:3px;border-radius:2px 2px 0 0;background:var(--cyan)}
   .streak-strip span.empty{background:var(--rim)}
+  .calendar-months{display:grid;gap:1px;margin:0 0 6px;color:var(--muted);font:min(.625rem,9px)/1.4 var(--mono);letter-spacing:.06em}
+  .calendar-months span{min-width:0;white-space:nowrap;justify-self:start}
+  @media(max-width:419px){.calendar-months span:nth-child(odd):not(:first-child){visibility:hidden}}
+  .calendar-grid{display:grid;gap:1px}
+  .calendar-week{display:grid;grid-auto-rows:auto;gap:1px;min-width:0}
+  .calendar-day{display:block;width:100%;aspect-ratio:1;border-radius:1.5px;background:var(--rim)}
+  .calendar-day.l1{background:#244C7D}
+  .calendar-day.l2{background:#2F6BC0}
+  .calendar-day.l3{background:var(--accent)}
+  .calendar-day.l4{background:var(--cyan)}
+  .calendar-legend{display:flex;align-items:center;gap:6px;margin:12px 0 0;color:var(--muted);font:.6875rem/1.5 var(--mono)}
+  .calendar-legend i{display:block;width:11px;height:11px;border-radius:2.5px;background:var(--rim)}
+  .calendar-legend .l1{background:#244C7D}
+  .calendar-legend .l2{background:#2F6BC0}
+  .calendar-legend .l3{background:var(--accent)}
+  .calendar-legend .l4{background:var(--cyan)}
+  .calendar-note{margin:6px 0 0;color:var(--muted);font:.6875rem/1.6 var(--mono)}
   .weekly-chart{position:relative;min-height:140px;touch-action:pan-y;user-select:none}
   .week-bars{display:grid;grid-template-columns:repeat(52,minmax(0,1fr));gap:2px;height:105px;align-items:end;border-bottom:1px solid var(--rim);padding-top:12px}
   .week-bar{min-width:0;background:var(--accent2);height:var(--height);min-height:2px;transform-origin:bottom;border-radius:2px 2px 0 0}
@@ -271,7 +288,7 @@ button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px 
   @media(min-width:600px){
     .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
     .telemetry-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .node-stats,.streak-grid,.weekly-card,.activity-card,.sync-line,.data-source{grid-column:1/-1}
+    .node-stats,.streak-grid,.weekly-card,.activity-card,.calendar-card,.sync-line,.data-source{grid-column:1/-1}
     .activity-body{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:center;gap:28px}
     .node-stats{grid-template-columns:repeat(4,minmax(0,1fr))}
     .repo-list{grid-template-columns:repeat(2,minmax(0,1fr))}

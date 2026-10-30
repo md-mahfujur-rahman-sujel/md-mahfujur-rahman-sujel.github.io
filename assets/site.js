@@ -20,6 +20,7 @@
   let selectedWeek = 51;
   const counters = new Map();
   const dateFormat = new Intl.DateTimeFormat('en', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+  const longDateFormat = new Intl.DateTimeFormat('en', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
   const relativeFormat = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
   const colors = { HTML: '#E8A48B', CSS: '#B6A3E8', JavaScript: '#E7D87D', TypeScript: '#82B7EB', Java: '#D9AA7D', Kotlin: '#C2A2F2', Python: '#A2BCD7', SCSS: '#DDA3C0' };
   const $ = (selector, parent = document) => parent.querySelector(selector);
@@ -33,6 +34,7 @@
   const validDate = value => typeof value === 'string' && Number.isFinite(Date.parse(value));
   const finite = value => typeof value === 'number' && Number.isFinite(value) && value >= 0;
   const shortDate = value => validDate(value) ? dateFormat.format(new Date(value)) : '—';
+  const longDate = value => validDate(value) ? longDateFormat.format(new Date(value)) : '—';
   const count = (value, className = '') => {
     const node = element('span', className, finite(value) ? value.toLocaleString('en') : '—');
     if (finite(value)) node.dataset.count = value;
@@ -359,6 +361,8 @@
       const elapsed = Math.max(0, Math.min(1, (Date.now() - Date.UTC(year, 0, 1)) / (Date.UTC(year + 1, 0, 1) - Date.UTC(year, 0, 1))));
       const yearLine = element('p', 'year-progress', `${year} · ${Math.round(elapsed * 100)}% elapsed · ring shows active-day consistency`);
       yearLine.append(meter(elapsed)); card.append(yearLine); grid.append(card);
+      const calendar = renderCalendar(contribution);
+      if (calendar) grid.append(calendar);
     }
     if (Array.isArray(languages)) {
       const card = element('div', 'language-card'); card.append(heading('LANGUAGES', 'BY BYTES'));
@@ -400,11 +404,10 @@
     if (!contribution) {
       const fallback = element('div', 'contribution-card');
       fallback.append(heading('CONTRIBUTIONS', 'UNAVAILABLE'));
-      fallback.append(element('p', 'fallback-note', 'The contribution source could not be reached. This saved panel is from 28 October 2026, not the latest data.'));
+      fallback.append(element('p', 'fallback-note', 'The contribution source could not be reached. The panel below is the last saved snapshot, so it can lag live data by up to three hours.'));
       const image = $('#telemetry .panel-fallback img').cloneNode();
       image.src = 'assets/telemetry.svg';
       fallback.append(image);
-      fallback.append(element('p', 'fallback-note', 'Historical snapshot: 37 contributions, 8 active days and a 3-day streak.'));
       grid.append(fallback);
     }
     if (contribution || (Array.isArray(stats.repos) && stats.repos.length)) grid.append(renderActivityOverview(stats, contribution));
@@ -413,6 +416,53 @@
     if (!profile || !contribution || !Array.isArray(languages)) grid.append(element('p', 'data-source', 'Partial snapshot: some GitHub data is unavailable. Missing values are not zero.'));
     if (contribution) grid.append(element('p', 'data-source', `Contribution window ends ${contribution.asOf || stats.generatedAt.slice(0, 10)} UTC. Counts and streaks reflect that snapshot.`));
     host.replaceChildren(grid); return true;
+  }
+  function renderCalendar(contribution) {
+    const days = contribution?.days;
+    if (!Array.isArray(days) || days.length < 7) return null;
+    const weeks = Math.floor(days.length / 7);
+    const peak = Math.max(1, ...days.map(day => day.count));
+    const intensity = day => !day.count ? 0 : Math.min(4, Math.ceil(day.count / peak * 4));
+    const card = element('div', 'calendar-card');
+    card.append(heading('CONTRIBUTION CALENDAR', '52 WEEKS'));
+    const columns = `repeat(${weeks}, minmax(0, 1fr))`;
+    const months = element('div', 'calendar-months');
+    months.style.gridTemplateColumns = columns;
+    months.setAttribute('aria-hidden', 'true');
+    let month = -1;
+    for (let week = 0; week < weeks; week++) {
+      const start = days[week * 7]?.date;
+      if (!validDate(start)) continue;
+      const date = new Date(start);
+      if (date.getUTCMonth() === month) continue;
+      month = date.getUTCMonth();
+      const label = element('span', '', date.toLocaleDateString('en', { month: 'short', timeZone: 'UTC' }));
+      const span = Math.min(4, weeks - week);
+      label.style.gridColumn = span > 1 ? `${week + 1} / span ${span}` : String(week + 1);
+      months.append(label);
+    }
+    const grid = element('div', 'calendar-grid');
+    grid.style.gridTemplateColumns = columns;
+    grid.setAttribute('role', 'img');
+    grid.setAttribute('aria-label', `Contribution calendar from ${longDate(days[0].date)} to ${longDate(days.at(-1).date)}: ${contribution.total} contributions on ${contribution.activeDays} active days, peak ${contribution.peak?.count ?? peak} on ${longDate(contribution.peak?.date)}.`);
+    for (let week = 0; week < weeks; week++) {
+      const column = element('div', 'calendar-week');
+      for (let row = 0; row < 7; row++) {
+        const day = days[week * 7 + row];
+        if (!day) { column.append(element('span', 'calendar-day')); continue; }
+        const cell = element('span', `calendar-day l${intensity(day)}`);
+        cell.title = `${longDate(day.date)}: ${day.count} contribution${day.count === 1 ? '' : 's'}`;
+        column.append(cell);
+      }
+      grid.append(column);
+    }
+    const legend = element('div', 'calendar-legend');
+    legend.setAttribute('aria-label', 'Contribution intensity from less to more');
+    legend.append(element('span', '', 'Less'));
+    for (let level = 0; level <= 4; level++) legend.append(element('i', `calendar-swatch l${level}`));
+    legend.append(element('span', '', 'More'));
+    card.append(months, grid, legend, element('p', 'calendar-note', 'Each cell is one day. Brighter cells mean more contributions.'));
+    return card;
   }
   function renderWeeks(weeks) {
     const card = element('div', 'weekly-card'); card.append(heading('ACTIVITY CARRIER', '52 WEEKS'));

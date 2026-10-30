@@ -38,13 +38,13 @@ BSc in Computer Science & Engineering at East West University, Bangladesh. I tur
 
 ## Telemetry
 
-<a href="https://github.com/md-mahfujur-rahman-sujel" target="_blank" rel="noopener noreferrer"><img src="./assets/telemetry.svg" width="100%" alt="Live GitHub telemetry: contributions, streaks, active days and languages by bytes" /></a>
+<a href="https://github.com/md-mahfujur-rahman-sujel" target="_blank" rel="noopener noreferrer"><img src="./assets/telemetry.svg" width="100%" alt="GitHub telemetry snapshot: contributions, streaks, active days and languages by bytes" /></a>
 
 <a href="#readme"><img src="./assets/divider-v4.svg" width="100%" alt="" /></a>
 
 ## Repositories
 
-<a href="https://github.com/md-mahfujur-rahman-sujel?tab=repositories" target="_blank" rel="noopener noreferrer"><img src="./assets/repos.svg" width="100%" alt="Repository index with live metadata for Apex Arcade, Unrot and Oppzy" /></a>
+<a href="https://github.com/md-mahfujur-rahman-sujel?tab=repositories" target="_blank" rel="noopener noreferrer"><img src="./assets/repos.svg" width="100%" alt="Repository index with metadata for Apex-Arcade, Unrot and Oppzy" /></a>
 
 <p align="center">
 <sub>
