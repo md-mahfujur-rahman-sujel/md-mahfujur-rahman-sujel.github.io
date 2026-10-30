@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T13:08:16Z",
+  "generatedAt": "2026-10-30T19:56:53Z",
   "sources": {
     "profile": {
       "status": "ok",
@@ -7,7 +7,7 @@
         "https://api.github.com/users/md-mahfujur-rahman-sujel",
         "https://api.github.com/users/md-mahfujur-rahman-sujel/repos?type=owner&per_page=100&sort=full_name"
       ],
-      "fetchedAt": "2026-10-30T13:08:16Z",
+      "fetchedAt": "2026-10-30T19:56:53Z",
       "errors": []
     },
     "contributions": {
@@ -15,7 +15,7 @@
       "urls": [
         "https://api.github.com/graphql"
       ],
-      "fetchedAt": "2026-10-30T13:08:16Z",
+      "fetchedAt": "2026-10-30T19:56:53Z",
       "errors": [],
       "selected": "https://api.github.com/graphql",
       "asOf": "2026-10-30"
@@ -29,7 +29,7 @@
         "https://api.github.com/repos/md-mahfujur-rahman-sujel/md-mahfujur-rahman-sujel.github.io/languages",
         "https://api.github.com/repos/md-mahfujur-rahman-sujel/Unrot/languages"
       ],
-      "fetchedAt": "2026-10-30T13:08:16Z",
+      "fetchedAt": "2026-10-30T19:56:53Z",
       "errors": []
     },
     "repos": {
@@ -39,7 +39,7 @@
         "https://api.github.com/repos/md-mahfujur-rahman-sujel/Unrot",
         "https://api.github.com/repos/masum-mir/Oppzy"
       ],
-      "fetchedAt": "2026-10-30T13:08:16Z",
+      "fetchedAt": "2026-10-30T19:56:53Z",
       "errors": []
     },
     "events": {
@@ -47,7 +47,7 @@
       "urls": [
         "https://api.github.com/users/md-mahfujur-rahman-sujel/events/public?per_page=100"
       ],
-      "fetchedAt": "2026-10-30T13:08:16Z",
+      "fetchedAt": "2026-10-30T19:56:53Z",
       "errors": [],
       "coverage": "Public events only; GitHub REST limits history to 300 events / 90 days"
     }
@@ -55,7 +55,7 @@
   "profile": {
     "repos": 4,
     "stars": 0,
-    "followers": 3,
+    "followers": 4,
     "following": 4,
     "memberSince": "2026-07"
   },
