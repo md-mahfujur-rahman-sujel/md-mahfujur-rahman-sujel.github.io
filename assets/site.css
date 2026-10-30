@@ -1,0 +1,95 @@
+:root{
+  --bg:#05080D; --bg2:#090F16; --chrome:#080E15; --rim:#16263A;
+  --accent:#3B82F6; --accent2:#4F8DFF; --cyan:#67C7EB; --ice:#A9C7FF;
+  --gold:#FBCA03; --bronze:#B97D10; --red:#AA0505; --maroon:#6A0C0B;
+  --text:#EEF6FF; --muted:#93A6BA; --dim:#7E93A8;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --sans:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:
+  radial-gradient(900px 520px at 10% -8%,rgba(59,130,246,.16),transparent 70%),
+  radial-gradient(820px 520px at 92% 6%,rgba(103,199,235,.10),transparent 70%),
+  radial-gradient(980px 620px at 50% 112%,rgba(106,12,11,.24),transparent 70%)}
+.wrap{width:min(1180px,92vw);margin:0 auto;position:relative;z-index:1}
+
+.site-head{position:sticky;top:0;z-index:30;background:rgba(5,8,13,.76);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(22,38,58,.7)}
+.head-in{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:13px 0}
+.brand{display:inline-flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;
+  font:800 14px/1 var(--mono);letter-spacing:.2em}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 14px rgba(170,5,5,.95)}
+.nav{display:flex;gap:6px;flex-wrap:wrap}
+.nav a{font:600 11.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+  text-decoration:none;padding:9px 12px;border-radius:999px;border:1px solid transparent;
+  transition:color .25s,border-color .25s,background .25s}
+.nav a:hover,.nav a:focus-visible{color:var(--text);border-color:var(--rim);background:rgba(22,38,58,.4)}
+a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+.hero{margin:30px 0 6px;border-radius:20px;overflow:hidden;
+  box-shadow:0 40px 120px -60px rgba(59,130,246,.65),0 0 0 1px rgba(22,38,58,.35)}
+.hero svg{display:block;width:100%;height:auto}
+
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:24px 0 10px}
+.chip{display:inline-flex;align-items:center;gap:9px;padding:11px 17px;border-radius:999px;
+  border:1px solid rgba(22,38,58,.9);background:rgba(13,22,34,.7);color:var(--text);text-decoration:none;
+  font:600 12.5px/1 var(--mono);letter-spacing:.06em;
+  transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s,background .3s,box-shadow .3s}
+.chip .pip{width:6px;height:6px;border-radius:50%;background:var(--c,var(--accent2));box-shadow:0 0 10px var(--c,var(--accent2))}
+.chip:hover{transform:translateY(-2px);border-color:rgba(251,202,3,.6);
+  background:rgba(22,38,58,.55);box-shadow:0 14px 34px -22px rgba(79,141,255,.9)}
+
+section{padding:14px 0 6px}
+.kicker{margin:0 0 10px;font:600 11px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--bronze)}
+h2{margin:0 0 12px;font:700 clamp(22px,2.3vw,29px)/1.2 var(--sans);letter-spacing:-.015em}
+.lead{margin:0 0 18px;max-width:72ch;color:var(--muted)}
+.lead strong{color:var(--text);font-weight:600}
+.panel{display:block;width:100%;height:auto}
+.divider{display:block;width:100%;height:auto;margin:26px 0;opacity:.9}
+
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{display:block;border-radius:18px;text-decoration:none;
+  transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.card img{display:block;width:100%;height:auto}
+.card:hover{transform:translateY(-5px);box-shadow:0 26px 64px -34px rgba(79,141,255,.8)}
+.card:focus-visible{outline-offset:5px}
+
+.links{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:16px 0 4px}
+.links a{color:var(--muted);text-decoration:none;font:600 13px/1 var(--mono);letter-spacing:.05em;
+  padding:8px 13px;border-radius:999px;border:1px solid rgba(22,38,58,.9)}
+.links a:hover{color:var(--text);border-color:rgba(251,202,3,.55);background:rgba(22,38,58,.45)}
+
+footer{margin:44px 0 64px;padding-top:22px;border-top:1px solid rgba(22,38,58,.6);
+  text-align:center;color:var(--dim);font:12.5px/1.9 var(--mono);letter-spacing:.04em}
+footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:var(--gold)}
+
+
+/* Ironbot: original mascot. Glides on eased arcs; click to follow the cursor. */
+#flyer{position:fixed;left:0;top:0;z-index:20;pointer-events:none;will-change:transform}
+#flyer[hidden]{display:none}
+#flyer-btn{pointer-events:auto;display:block;width:58px;height:107px;padding:0;margin:0;border:0;background:none;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;will-change:transform}
+.flyer-stage{display:block;position:relative;width:100%;height:100%;perspective:560px}
+/* soft halo behind the armour; static gradient so it costs nothing per frame */
+.flyer-stage::before{content:'';position:absolute;left:50%;top:52%;width:66px;height:88px;margin:-44px 0 0 -33px;border-radius:50%;background:radial-gradient(closest-side,rgba(253,201,35,.20),rgba(214,5,31,.10) 62%,transparent 76%);pointer-events:none;z-index:0}
+/* yaw is clamped to 16deg and the squash to 5%, so the silhouette never collapses */
+.flyer-fig{position:relative;z-index:1;display:block;width:100%;height:100%;overflow:visible;transform-origin:50% 74%;backface-visibility:hidden;filter:drop-shadow(0 12px 14px rgba(0,0,0,.5));will-change:transform}
+.flyer-shadow{position:absolute;left:50%;bottom:-2px;width:36px;height:9px;margin-left:-18px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.6),transparent 78%);will-change:transform,opacity}
+#flyer-btn:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:14px}
+.sk-flame{animation:skflick .24s ease-in-out infinite alternate}
+@keyframes skflick{from{transform:scaleY(.9)}to{transform:scaleY(1.08)}}
+.sk-spark{position:fixed;left:0;top:0;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;pointer-events:none;z-index:19}
+.nav .nav-btn{font:600 11.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--bronze);background:transparent;border:1px solid rgba(185,125,16,.5);padding:9px 12px;border-radius:999px;cursor:pointer;transition:color .25s,border-color .25s}
+.nav .nav-btn:hover,.nav .nav-btn:focus-visible{color:var(--gold);border-color:var(--gold)}
+@media (prefers-reduced-motion:reduce){.sk-flame{animation:none}}
+
+.panel-fallback{width:100%}
+.panel-fallback img{display:block;width:100%;height:auto}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .chip,.card,.nav a{transition:none}
+  .chip:hover,.card:hover{transform:none}
+}
