@@ -22,7 +22,7 @@
   const dateFormat = new Intl.DateTimeFormat('en', { month: 'short', day: 'numeric', timeZone: 'UTC' });
   const longDateFormat = new Intl.DateTimeFormat('en', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
   const relativeFormat = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
-  const colors = { HTML: '#E8A48B', CSS: '#B6A3E8', JavaScript: '#E7D87D', TypeScript: '#82B7EB', Java: '#D9AA7D', Kotlin: '#C2A2F2', Python: '#A2BCD7', SCSS: '#DDA3C0' };
+  const colors = { HTML: '#FBCA03', CSS: '#B6A3E8', JavaScript: '#E7D87D', TypeScript: '#82B7EB', Java: '#D9AA7D', Kotlin: '#E10F19', Python: '#A2BCD7', SCSS: '#DDA3C0' };
   const $ = (selector, parent = document) => parent.querySelector(selector);
   const $$ = (selector, parent = document) => [...parent.querySelectorAll(selector)];
   const element = (tag, className, text) => {
@@ -284,23 +284,36 @@
   let lastDockChange = lastScroll;
   function scrollSpy() {
     scrollFrame = 0;
-    if (!compact.matches || dialog.open) return;
+    if (dialog.open) return;
     const y = window.scrollY;
-    if (!reduced && Math.abs(y - lastDockChange) > 12) {
-      dock.classList.toggle('is-hidden', y > lastScroll && y > 120 && y + innerHeight < document.documentElement.scrollHeight - 80);
-      lastDockChange = y;
+    if (compact.matches) {
+      if (!reduced && Math.abs(y - lastDockChange) > 12) {
+        dock.classList.toggle('is-hidden', y > lastScroll && y > 120 && y + innerHeight < document.documentElement.scrollHeight - 80);
+        lastDockChange = y;
+      }
+      lastScroll = y;
     }
-    lastScroll = y;
-    const sections = ['top', 'projects', 'stack', 'telemetry', 'repositories', 'activity'];
+    const sections = ['top', 'about', 'projects', 'stack', 'telemetry', 'repositories', 'activity', 'contact'];
     let current = 'top';
-    for (const id of sections.slice(1)) if (document.getElementById(id).getBoundingClientRect().top <= 150) current = id;
-    if (y + innerHeight >= document.documentElement.scrollHeight - 12) current = 'activity';
-    if (current === 'repositories') current = 'telemetry';
-    $$('.mobile-dock a').forEach(link => {
-      if (link.dataset.section === current) {
-        link.setAttribute('aria-current', 'location');
-        $('.dock-indicator').style.transform = `translateX(${link.offsetLeft + link.offsetWidth / 2 - 16}px)`;
-      } else link.removeAttribute('aria-current');
+    for (const id of sections.slice(1)) {
+      const node = document.getElementById(id);
+      if (node && node.getBoundingClientRect().top <= 150) current = id;
+    }
+    if (y + innerHeight >= document.documentElement.scrollHeight - 12) current = 'contact';
+    if (compact.matches) {
+      const dockMap = { about: 'top', repositories: 'telemetry', contact: 'activity' };
+      const dockCurrent = dockMap[current] || current;
+      $$('.mobile-dock a').forEach(link => {
+        if (link.dataset.section === dockCurrent) {
+          link.setAttribute('aria-current', 'location');
+          $('.dock-indicator').style.transform = `translateX(${link.offsetLeft + link.offsetWidth / 2 - 16}px)`;
+        } else link.removeAttribute('aria-current');
+      });
+    }
+    const navCurrent = current === 'top' ? 'about' : current;
+    $$('.nav a[href^="#"]').forEach(link => {
+      if (link.getAttribute('href') === `#${navCurrent}`) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
     });
   }
   window.addEventListener('scroll', () => {
@@ -308,6 +321,7 @@
     if (!scrollFrame) scrollFrame = requestAnimationFrame(scrollSpy);
   }, { passive: true });
   window.addEventListener('resize', scrollSpy, { passive: true });
+  requestAnimationFrame(scrollSpy);
   $$('.mobile-dock a,.hero-tabs a').forEach(link => link.addEventListener('click', () => {
     dock.classList.remove('is-hidden');
     const target = $(link.getAttribute('href'));

@@ -76,7 +76,7 @@ class RenderTests(unittest.TestCase):
         months = {day["date"][:7] for day in days}
         self.assertIn(f'>{contributions["total"]}<', markup)
         self.assertIn(f'ACTIVE <tspan fill="#67C7EB">{contributions["activeDays"]}</tspan>', markup)
-        self.assertIn(f'PEAK <tspan fill="#A9C7FF">{contributions["peak"]["count"]}</tspan>', markup)
+        self.assertIn(f'PEAK <tspan fill="#FBCA03">{contributions["peak"]["count"]}</tspan>', markup)
         self.assertEqual(len(re.findall(r'width="12.5" height="12.5"', markup)), len(days))
         self.assertEqual(len(re.findall(r'y="478"', markup)), len(months))
         self.assertIn(f'{contributions["total"]} contributions · {contributions["activeDays"]} active days · {len(days)}d window', markup)

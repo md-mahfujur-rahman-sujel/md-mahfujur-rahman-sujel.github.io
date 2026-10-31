@@ -25,26 +25,26 @@ ASSET_DIR = ROOT / 'assets'
 PANELS = ('telemetry', 'activity', 'repos')
 
 MONTHS = ('JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC')
-LEVEL_COLORS = {0: '#111B27', 1: '#244C7D', 2: '#2F6BC0', 3: '#3B82F6', 4: '#67C7EB'}
-BAR_COLORS = ('#3B82F6', '#67C7EB', '#A9C7FF', '#4F8DFF')
-BAR_TEXT_COLORS = ('#93C5FD', '#67C7EB', '#A9C7FF', '#BFDBFE')
+LEVEL_COLORS = {0: '#111B27', 1: '#244C7D', 2: '#2F6BC0', 3: '#3B82F6', 4: '#FBCA03'}
+BAR_COLORS = ('#3B82F6', '#67C7EB', '#FBCA03', '#4F8DFF')
+BAR_TEXT_COLORS = ('#93C5FD', '#67C7EB', '#FBCA03', '#BFDBFE')
 STRIP_COLORS = ('#A9C7FF', '#4F8DFF', '#67C7EB')
-CARD_ACCENTS = ('#A9C7FF', '#67C7EB', '#3B82F6')
-CARD_OPEN_COLORS = ('#A9C7FF', '#67C7EB', '#BFDBFE')
+CARD_ACCENTS = ('#A9C7FF', '#67C7EB', '#E10F19')
+CARD_OPEN_COLORS = ('#A9C7FF', '#67C7EB', '#FF8B80')
 LANGUAGE_COLORS = {
-    'HTML': '#3B82F6', 'CSS': '#A9C7FF', 'JavaScript': '#A9C7FF', 'TypeScript': '#67C7EB',
-    'Java': '#BFDBFE', 'Kotlin': '#4F8DFF', 'Python': '#67C7EB', 'SCSS': '#4F8DFF',
+    'HTML': '#FBCA03', 'CSS': '#A9C7FF', 'JavaScript': '#A9C7FF', 'TypeScript': '#67C7EB',
+    'Java': '#BFDBFE', 'Kotlin': '#E10F19', 'Python': '#67C7EB', 'SCSS': '#4F8DFF',
 }
 EVENT_STYLES = {
     'push': ('PUSH', '#A9C7FF'),
-    'pull_request': ('PR', '#67C7EB'),
+    'pull_request': ('PR', '#FF5C5C'),
     'issues': ('ISSUE', '#4F8DFF'),
     'issue_comment': ('COMMENT', '#4F8DFF'),
-    'watch': ('STAR', '#3B82F6'),
+    'watch': ('STAR', '#FBCA03'),
     'create': ('CREATE', '#4F8DFF'),
     'delete': ('DELETE', '#7E93A8'),
     'fork': ('FORK', '#A9C7FF'),
-    'release': ('RELEASE', '#67C7EB'),
+    'release': ('RELEASE', '#FBCA03'),
 }
 
 CIRCUMFERENCE = 326.7
@@ -401,7 +401,7 @@ def repo_cards(repos, ref):
             f'<rect x="20.0" y="{top:.1f}" width="1240.0" height="86.0" rx="12" fill="url(#glass)" stroke="#16263A" stroke-opacity=".6"/>'
             f'<rect x="20.0" y="{top + 12:.1f}" width="3" height="62.0" rx="1.5" fill="{accent}"/>'
             f'<rect x="20.0" y="{top:.1f}" width="1240.0" height="1.5" rx=".75" fill="{accent}" fill-opacity=".55"/>'
-            f'<text class="m" x="42.0" y="{top + 35:.1f}" font-size="11.5" fill="{accent}">{index + 1:02d}</text>'
+            f'<text class="m" x="42.0" y="{top + 35:.1f}" font-size="11.5" fill="{open_color}">{index + 1:02d}</text>'
             f'<text class="m" x="42.0" y="{top + 52:.1f}" font-size="9" letter-spacing="1.1" fill="#60748A">NODE</text>'
             f'<text class="s" x="88.0" y="{top + 34:.1f}" font-size="20" font-weight="700" fill="#EEF6FF">{image_escape(repo.get("name") or slug)}</text>'
             f'<text class="m" x="88.0" y="{top + 52:.1f}" font-size="10.5" fill="#7E93A8">{image_escape(role)}</text>'
