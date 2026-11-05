@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T17:28:19Z",
+  "generatedAt": "2026-11-05T23:41:35Z",
   "sources": {
     "profile": {
       "status": "ok",
@@ -7,7 +7,7 @@
         "https://api.github.com/users/md-mahfujur-rahman-sujel",
         "https://api.github.com/users/md-mahfujur-rahman-sujel/repos?type=owner&per_page=100&sort=full_name"
       ],
-      "fetchedAt": "2026-11-05T17:28:19Z",
+      "fetchedAt": "2026-11-05T23:41:35Z",
       "errors": []
     },
     "contributions": {
@@ -15,7 +15,7 @@
       "urls": [
         "https://api.github.com/graphql"
       ],
-      "fetchedAt": "2026-11-05T17:28:19Z",
+      "fetchedAt": "2026-11-05T23:41:35Z",
       "errors": [],
       "selected": "https://api.github.com/graphql",
       "asOf": "2026-11-05"
@@ -29,7 +29,7 @@
         "https://api.github.com/repos/md-mahfujur-rahman-sujel/md-mahfujur-rahman-sujel.github.io/languages",
         "https://api.github.com/repos/md-mahfujur-rahman-sujel/Unrot/languages"
       ],
-      "fetchedAt": "2026-11-05T17:28:19Z",
+      "fetchedAt": "2026-11-05T23:41:35Z",
       "errors": []
     },
     "repos": {
@@ -39,7 +39,7 @@
         "https://api.github.com/repos/md-mahfujur-rahman-sujel/Unrot",
         "https://api.github.com/repos/masum-mir/Oppzy"
       ],
-      "fetchedAt": "2026-11-05T17:28:19Z",
+      "fetchedAt": "2026-11-05T23:41:35Z",
       "errors": []
     },
     "events": {
@@ -47,7 +47,7 @@
       "urls": [
         "https://api.github.com/users/md-mahfujur-rahman-sujel/events/public?per_page=100"
       ],
-      "fetchedAt": "2026-11-05T17:28:19Z",
+      "fetchedAt": "2026-11-05T23:41:35Z",
       "errors": [],
       "coverage": "Public events only; GitHub REST limits history to 300 events / 90 days"
     }
@@ -1756,30 +1756,30 @@
   "languages": [
     {
       "name": "HTML",
-      "pct": 39.71
+      "pct": 39.31
     },
     {
       "name": "JavaScript",
-      "pct": 33.99
+      "pct": 34.27
     },
     {
       "name": "TypeScript",
-      "pct": 18.16
+      "pct": 18.38
     },
     {
       "name": "Kotlin",
-      "pct": 4.45
+      "pct": 4.4
     },
     {
       "name": "Python",
-      "pct": 2.56
+      "pct": 2.53
     },
     {
       "name": "CSS",
-      "pct": 1.12
+      "pct": 1.1
     }
   ],
-  "bytesTotal": 4351848,
+  "bytesTotal": 4401271,
   "repos": [
     {
       "name": "Apex-Arcade",
@@ -1791,7 +1791,7 @@
       "language": "HTML",
       "stars": 0,
       "forks": 0,
-      "updatedAt": "2026-11-05T16:36:51Z"
+      "updatedAt": "2026-11-05T19:10:14Z"
     },
     {
       "name": "Unrot",
@@ -1819,6 +1819,20 @@
     }
   ],
   "events": [
+    {
+      "id": "26273456494",
+      "type": "push",
+      "at": "2026-11-05T18:35:57Z",
+      "repo": "md-mahfujur-rahman-sujel/Apex-Arcade",
+      "summary": "Pushed to main"
+    },
+    {
+      "id": "26260429531",
+      "type": "push",
+      "at": "2026-11-05T14:24:27Z",
+      "repo": "md-mahfujur-rahman-sujel/Apex-Arcade",
+      "summary": "Pushed to main"
+    },
     {
       "id": "26207168044",
       "type": "push",
