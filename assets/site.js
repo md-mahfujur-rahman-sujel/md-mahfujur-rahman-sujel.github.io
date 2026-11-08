@@ -450,9 +450,11 @@
       const date = new Date(start);
       if (date.getUTCMonth() === month) continue;
       month = date.getUTCMonth();
+      // A label needs its full 4-week span to fit at 320px; skip it near the
+      // window edge instead of letting nowrap text widen the grid.
+      if (weeks - week < 4) continue;
       const label = element('span', '', date.toLocaleDateString('en', { month: 'short', timeZone: 'UTC' }));
-      const span = Math.min(4, weeks - week);
-      label.style.gridColumn = span > 1 ? `${week + 1} / span ${span}` : String(week + 1);
+      label.style.gridColumn = `${week + 1} / span 4`;
       months.append(label);
     }
     const grid = element('div', 'calendar-grid');
