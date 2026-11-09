@@ -85,7 +85,7 @@
       counters.clear();
       $$('.is-revealing').forEach(node => node.classList.remove('is-revealing'));
       for (const animation of document.getAnimations()) {
-        if (animation.effect?.target?.closest('.mobile-workspace,.mobile-only,.mobile-dock,#explorer')) animation.cancel();
+        if (animation.effect?.target?.closest('.mobile-workspace,.panel-component,.stack-component,.mobile-dock,#explorer')) animation.cancel();
       }
       $('#typed-copy').textContent = typedLines[0];
       dock.classList.remove('is-hidden');
@@ -229,7 +229,7 @@
   }));
   $$('.tech-track').forEach(track => track.append(element('span', 'track-playhead')));
   setInterval(() => {
-    if (!compact.matches || reduced || document.hidden || !$('.stack-component').classList.contains('in-view')) return;
+    if (reduced || document.hidden || !$('.stack-component').classList.contains('in-view')) return;
     $$('.track-playhead').forEach((playhead, index) => {
       playhead.animate([{ transform: 'translateX(0)', opacity: 0 }, { opacity: .8, offset: .25 }, { transform: `translateX(${playhead.parentElement.clientWidth - 48}px)`, opacity: 0 }], { duration: 1200, delay: index * 240, easing: 'ease-in-out' });
     });
@@ -243,7 +243,7 @@
     if (node.dataset.counted) return;
     node.dataset.counted = 'true';
     const final = Number(node.dataset.count);
-    if (reduced || !compact.matches) { node.textContent = formatCounter(node, final); return; }
+    if (reduced) { node.textContent = formatCounter(node, final); return; }
     const start = performance.now();
     function frame(now) {
       const progress = Math.min(1, (now - start) / 900);
@@ -258,7 +258,7 @@
     for (const entry of entries) {
       const node = entry.target;
       node.classList.toggle('in-view', entry.isIntersecting);
-      if (!compact.matches || !entry.isIntersecting || revealed.has(node)) continue;
+      if (!entry.isIntersecting || revealed.has(node)) continue;
       revealed.add(node);
       if (!reduced) {
         node.classList.add('is-revealing');
@@ -697,7 +697,7 @@
     if (focusedId) document.getElementById(focusedId)?.focus({ preventScroll: true });
   }
   async function loadData() {
-    if (fetching || !compact.matches || document.hidden) return;
+    if (fetching || document.hidden) return;
     fetching = true;
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 12000);

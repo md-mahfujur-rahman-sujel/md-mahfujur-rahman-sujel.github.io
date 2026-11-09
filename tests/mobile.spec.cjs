@@ -158,6 +158,7 @@ test('data errors can be retried and malicious API text stays text', async ({ pa
   await page.goto('/'); await expect(page.locator('.retry-data')).toBeEnabled();
   success = true; await page.locator('.retry-data').click();
   await expect(page.locator('#repositories')).toHaveClass(/has-data/);
+  await expect(page.locator('.retry-data')).not.toBeVisible();
   await expect(page.locator('.repo-card').first()).toContainText('<img src=x');
   expect(await page.evaluate(() => window.injected)).toBeUndefined();
   expect(await page.locator('.repo-card img').count()).toBe(0);
@@ -172,15 +173,52 @@ test('mobile accessibility audit has no WCAG A/AA violations', async ({ page }) 
   const sheet = await new AxeBuilder({ page }).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
   expect(sheet.violations.map(issue => ({ id: issue.id, nodes: issue.nodes.map(node => node.target) }))).toEqual([]);
 });
-test('desktop retains the original layout and SVG panels', async ({ page }) => {
+test('desktop renders the live components with the unified design system', async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 900 });
-  await page.goto('/');
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await mockData(page); await ready(page);
   await expect(page.locator('.hero')).toBeVisible();
   await expect(page.locator('.mobile-workspace')).not.toBeVisible();
   await expect(page.locator('.mobile-dock')).not.toBeVisible();
-  await expect(page.locator('#telemetry .panel-fallback')).toBeVisible();
+  await expect(page.locator('#telemetry-component')).toBeVisible();
+  await expect(page.locator('#telemetry .panel-fallback')).not.toBeVisible();
+  await expect(page.locator('#telemetry .retry-data')).not.toBeVisible();
+  await expect(page.locator('#telemetry .data-notice')).not.toBeVisible();
+  await expect(page.locator('.metric-card')).toHaveCount(4);
+  await expect(page.locator('.week-bar')).toHaveCount(52);
+  await expect(page.locator('.repo-card')).toHaveCount(3);
+  await expect(page.locator('.tech-chip')).toHaveCount(15);
+  await expect(page.locator('.cards .card')).toHaveCount(3);
+  await expect(page.locator('.cards .card img')).toHaveCount(0);
   expect(await page.locator('.head-in').evaluate(node => getComputedStyle(node).flexDirection)).toBe('row');
   expect(await page.locator('.cards').evaluate(node => getComputedStyle(node).gridTemplateColumns.split(' ').length)).toBe(3);
+  expect(await page.locator('.repo-list').evaluate(node => getComputedStyle(node).gridTemplateColumns.split(' ').length)).toBe(3);
+});
+test('desktop reflows without overflow and passes WCAG at 1280 and 1024', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await mockData(page);
+  for (const width of [1280, 1024]) {
+    await page.setViewportSize({ width, height: 900 });
+    await ready(page);
+    for (const id of ['top','projects','stack','telemetry','repositories','activity','contact']) {
+      await page.locator(`#${id}`).evaluate(node => node.scrollIntoView({ behavior: 'instant' }));
+      expect(await overflow(page)).toEqual([]);
+    }
+    expect(await page.evaluate(() => document.scrollingElement.scrollWidth)).toBe(width);
+  }
+  const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
+  expect(results.violations.map(issue => ({ id: issue.id, nodes: issue.nodes.map(node => node.target) }))).toEqual([]);
+});
+test('desktop without JavaScript keeps the SVG fallbacks readable', async ({ browser }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 1280, height: 900 }, reducedMotion: 'reduce' });
+  const page = await context.newPage();
+  await page.goto('/');
+  await expect(page.locator('#telemetry .panel-fallback')).toBeVisible();
+  await expect(page.locator('#telemetry-component')).not.toBeVisible();
+  await expect(page.locator('.cards .card')).toHaveCount(3);
+  await expect(page.locator('.stack-component')).toBeVisible();
+  expect(await overflow(page)).toEqual([]);
+  await context.close();
 });
 test('200 percent text scaling reflows at 320 CSS pixels', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 568 });
