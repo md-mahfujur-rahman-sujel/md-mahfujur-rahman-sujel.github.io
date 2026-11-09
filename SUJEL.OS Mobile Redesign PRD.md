@@ -1,6 +1,6 @@
 # SUJEL.OS Mobile Redesign: Product Requirements Document
 
-*Draft v1.0 · 29 Oct 2026 · Scope: md-mahfujur-rahman-sujel.github.io on phone-size screens (900 px and below) · Based on a review of the live site and the local repo*
+*Draft v1.0 · 29 Oct 2026 · **Status 9 Nov 2026:** Phase 1 shipped (compact top bar, bottom dock, Explorer sheet, JS panel components with SVG fallbacks). Both breakpoints now render one intro component: the fake-IDE hero — window caption, `about.md` tab strip, typed line, status monitor, info cards — is gone from the phone as well as the desktop, leaving a typographic intro beside a reactor stage that keeps Ironbot inside it, with section navigation living in the bottom dock and the Explorer sheet. `assets/polish.css` is a deferred refinement layer (type scale, rhythm, one card surface, AA button contrast), and the inlined critical layer now guards image widths so mobile first paint cannot zoom out to fit a 1280 px fallback panel. Sections 2 and 8 below describe the original problems, not current state.* · Scope: md-mahfujur-rahman-sujel.github.io on phone-size screens (900 px and below) · Based on a review of the live site and the local repo
 
 ## 1. Summary
 

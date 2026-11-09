@@ -194,6 +194,19 @@ test('desktop renders the live components with the unified design system', async
   expect(await page.locator('.cards').evaluate(node => getComputedStyle(node).gridTemplateColumns.split(' ').length)).toBe(3);
   expect(await page.locator('.repo-list').evaluate(node => getComputedStyle(node).gridTemplateColumns.split(' ').length)).toBe(3);
 });
+test('the phone and desktop intros present the same copy and links', async ({ page }) => {
+  await mockData(page); await ready(page);
+  const intros = await page.evaluate(() => {
+    const text = node => node.textContent.replace(/\u00a0/g, ' ').trim().replace(/\s+/g, ' ');
+    const read = root => ({
+      copy: [...root.querySelectorAll('.intro-kicker,h1,.intro-lead,dt,dd')].map(text).join('|'),
+      actions: [...root.querySelectorAll('.intro-actions a')].map(link => `${text(link)} ${link.getAttribute('href')}`).join('|')
+    });
+    return { desktop: read(document.querySelector('.hero .intro')), mobile: read(document.querySelector('.mobile-workspace .intro')) };
+  });
+  expect(intros.mobile).toEqual(intros.desktop);
+  expect(await page.locator('.hero-tabs,.window-caption,.typed-line,.system-monitor,.info-cards,.chips').count()).toBe(0);
+});
 test('desktop reflows without overflow and passes WCAG at 1280 and 1024', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await mockData(page);
@@ -265,6 +278,21 @@ test('critical CSS paints the fold exactly like the full stylesheets', async ({ 
     expect(diffs.slice(0, 20), `${width}x${height}: ${diffs.length} above-the-fold paint diffs`).toEqual([]);
     await full.close(); await critical.close();
   }
+});
+test('critical CSS keeps the mobile first paint inside the viewport', async ({ browser }) => {
+  // An unconstrained width="1280" fallback panel widens the layout viewport, and mobile
+  // browsers shrink-to-fit around it: every fixed element then lands somewhere else and
+  // jumps back when the sheets arrive. That jump is the 0.07 CLS this test guards.
+  const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 412, height: 823 } });
+  await context.route('**/assets/*.css', route => route.abort());
+  const page = await context.newPage();
+  await page.goto('/');
+  const wide = await page.evaluate(() => {
+    const de = document.documentElement;
+    return { scrollWidth: de.scrollWidth, clientWidth: de.clientWidth, dockTop: Math.round(document.querySelector('.mobile-dock').getBoundingClientRect().top) };
+  });
+  expect(wide).toEqual({ scrollWidth: 412, clientWidth: 412, dockTop: 766 });
+  await context.close();
 });
 test('200 percent text scaling reflows at 320 CSS pixels', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 568 });

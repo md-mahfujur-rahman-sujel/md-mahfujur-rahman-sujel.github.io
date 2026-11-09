@@ -2,13 +2,13 @@
 
 <a href="#readme"><img src="./assets/hero-v4.svg" width="100%" alt="Md Mahfujur Rahman Sujel — BSc in Computer Science & Engineering at East West University" /></a>
 
-<a href="#readme"><img src="./assets/flight-v4.svg" width="100%" alt="Skybot, the profile mascot, flying across the page" /></a>
+<a href="#readme"><img src="./assets/flight-v4.svg" width="100%" alt="Ironbot, the profile mascot, flying across the page" /></a>
 
 <br />
 
 <a href="https://linkedin.com/in/md-mahfujur-rahman-sujel" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/LinkedIn-Connect-3B82F6?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=16263A" alt="LinkedIn" /></a>
 <a href="https://github.com/md-mahfujur-rahman-sujel" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/GitHub-Profile-4F8DFF?style=for-the-badge&logo=github&logoColor=white&labelColor=16263A" alt="GitHub" /></a>
-<a href="https://md-mahfujur-rahman-sujel.github.io/md-mahfujur-rahman-sujel/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Interactive-Site-3B82F6?style=for-the-badge&logo=githubpages&logoColor=white&labelColor=16263A" alt="Interactive site with the flying Skybot" /></a>
+<a href="https://md-mahfujur-rahman-sujel.github.io/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Portfolio-Visit-3B82F6?style=for-the-badge&logo=githubpages&logoColor=white&labelColor=16263A" alt="Portfolio site" /></a>
 
 <a href="#readme"><img src="./assets/divider-v4.svg" width="100%" alt="" /></a>
 

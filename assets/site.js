@@ -87,7 +87,6 @@
       for (const animation of document.getAnimations()) {
         if (animation.effect?.target?.closest('.mobile-workspace,.panel-component,.stack-component,.mobile-dock,#explorer')) animation.cancel();
       }
-      $('#typed-copy').textContent = typedLines[0];
       dock.classList.remove('is-hidden');
     }
     document.dispatchEvent(new CustomEvent('motionchange'));
@@ -198,19 +197,6 @@
     }
   });
 
-  const typedLines = ['trying out new things...', 'shipping React, Spring Boot & Android', 'from first sketch to polished release'];
-  let typedElapsed = 0;
-  let lastTypedAt = performance.now();
-  setInterval(() => {
-    const now = performance.now();
-    const delta = now - lastTypedAt;
-    lastTypedAt = now;
-    if (!compact.matches || reduced || document.hidden || dialog.open || !$('.mobile-workspace').classList.contains('in-view')) return;
-    typedElapsed += Math.min(delta, 100);
-    const index = Math.floor(typedElapsed / 4000) % typedLines.length;
-    const length = Math.min(typedLines[index].length, Math.floor((typedElapsed % 4000) / 42));
-    $('#typed-copy').textContent = typedLines[index].slice(0, length);
-  }, 60);
   const reactor = $('.reactor-button');
   reactor.disabled = false;
   let pulseTimer;
@@ -273,7 +259,7 @@
     }
   }, { threshold: .15 });
   function observe(parent = document) {
-    $$('.motion-zone,.info-cards li,.cards .card,.metric-card,.contribution-card,.language-card,.streak-card,.weekly-card,.activity-card,.repo-card,.activity-component', parent).forEach((node, index) => {
+    $$('.motion-zone,.cards .card,.metric-card,.contribution-card,.language-card,.streak-card,.weekly-card,.activity-card,.repo-card,.activity-component', parent).forEach((node, index) => {
       node.style.setProperty('--stagger', `${Math.min(index % 6, 5) * 60}ms`);
       observer.observe(node);
     });
@@ -322,7 +308,7 @@
   }, { passive: true });
   window.addEventListener('resize', scrollSpy, { passive: true });
   requestAnimationFrame(scrollSpy);
-  $$('.mobile-dock a,.hero-tabs a').forEach(link => link.addEventListener('click', () => {
+  $$('.mobile-dock a').forEach(link => link.addEventListener('click', () => {
     dock.classList.remove('is-hidden');
     const target = $(link.getAttribute('href'));
     if (!reduced && target) {
@@ -680,8 +666,6 @@
     $$('time[datetime]').forEach(node => { node.textContent = (node.dataset.prefix || '') + age(node.dateTime); });
     if (data) {
       $('.footer-sync').textContent = `Data updated ${age(data.generatedAt)}`;
-      $('.hero-sync').textContent = `sync ${age(data.generatedAt)}`;
-      $('.monitor-refresh').textContent = age(data.generatedAt);
     }
   }
   function render(stats) {
@@ -763,30 +747,4 @@
   });
   root.classList.add('js-ready');
   setMotion(); observe(); scrollSpy(); loadData();
-
-  const hero = $('.hero svg');
-  const reactorGroup = $('.rc', hero);
-  let desktopFrame = 0;
-  let pointer = null;
-  function desktopReactor() {
-    desktopFrame = 0;
-    if (reduced || compact.matches || !reactorGroup) return;
-    const rect = reactorGroup.parentNode.getBoundingClientRect();
-    const bounds = hero.getBoundingClientRect();
-    const k = bounds.width ? 1280 / bounds.width : 1;
-    const dx = pointer ? (pointer.x - rect.left - rect.width / 2) * k : 0;
-    const dy = pointer ? (pointer.y - rect.top - rect.height / 2) * k : 0;
-    const distance = Math.hypot(dx, dy);
-    const near = Boolean(pointer) && distance < 130;
-    const pull = pointer ? Math.max(0, Math.min(1, 1 - distance / 420)) : 0;
-    hero.style.setProperty('--rx', `${pointer ? Math.max(-7, Math.min(7, dx * .05)) : 0}px`);
-    hero.style.setProperty('--ry', `${pointer ? Math.max(-7, Math.min(7, dy * .05)) : 0}px`);
-    hero.style.setProperty('--rs', near ? '1.14' : String(1 + pull * .06));
-    hero.classList.toggle('near', near);
-  }
-  const scheduleDesktop = () => { if (!compact.matches && !reduced && !desktopFrame) desktopFrame = requestAnimationFrame(desktopReactor); };
-  window.addEventListener('pointermove', event => { pointer = { x: event.clientX, y: event.clientY }; scheduleDesktop(); }, { passive: true });
-  window.addEventListener('pointerdown', event => { pointer = { x: event.clientX, y: event.clientY }; scheduleDesktop(); }, { passive: true });
-  window.addEventListener('scroll', scheduleDesktop, { passive: true });
-  root.addEventListener('mouseleave', () => { pointer = null; scheduleDesktop(); });
 })();

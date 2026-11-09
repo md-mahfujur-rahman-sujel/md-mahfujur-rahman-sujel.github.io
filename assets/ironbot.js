@@ -10,7 +10,7 @@ var W=window.innerWidth,H=window.innerHeight,compact=compactQuery?compactQuery.m
 var pos={x:W*0.78,y:H*0.62},vel={x:0,y:0},target={x:pos.x,y:pos.y},mouse={x:W/2,y:H/2};
 var mode='roam',leg=null,face=0,last=null,raf=0,pauseUntil=0,sparkAt=0,enabled=true,autoOff=false;
 var scrolling=false,scrollTimer=0,slowTime=0,slowFrames=0,drag=null,suppressClick=false;
-var particles=[],spin=null,bounds={},dockHeight=56,dockTop=H-56;
+var particles=[],spin=null,bounds={},parked=false;
 var touchAction=btn.style.touchAction;
 var prevX=pos.x,prevY=pos.y,driftX=0;
 function rnd(a,b){return a+Math.random()*(b-a);}
@@ -19,6 +19,16 @@ function reduced(){return reduce.matches||document.documentElement.dataset.motio
 function isOn(){return enabled&&!autoOff&&!reduced();}
 function explorerOpen(){var dialog=document.getElementById('explorer');return !!(dialog&&dialog.open);}
 function blocked(){return document.hidden||scrolling||explorerOpen();}
+// The mascot patrols one hero element only, so it never flies over the
+// reading column; the first visible [data-flyer-home] wins.
+function homeRect(){
+  var nodes=document.querySelectorAll('[data-flyer-home]');
+  for(var i=0;i<nodes.length;i++){
+    var r=nodes[i].getBoundingClientRect();
+    if(r.width>0&&r.height>0){return r;}
+  }
+  return null;
+}
 function canRun(){return isOn()&&!blocked()&&!drag;}
 function resetClock(){last=null;slowTime=0;slowFrames=0;pauseUntil=0;}
 function constrain(){
@@ -31,21 +41,17 @@ function constrain(){
 }
 function measure(){
   W=window.innerWidth;H=window.innerHeight;
-  if(compact){
-    var dock=document.querySelector('.mobile-dock');
-    dockTop=H-dockHeight;
-    if(dock){
-      var rect=dock.getBoundingClientRect();
-      var padding=parseFloat(window.getComputedStyle(dock).paddingBottom)||0;
-      // A translated-away dock still reserves its height, including the safe area.
-      dockHeight=rect.height?Math.max(56+padding,rect.height):Math.max(dockHeight,56+padding);
-      dockTop=Math.min(H-dockHeight,rect.height?rect.top:H-dockHeight);
-    }
-    bounds.left=Math.min(48,W/2);bounds.right=Math.max(bounds.left,W-48);
-    bounds.bottom=Math.max(48,dockTop-54);bounds.top=Math.max(48,bounds.bottom-12);
+  var r=homeRect();
+  if(r){
+    var ix=compact?22:29,iy=compact?37:54,gap=compact?8:16;
+    bounds.left=Math.max(ix+2,r.left+gap);bounds.right=Math.min(W-ix-2,r.right-gap);
+    bounds.top=Math.max(iy+2,r.top+gap);bounds.bottom=Math.min(H-iy-2,r.bottom-gap);
+    if(bounds.right<bounds.left){var cx=(r.left+r.right)/2;bounds.left=cx-2;bounds.right=cx+2;}
+    if(bounds.bottom<bounds.top){var cy=(r.top+r.bottom)/2;bounds.top=cy-2;bounds.bottom=cy+2;}
+    parked=r.bottom<0||r.top>=H;
   }else{
-    bounds.left=Math.min(48,W/2);bounds.right=Math.max(bounds.left,W-48);
-    bounds.top=Math.min(66,H/2);bounds.bottom=Math.max(bounds.top,H-66);
+    // No hero on this page state: keep the bot out of the reading column.
+    bounds.left=48;bounds.right=48;bounds.top=66;bounds.bottom=66;parked=true;
   }
   constrain();
 }
@@ -64,9 +70,7 @@ function startLeg(x,y,t){
 function pick(t){
   var min=compact?80:200,x=0,y=0;
   for(var i=0;i<8;i++){
-    x=compact?rnd(bounds.left,bounds.right):rnd(70,Math.max(120,W-70));
-    y=compact?rnd(bounds.top,bounds.bottom):rnd(110,Math.max(160,H-90));
-    x=clamp(x,bounds.left,bounds.right);y=clamp(y,bounds.top,bounds.bottom);
+    x=rnd(bounds.left,bounds.right);y=rnd(bounds.top,bounds.bottom);
     if(Math.hypot(x-pos.x,y-pos.y)>=min){break;}
   }
   target.x=x;target.y=y;
@@ -86,10 +90,8 @@ function clearEffects(){
 function dot(x,y,dx,dy,life,color){
   if(!canRun()||particles.length>=(compact?8:24)||!svg.animate){return;}
   var endX=x+dx,endY=y+dy;
-  if(compact){
-    x=clamp(x,6,W-6);y=clamp(y,6,dockTop-6);
-    endX=clamp(endX,6,W-6);endY=clamp(endY,6,dockTop-6);
-  }
+  var lo=bounds.left-10,hi=bounds.right+10,up=bounds.top-10,dn=bounds.bottom+10;
+  x=clamp(x,lo,hi);y=clamp(y,up,dn);endX=clamp(endX,lo,hi);endY=clamp(endY,up,dn);
   var s=document.createElement('span');
   s.className='sk-spark';s.setAttribute('aria-hidden','true');s.style.background=color;
   document.body.appendChild(s);
@@ -173,18 +175,19 @@ function updateControls(on,motionReduced){
   });
 }
 function sync(){
+  measure();
   var motionReduced=reduced(),on=enabled&&!autoOff&&!motionReduced;
   if(!on||document.hidden||explorerOpen()){
     clearTimeout(scrollTimer);scrollTimer=0;scrolling=false;
   }
   var paused=blocked();
   if(!on||paused){endDrag(true);}
-  var running=on&&!paused&&!drag;
+  var running=on&&!paused&&!drag&&!parked;
   if(!running){
     cancelAnimationFrame(raf);raf=0;resetClock();clearEffects();
   }
   flames.forEach(function(flame){flame.style.animationPlayState=running?'running':'paused';});
-  root.hidden=!on;btn.disabled=!on||paused;
+  root.hidden=!on||parked;btn.disabled=!on||paused||parked;
   updateControls(on,motionReduced);
   if(running&&!raf){
     measure();place();

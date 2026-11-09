@@ -1,0 +1,71 @@
+/* Professional polish layer. Loads after site.css / mobile.css / motion-extras.css
+   (document order wins), so it only refines them: calmer palette, clearer type,
+   more whitespace, fewer decorative boxes. Delete this file to roll back. */
+
+:root{
+  --text:#F1F5FA; --muted:#A3B3C4; --dim:#8899AB;
+  --rim:#1B2B40; --surface:rgba(10,17,26,.72);
+}
+
+/* Calmer background: one soft blue glow, no red/gold bloom */
+body::before{background:
+  radial-gradient(900px 480px at 12% -10%,rgba(59,130,246,.12),transparent 70%),
+  radial-gradient(700px 420px at 92% 0,rgba(103,199,235,.06),transparent 70%)}
+
+/* Header: quieter, readable navigation */
+.site-head{background:rgba(5,8,13,.85);border-bottom-color:rgba(27,43,64,.9)}
+.brand{font-size:13.5px;letter-spacing:.16em}
+.brand .dot{background:var(--accent2);box-shadow:0 0 8px rgba(79,141,255,.6)}
+.nav{gap:2px}
+.nav a{font:500 13.5px/1 var(--sans);letter-spacing:0;text-transform:none;padding:9px 13px}
+.nav a[aria-current="location"]{border-color:transparent;background:rgba(59,130,246,.14);color:var(--ice)}
+.nav .nav-btn{font:500 13px/1 var(--sans);letter-spacing:0;text-transform:none;color:var(--muted);border-color:var(--rim);margin-left:6px}
+.nav .nav-btn:hover,.nav .nav-btn:focus-visible{color:var(--text);border-color:var(--accent2)}
+
+/* Rhythm: whitespace replaces the decorative dividers */
+.divider{display:none}
+.kicker{font:600 12px/1 var(--mono);letter-spacing:.14em;color:var(--accent2);margin-bottom:12px}
+h2{font-size:clamp(26px,3vw,34px);letter-spacing:-.02em;margin-bottom:14px}
+.lead{font-size:1.0625rem;line-height:1.7;color:var(--muted);max-width:64ch}
+
+/* Buttons and links: solid, understated */
+:root{--btn:#2563EB;--btn-hover:#1D4ED8}
+.links a,.cta{font:600 13.5px/1 var(--sans);letter-spacing:0}
+.links a:hover{border-color:rgba(103,199,235,.5);box-shadow:none}
+.cta{color:#fff;background:var(--btn);border-color:var(--btn)}
+.cta:hover{background:var(--btn-hover);border-color:var(--btn-hover);box-shadow:none}
+.cta.ghost{color:var(--text);background:transparent;border-color:var(--rim)}
+.cta.ghost:hover{border-color:var(--accent2);background:rgba(59,130,246,.08);box-shadow:none}
+.links .graph-link{color:var(--ice);background:transparent;border-color:var(--rim);box-shadow:none}
+.links .graph-link:hover{border-color:var(--accent2);background:rgba(59,130,246,.08)}
+
+/* Surfaces: one consistent card style */
+.metric-card,.stack-component,.contribution-card,.calendar-card,.language-card,.weekly-card,
+.streak-card,.activity-component,.activity-card,.repo-card,.card{background:var(--surface);border-color:var(--rim);border-radius:12px}
+.card,.repo-card{padding:24px}
+.card-head strong,.repo-card h3{color:var(--text)}
+.card p,.repo-card p{font-size:.9375rem;line-height:1.6}
+.card-tags li{font:500 .75rem/1.5 var(--sans);letter-spacing:0;border-radius:999px;padding:3px 10px}
+.card-open,.repo-open{color:var(--accent2);font:600 .8125rem/1.5 var(--sans)}
+
+/* Labels: larger, higher contrast */
+.component-heading h2,.component-heading h3,.micro-label,.tech-track h3{font-size:.75rem;letter-spacing:.09em;color:var(--muted)}
+.metric-card span,.member-line,.sync-line,.data-source,.repo-topline,.repo-meta,.event-repo,.event-time,
+.bytes-total,.calendar-note,.chart-hint,.streak-card p{font-size:.75rem}
+.member-line{margin-top:8px;padding:12px 2px 0;border-top:1px solid var(--rim);color:var(--dim)}
+.tech-chip{font:500 .875rem/1.4 var(--sans);color:var(--text);border-color:var(--rim);border-radius:999px;padding:8px 16px}
+
+/* Balanced cards: short panels centre their figures instead of trailing empty space */
+.streak-card{display:flex;flex-direction:column;justify-content:center}
+.streak-card p{margin-top:2px}
+
+/* Footer */
+footer{font:13px/1.8 var(--sans);letter-spacing:0;margin-top:56px}
+.foot-dot{background:var(--accent2);box-shadow:none}
+.contact-card{background:var(--surface);border-color:var(--rim);box-shadow:none}
+
+@media(min-width:901px){
+  section{padding:68px 0 8px}
+  .hero{margin-top:44px}
+  .card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -28px rgba(79,141,255,.55)}
+}
