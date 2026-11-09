@@ -6,6 +6,8 @@
     "data:refresh": "python scripts/generate_stats.py && python scripts/render_panels.py",
     "data:panels": "python scripts/render_panels.py",
     "test": "playwright test",
+    "critical": "node scripts/critical-css.cjs --write",
+    "test:critical": "node scripts/critical-css.cjs --check",
     "test:data": "python -m unittest discover -s tests -p test_*.py",
     "test:performance": "node scripts/lighthouse-check.cjs"
   },

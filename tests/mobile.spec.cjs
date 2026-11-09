@@ -220,6 +220,52 @@ test('desktop without JavaScript keeps the SVG fallbacks readable', async ({ bro
   expect(await overflow(page)).toEqual([]);
   await context.close();
 });
+test('critical CSS paints the fold exactly like the full stylesheets', async ({ browser }) => {
+  const props = ['display', 'position', 'width', 'height', 'margin-top', 'padding-top', 'font-size', 'line-height',
+    'font-family', 'font-weight', 'letter-spacing', 'color', 'background-color', 'background-image', 'background-clip',
+    '-webkit-text-fill-color', 'text-shadow', 'border-radius', 'border-top-width', 'border-top-color',
+    'flex-direction', 'justify-content', 'align-items', 'grid-template-columns', 'opacity', 'visibility', 'transform',
+    'fill', 'stroke', 'stroke-width', 'stroke-dasharray'];
+  // JavaScript stays off in both contexts so the markup is identical; the second one never
+  // gets the full sheets, so what it paints is the inlined critical layer and nothing else.
+  const grab = ({ fold, list }) => {
+    const keep = [];
+    [...document.querySelectorAll('body *')].forEach((node, index) => {
+      const box = node.getBoundingClientRect();
+      // A zero-width or zero-height box is still painted (an SVG line); display:none is both.
+      if (!((box.width > 0 || box.height > 0) && box.top < fold)) return;
+      const style = getComputedStyle(node);
+      keep.push({
+        index, bottom: Math.round(box.bottom), values: list.map(prop => style[prop]),
+        element: `${node.tagName.toLowerCase()}${node.id ? '#' + node.id : ''}.${node.getAttribute('class') || ''}`.slice(0, 60)
+      });
+    });
+    return keep;
+  };
+  for (const [width, height] of [[390, 844], [1280, 900]]) {
+    const options = { javaScriptEnabled: false, viewport: { width, height }, reducedMotion: 'reduce' };
+    const full = await browser.newContext(options);
+    const critical = await browser.newContext(options);
+    await critical.route('**/assets/*.css', route => route.abort());
+    const a = await full.newPage(); await a.goto('/');
+    const b = await critical.newPage(); await b.goto('/');
+    const reference = new Map((await a.evaluate(grab, { fold: height, list: props })).map(entry => [entry.index, entry]));
+    const painted = await b.evaluate(grab, { fold: height, list: props });
+    const diffs = [];
+    for (const entry of painted) {
+      const wanted = reference.get(entry.index);
+      if (!wanted) continue;
+      props.forEach((prop, position) => {
+        // A layer trimmed to the fold cannot size the content stacked below it.
+        if (prop === 'height' && entry.bottom > height + 1) return;
+        if (wanted.values[position] !== entry.values[position])
+          diffs.push({ element: entry.element, prop, full: wanted.values[position], critical: entry.values[position] });
+      });
+    }
+    expect(diffs.slice(0, 20), `${width}x${height}: ${diffs.length} above-the-fold paint diffs`).toEqual([]);
+    await full.close(); await critical.close();
+  }
+});
 test('200 percent text scaling reflows at 320 CSS pixels', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 568 });
   await page.emulateMedia({ reducedMotion: 'reduce' });
