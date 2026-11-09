@@ -69,3 +69,14 @@ footer{font:13px/1.8 var(--sans);letter-spacing:0;margin-top:56px}
   .hero{margin-top:44px}
   .card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -28px rgba(79,141,255,.55)}
 }
+
+/* One accent family: replace the leftover gold/red on kickers, status pills and mobile labels */
+.live-pill,.online-pill{color:var(--cyan)}
+.live-pill{border-color:rgba(103,199,235,.35)}
+.divider{display:none}
+@media(max-width:900px){
+  .kicker{color:var(--accent2);letter-spacing:.14em}
+  .mobile-dock .dock-indicator{background:var(--accent2)}
+  .mobile-dock a[aria-current]{color:var(--ice)}
+  .site-head{background:rgba(5,8,13,.94)}
+}

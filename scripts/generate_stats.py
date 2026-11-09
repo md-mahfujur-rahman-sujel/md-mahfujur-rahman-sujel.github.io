@@ -24,6 +24,10 @@ CURATED_REPOS = (
     (f"{USERNAME}/Unrot", "owner", "ANDROID"),
     ("masum-mir/Oppzy", "collaborator", "WEB"),
 )
+# Used only when a repository has no GitHub description of its own.
+FALLBACK_DESCRIPTIONS = {
+    "masum-mir/Oppzy": "Internship and research matching platform (team project)",
+}
 
 
 class DataError(ValueError):
@@ -197,7 +201,7 @@ def fetch_repos(source):
         pushed_at = repo["pushed_at"]
         repos.append({"name": repo["name"], "slug": repo["full_name"],
                       "owner": repo["owner"]["login"], "role": role,
-                      "desc": repo["description"], "kind": kind, "language": repo["language"],
+                      "desc": repo["description"] or FALLBACK_DESCRIPTIONS.get(repo["full_name"]), "kind": kind, "language": repo["language"],
                       "stars": number(repo["stargazers_count"]), "forks": number(repo["forks_count"]),
                       "updatedAt": checked_timestamp(pushed_at) if pushed_at is not None else None})
     return repos
