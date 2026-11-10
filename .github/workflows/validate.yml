@@ -26,6 +26,8 @@ jobs:
       - run: python -m unittest discover -s tests -p "test_*.py"
       - name: Check desktop panels are current
         run: python scripts/render_panels.py --check
+      - name: Check the Ironbot GLB is current
+        run: python scripts/make_ironbot_glb.py --check
 
   browser:
     name: Browser and accessibility tests
@@ -41,6 +43,8 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Check the inlined critical layer is current
         run: npm run test:critical
+      - name: Check the 3D bundle is current
+        run: npm run test:3d
       - run: npm test
       - uses: actions/upload-artifact@v4
         if: failure()

@@ -1,0 +1,48 @@
+/* SUJEL.OS shell (desktop): window chrome, status bar, command palette.
+   Loads after polish.css. Delete this file, os.js and their tags to roll back. */
+
+@media (min-width:901px){
+  /* Window chrome: a slim title bar with three quiet controls on every panel */
+  .card,.repo-card,.system-monitor,.stack-component,.contribution-card,.calendar-card,
+  .language-card,.weekly-card,.streak-card,.activity-component{
+    border-top:24px solid rgba(169,199,255,.05);
+    background-origin:border-box;
+    background-image:
+      radial-gradient(circle at 14px 12px,#34465C 0 3.5px,transparent 4px),
+      radial-gradient(circle at 28px 12px,#34465C 0 3.5px,transparent 4px),
+      radial-gradient(circle at 42px 12px,#34465C 0 3.5px,transparent 4px);
+    background-repeat:no-repeat;
+    transition:transform .24s cubic-bezier(.2,.7,.2,1),border-color .24s,box-shadow .24s;
+  }
+  .card:hover,.repo-card:hover,.card:focus-within,.repo-card:focus-within{border-color:rgba(103,199,235,.4)}
+  .card:hover,.repo-card:hover{transform:translateY(-3px);box-shadow:0 20px 44px -30px rgba(79,141,255,.6)}
+
+  /* Menu bar extras */
+  .nav{align-items:center}
+  .nav .os-search{display:inline-flex;align-items:center;gap:10px}
+  .os-search kbd{font:600 11px/1 var(--mono);color:var(--dim);border:1px solid var(--rim);border-radius:5px;padding:3px 6px}
+  .os-clock{margin-left:10px;padding-left:14px;border-left:1px solid var(--rim);font:500 13px/1 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+}
+@media (max-width:900px){.os-search,.os-clock{display:none}}
+
+/* Command palette */
+.os-palette{width:min(560px,92vw);margin:12vh auto auto;padding:0;border:1px solid var(--rim);border-radius:14px;
+  background:#0A111A;color:var(--text);box-shadow:0 30px 80px -20px rgba(0,0,0,.8);overflow:hidden}
+.os-palette[open]{animation:os-in .18s cubic-bezier(.2,.7,.2,1)}
+.os-palette::backdrop{background:rgba(3,6,10,.62);backdrop-filter:blur(3px)}
+@keyframes os-in{from{opacity:0;transform:translateY(-8px) scale(.98)}to{opacity:1;transform:none}}
+.os-input{display:block;width:100%;padding:18px 20px;border:0;border-bottom:1px solid var(--rim);background:transparent;
+  color:var(--text);font:500 16px/1.4 var(--sans)}
+.os-input::placeholder{color:var(--dim)}
+.os-input:focus-visible{outline:2px solid var(--accent2);outline-offset:-2px}
+.os-list{list-style:none;margin:0;padding:8px;max-height:min(52vh,380px);overflow:auto}
+.os-item{display:flex;justify-content:space-between;gap:16px;padding:11px 12px;border-radius:8px;cursor:pointer;font:500 14.5px/1.4 var(--sans)}
+.os-item small{font:500 12px/1.4 var(--mono);color:var(--dim)}
+.os-item[aria-selected="true"]{background:rgba(59,130,246,.18);color:#fff}
+.os-empty{margin:0;padding:18px 20px;color:var(--muted);font:400 14px/1.5 var(--sans)}
+.os-foot{display:flex;gap:16px;padding:10px 16px;border-top:1px solid var(--rim);font:500 11.5px/1 var(--mono);color:var(--dim)}
+
+/* The site-wide reduced-motion guards in mobile.css stop animations and transitions, but a
+   static hover lift is neither, and this file loads after site.css's own guard for it. */
+@media (prefers-reduced-motion:reduce){.card:hover,.repo-card:hover{transform:none;box-shadow:none}}
+html[data-motion="reduced"] .card:hover,html[data-motion="reduced"] .repo-card:hover{transform:none;box-shadow:none}

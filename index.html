@@ -256,12 +256,31 @@ h2 { font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.02em; margin-bottom: 
   .mobile-dock a[aria-current] { color: var(--ice); }
   .site-head { background: rgba(5, 8, 13, 0.94); }
 }
+
+/* os.css */
+@media (min-width: 901px) {
+  .nav { align-items: center; }
+}
+@keyframes os-in { 
+  0% { opacity: 0; transform: translateY(-8px) scale(0.98); }
+  100% { opacity: 1; transform: none; }
+}
+
+/* assistant.css */
+@keyframes ast-in { 
+  0% { opacity: 0; transform: translateY(10px) scale(0.98); }
+  100% { opacity: 1; transform: none; }
+}
 /* critical-css:end */</style>
 <link rel="stylesheet" href="assets/site.css" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="assets/mobile.css" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="assets/motion-extras.css" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="assets/polish.css" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="assets/site.css"><link rel="stylesheet" href="assets/mobile.css"><link rel="stylesheet" href="assets/motion-extras.css"><link rel="stylesheet" href="assets/polish.css"></noscript>
+<link rel="stylesheet" href="assets/os.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="assets/assistant.css" media="print" onload="this.media='all'">
+<script src="assets/os.js" defer></script>
+<script src="assets/assistant.js" defer></script>
+<noscript><link rel="stylesheet" href="assets/site.css"><link rel="stylesheet" href="assets/mobile.css"><link rel="stylesheet" href="assets/motion-extras.css"><link rel="stylesheet" href="assets/polish.css"><link rel="stylesheet" href="assets/os.css"><link rel="stylesheet" href="assets/assistant.css"></noscript>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Md Mahfujur Rahman Sujel","url":"https://md-mahfujur-rahman-sujel.github.io/","image":"https://md-mahfujur-rahman-sujel.github.io/assets/og-card.png","jobTitle":"Software engineering student","affiliation":{"@type":"CollegeOrUniversity","name":"East West University"},"sameAs":["https://github.com/md-mahfujur-rahman-sujel","https://linkedin.com/in/md-mahfujur-rahman-sujel"]}</script>
 </head>
 <body id="top">
@@ -326,10 +345,10 @@ h2 { font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.02em; margin-bottom: 
 <circle r="33.4" fill="none" stroke="#3B82F6" stroke-opacity=".22" stroke-width="7" filter="url(#hero-glow)"/>
 <g fill="#16263A" opacity=".6"><path d="M5.81 -19.14L6.54 -18.90L10.80 -31.82L9.96 -32.09Z"/><path d="M15.95 -12.06L16.40 -11.44L27.44 -19.39L26.92 -20.10Z"/><path d="M20.00 -0.38L20.00 0.38L33.60 0.44L33.60 -0.44Z"/><path d="M16.40 11.44L15.95 12.06L26.92 20.10L27.44 19.39Z"/><path d="M6.54 18.90L5.81 19.14L9.96 32.09L10.80 31.82Z"/><path d="M-5.81 19.14L-6.54 18.90L-10.80 31.82L-9.96 32.09Z"/><path d="M-15.95 12.06L-16.40 11.44L-27.44 19.39L-26.92 20.10Z"/><path d="M-20.00 0.38L-20.00 -0.38L-33.60 -0.44L-33.60 0.44Z"/><path d="M-16.40 -11.44L-15.95 -12.06L-26.92 -20.10L-27.44 -19.39Z"/><path d="M-6.54 -18.90L-5.81 -19.14L-9.96 -32.09L-10.80 -31.82Z"/></g>
 <circle r="19.6" fill="none" stroke="#16263A" stroke-width="2.6"/>
-<g fill="url(#hero-coilGrad)" stroke="#0D1622" stroke-width=".7" stroke-linejoin="round" filter="url(#hero-soft)"><path class="rc-coil c1" d="M-4.97 -19.37L4.97 -19.37L5.96 -32.46L-5.96 -32.46Z"/><path class="rc-coil c2" d="M7.36 -18.60L15.41 -12.75L23.90 -22.76L14.26 -29.76Z"/><path class="rc-coil c3" d="M16.89 -10.72L19.96 -1.26L32.71 -4.36L29.03 -15.70Z"/><path class="rc-coil c4" d="M19.96 1.26L16.89 10.72L29.03 15.70L32.71 4.36Z"/><path class="rc-coil c5" d="M15.41 12.75L7.36 18.60L14.26 29.76L23.90 22.76Z"/><path class="rc-coil c6" d="M4.97 19.37L-4.97 19.37L-5.96 32.46L5.96 32.46Z"/><path class="rc-coil c7" d="M-7.36 18.60L-15.41 12.75L-23.90 22.76L-14.26 29.76Z"/><path class="rc-coil c8" d="M-16.89 10.72L-19.96 1.26L-32.71 4.36L-29.03 15.70Z"/><path class="rc-coil c9" d="M-19.96 -1.26L-16.89 -10.72L-29.03 -15.70L-32.71 -4.36Z"/><path class="rc-coil c10" d="M-15.41 -12.75L-7.36 -18.60L-14.26 -29.76L-23.90 -22.76Z"/></g>
+<g fill="url(#hero-coilGrad)" stroke="#0D1622" stroke-width=".7" stroke-linejoin="round" filter="url(#hero-soft)"><path d="M-4.97 -19.37L4.97 -19.37L5.96 -32.46L-5.96 -32.46Z"/><path d="M7.36 -18.60L15.41 -12.75L23.90 -22.76L14.26 -29.76Z"/><path d="M16.89 -10.72L19.96 -1.26L32.71 -4.36L29.03 -15.70Z"/><path d="M19.96 1.26L16.89 10.72L29.03 15.70L32.71 4.36Z"/><path d="M15.41 12.75L7.36 18.60L14.26 29.76L23.90 22.76Z"/><path d="M4.97 19.37L-4.97 19.37L-5.96 32.46L5.96 32.46Z"/><path d="M-7.36 18.60L-15.41 12.75L-23.90 22.76L-14.26 29.76Z"/><path d="M-16.89 10.72L-19.96 1.26L-32.71 4.36L-29.03 15.70Z"/><path d="M-19.96 -1.26L-16.89 -10.72L-29.03 -15.70L-32.71 -4.36Z"/><path d="M-15.41 -12.75L-7.36 -18.60L-14.26 -29.76L-23.90 -22.76Z"/></g>
 <circle r="23" fill="url(#hero-coreGlow)" opacity=".5"/>
 <circle r="19.4" fill="#05080D" stroke="#16263A" stroke-width="2.2"/>
-<g class="rc-core">
+<g>
 <circle r="16.4" fill="url(#hero-coreGrad)"/>
 <path d="M0.00 -11.50L9.96 5.75L-9.96 5.75Z" fill="none" stroke="#3B82F6" stroke-width="2.2" stroke-linejoin="round"/>
 <path d="M0.00 -7.60L6.58 3.80L-6.58 3.80Z" fill="none" stroke="#A9C7FF" stroke-width="1.1" stroke-linejoin="round"/>
@@ -343,7 +362,7 @@ h2 { font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.02em; margin-bottom: 
 
   <section class="mobile-workspace motion-zone" aria-label="Introduction">
     <div class="workspace-body">
-      <div class="hero-stage identity-reactor" data-flyer-home>
+      <div class="hero-stage" data-flyer-home>
         <button class="reactor-button" type="button" aria-label="Pulse the arc reactor" disabled><svg class="mobile-reactor" viewBox="-60 -60 120 120" aria-hidden="true"><defs>
 <linearGradient id="mobile-ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3B82F6"/><stop offset=".5" stop-color="#A9C7FF"/><stop offset="1" stop-color="#67C7EB"/></linearGradient>
 <radialGradient id="mobile-coilGrad" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="33"><stop offset="0" stop-color="#4F8DFF"/><stop offset=".48" stop-color="#93C5FD"/><stop offset=".74" stop-color="#BFDBFE"/><stop offset="1" stop-color="#EEF6FF"/></radialGradient>
@@ -364,10 +383,10 @@ h2 { font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.02em; margin-bottom: 
 <circle r="33.4" fill="none" stroke="#3B82F6" stroke-opacity=".22" stroke-width="7" filter="url(#mobile-glow)"/>
 <g fill="#16263A" opacity=".6"><path d="M5.81 -19.14L6.54 -18.90L10.80 -31.82L9.96 -32.09Z"/><path d="M15.95 -12.06L16.40 -11.44L27.44 -19.39L26.92 -20.10Z"/><path d="M20.00 -0.38L20.00 0.38L33.60 0.44L33.60 -0.44Z"/><path d="M16.40 11.44L15.95 12.06L26.92 20.10L27.44 19.39Z"/><path d="M6.54 18.90L5.81 19.14L9.96 32.09L10.80 31.82Z"/><path d="M-5.81 19.14L-6.54 18.90L-10.80 31.82L-9.96 32.09Z"/><path d="M-15.95 12.06L-16.40 11.44L-27.44 19.39L-26.92 20.10Z"/><path d="M-20.00 0.38L-20.00 -0.38L-33.60 -0.44L-33.60 0.44Z"/><path d="M-16.40 -11.44L-15.95 -12.06L-26.92 -20.10L-27.44 -19.39Z"/><path d="M-6.54 -18.90L-5.81 -19.14L-9.96 -32.09L-10.80 -31.82Z"/></g>
 <circle r="19.6" fill="none" stroke="#16263A" stroke-width="2.6"/>
-<g fill="url(#mobile-coilGrad)" stroke="#0D1622" stroke-width=".7" stroke-linejoin="round" filter="url(#mobile-soft)"><path class="rc-coil c1" d="M-4.97 -19.37L4.97 -19.37L5.96 -32.46L-5.96 -32.46Z"/><path class="rc-coil c2" d="M7.36 -18.60L15.41 -12.75L23.90 -22.76L14.26 -29.76Z"/><path class="rc-coil c3" d="M16.89 -10.72L19.96 -1.26L32.71 -4.36L29.03 -15.70Z"/><path class="rc-coil c4" d="M19.96 1.26L16.89 10.72L29.03 15.70L32.71 4.36Z"/><path class="rc-coil c5" d="M15.41 12.75L7.36 18.60L14.26 29.76L23.90 22.76Z"/><path class="rc-coil c6" d="M4.97 19.37L-4.97 19.37L-5.96 32.46L5.96 32.46Z"/><path class="rc-coil c7" d="M-7.36 18.60L-15.41 12.75L-23.90 22.76L-14.26 29.76Z"/><path class="rc-coil c8" d="M-16.89 10.72L-19.96 1.26L-32.71 4.36L-29.03 15.70Z"/><path class="rc-coil c9" d="M-19.96 -1.26L-16.89 -10.72L-29.03 -15.70L-32.71 -4.36Z"/><path class="rc-coil c10" d="M-15.41 -12.75L-7.36 -18.60L-14.26 -29.76L-23.90 -22.76Z"/></g>
+<g fill="url(#mobile-coilGrad)" stroke="#0D1622" stroke-width=".7" stroke-linejoin="round" filter="url(#mobile-soft)"><path d="M-4.97 -19.37L4.97 -19.37L5.96 -32.46L-5.96 -32.46Z"/><path d="M7.36 -18.60L15.41 -12.75L23.90 -22.76L14.26 -29.76Z"/><path d="M16.89 -10.72L19.96 -1.26L32.71 -4.36L29.03 -15.70Z"/><path d="M19.96 1.26L16.89 10.72L29.03 15.70L32.71 4.36Z"/><path d="M15.41 12.75L7.36 18.60L14.26 29.76L23.90 22.76Z"/><path d="M4.97 19.37L-4.97 19.37L-5.96 32.46L5.96 32.46Z"/><path d="M-7.36 18.60L-15.41 12.75L-23.90 22.76L-14.26 29.76Z"/><path d="M-16.89 10.72L-19.96 1.26L-32.71 4.36L-29.03 15.70Z"/><path d="M-19.96 -1.26L-16.89 -10.72L-29.03 -15.70L-32.71 -4.36Z"/><path d="M-15.41 -12.75L-7.36 -18.60L-14.26 -29.76L-23.90 -22.76Z"/></g>
 <circle r="23" fill="url(#mobile-coreGlow)" opacity=".5"/>
 <circle r="19.4" fill="#05080D" stroke="#16263A" stroke-width="2.2"/>
-<g class="rc-core">
+<g>
 <circle r="16.4" fill="url(#mobile-coreGrad)"/>
 <path d="M0.00 -11.50L9.96 5.75L-9.96 5.75Z" fill="none" stroke="#3B82F6" stroke-width="2.2" stroke-linejoin="round"/>
 <path d="M0.00 -7.60L6.58 3.80L-6.58 3.80Z" fill="none" stroke="#A9C7FF" stroke-width="1.1" stroke-linejoin="round"/>
@@ -543,9 +562,6 @@ h2 { font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.02em; margin-bottom: 
   <linearGradient id="sk-gold2" x1=".12" y1="0" x2=".85" y2="1">
     <stop offset="0" stop-color="#FFD65A"/><stop offset=".5" stop-color="#F2A80C"/><stop offset="1" stop-color="#BE7502"/>
   </linearGradient>
-  <linearGradient id="sk-gold3" x1="0" y1="0" x2=".4" y2="1">
-    <stop offset="0" stop-color="#FFEE9E"/><stop offset=".55" stop-color="#F7BE22"/><stop offset="1" stop-color="#D98E04"/>
-  </linearGradient>
   <linearGradient id="sk-crest" x1="0" y1="0" x2="0" y2="1">
     <stop offset="0" stop-color="#EE2733"/><stop offset=".55" stop-color="#DA0A22"/><stop offset="1" stop-color="#B70F20"/>
   </linearGradient>
@@ -553,11 +569,6 @@ h2 { font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.02em; margin-bottom: 
     <stop offset="0" stop-color="#FFFFFF"/><stop offset=".46" stop-color="#F2FDFF"/><stop offset="1" stop-color="#B9F6FE"/>
   </linearGradient>
   <radialGradient id="sk-arc"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".55" stop-color="#E8FCFF"/><stop offset="1" stop-color="#8FE6F7"/></radialGradient>
-  <radialGradient id="sk-rep">
-    <stop offset="0" stop-color="#FFFFFF"/><stop offset=".34" stop-color="#F2FEFF"/>
-    <stop offset=".62" stop-color="#9FE8FA" stop-opacity=".92"/><stop offset=".82" stop-color="#4FA8F0" stop-opacity=".55"/>
-    <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
-  </radialGradient>
   <linearGradient id="sk-flame" x1="0" y1="0" x2="0" y2="1">
     <stop offset="0" stop-color="#F2FDFF" stop-opacity=".98"/><stop offset=".42" stop-color="#8FE6F7" stop-opacity=".85"/><stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
   </linearGradient>
@@ -581,7 +592,7 @@ h2 { font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.02em; margin-bottom: 
   </g>
 
   <!-- legs -->
-  <g id="leg-l">
+  <g>
     <path d="M-11.8 23.4C-8.6 22.6-5.2 22.6-2.6 23.4C-2.2 27.4-2.6 31.2-3.6 34.8L-12.0 34.8C-13.0 31.2-13.0 27.0-11.8 23.4Z" fill="url(#sk-red2)" stroke="#170C1E" stroke-width="1.6" stroke-linejoin="round"/>
     <path d="M-11.2 25.0C-8.4 24.4-5.6 24.4-3.2 25.0C-2.9 28.4-3.2 31.6-4.0 34.4L-11.2 34.4C-12.0 31.6-12.0 28.0-11.2 25.0Z" fill="url(#sk-gold)" stroke="#170C1E" stroke-width="1.2" stroke-linejoin="round"/>
     <path d="M-10.9 27.6C-8.2 28.4-5.8 28.4-3.6 27.6M-10.6 30.8C-8.0 31.6-5.6 31.6-3.8 30.8" fill="none" stroke="#170C1E" stroke-width=".75" opacity=".6"/>
@@ -596,7 +607,7 @@ h2 { font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.02em; margin-bottom: 
     <ellipse cx="-11.4" cy="49.0" rx="4.8" ry="1.4" fill="#2A0B14" stroke="#170C1E" stroke-width=".9"/>
     <ellipse cx="-11.4" cy="49.0" rx="2.8" ry=".75" fill="#67C7EB" opacity=".9"/>
   </g>
-  <g id="leg-r">
+  <g>
     <path d="M11.8 23.4C8.6 22.6 5.2 22.6 2.6 23.4C2.2 27.4 2.6 31.2 3.6 34.8L12.0 34.8C13.0 31.2 13.0 27.0 11.8 23.4Z" fill="url(#sk-red2)" stroke="#170C1E" stroke-width="1.6" stroke-linejoin="round"/>
     <path d="M11.2 25.0C8.4 24.4 5.6 24.4 3.2 25.0C2.9 28.4 3.2 31.6 4.0 34.4L11.2 34.4C12.0 31.6 12.0 28.0 11.2 25.0Z" fill="url(#sk-gold)" stroke="#170C1E" stroke-width="1.2" stroke-linejoin="round"/>
     <path d="M10.9 27.6C8.2 28.4 5.8 28.4 3.6 27.6M10.6 30.8C8.0 31.6 5.6 31.6 3.8 30.8" fill="none" stroke="#170C1E" stroke-width=".75" opacity=".6"/>
@@ -635,8 +646,8 @@ h2 { font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.02em; margin-bottom: 
   <ellipse cx="-.55" cy="9.3" rx=".7" ry=".5" fill="#FFFFFF"/>
 
   <!-- arms -->
-  <g id="arm-l">
-    <g class="sk-rep">
+  <g>
+    <g>
       <ellipse cx="-19.6" cy="34.4" rx="7.6" ry="6.8" fill="#3B82F6" opacity=".34" filter="url(#sk-b3)"/>
       <ellipse cx="-19.6" cy="34.4" rx="5.6" ry="5.0" fill="#5FC8F5" opacity=".5" filter="url(#sk-b3)"/>
       <ellipse cx="-19.6" cy="34.4" rx="4.6" ry="4.0" fill="#D8F5FF" opacity=".55" filter="url(#sk-b15)"/>
@@ -659,8 +670,8 @@ h2 { font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.02em; margin-bottom: 
     <path d="M-22.6 26.6C-20.2 27.4-17.0 27.4-15.0 26.6M-22.2 29.2C-20.0 30.0-17.2 30.0-15.4 29.2" fill="none" stroke="#170C1E" stroke-width=".75" opacity=".65"/>
     <ellipse cx="-21.4" cy="25.2" rx="1.9" ry="1.1" fill="#FFFFFF" opacity=".22" transform="rotate(-20 -21.4 25.2)" filter="url(#sk-b08)"/>
   </g>
-  <g id="arm-r">
-    <g class="sk-rep sk-rep-r">
+  <g>
+    <g>
       <ellipse cx="19.6" cy="34.4" rx="7.6" ry="6.8" fill="#3B82F6" opacity=".3" filter="url(#sk-b3)"/>
       <ellipse cx="19.6" cy="34.4" rx="5.6" ry="5.0" fill="#5FC8F5" opacity=".44" filter="url(#sk-b3)"/>
       <ellipse cx="19.6" cy="34.4" rx="4.6" ry="4.0" fill="#D8F5FF" opacity=".48" filter="url(#sk-b15)"/>
