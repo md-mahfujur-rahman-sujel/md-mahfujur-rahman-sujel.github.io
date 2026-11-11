@@ -24,6 +24,12 @@
   .os-clock{margin-left:10px;padding-left:14px;border-left:1px solid var(--rim);font:500 13px/1 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
 }
 @media (max-width:900px){.os-search,.os-clock{display:none}}
+/* Same squeeze band as site.css's nav: the clock and the Ctrl+K hint are the
+   first things to go when the menu bar runs out of room. */
+@media (min-width:901px) and (max-width:1119px){
+  .os-clock{display:none}
+  .os-search kbd{display:none}
+}
 
 /* Command palette */
 .os-palette{width:min(560px,92vw);margin:12vh auto auto;padding:0;border:1px solid var(--rim);border-radius:14px;

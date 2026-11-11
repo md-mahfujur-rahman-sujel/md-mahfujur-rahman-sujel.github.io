@@ -87,6 +87,11 @@ test('menu bar clock and search are desktop only, and the clock is decorative', 
   await expect(clock).toHaveAttribute('aria-hidden', 'true');
   expect(await clock.textContent()).toMatch(/^\d{1,2}:\d{2}/);
 
+  await page.setViewportSize({ width: 1024, height: 800 });
+  await expect(clock).not.toBeVisible();
+  await expect(page.locator('.nav .os-search')).toBeVisible();
+  await expect(page.locator('.os-search kbd')).not.toBeVisible();
+
   await page.setViewportSize(PHONE);
   await expect(page.locator('.nav .os-search')).not.toBeVisible();
   await expect(clock).not.toBeVisible();
