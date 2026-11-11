@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T11:10:15Z",
+  "generatedAt": "2026-11-11T19:42:51Z",
   "sources": {
     "profile": {
       "status": "ok",
@@ -7,7 +7,7 @@
         "https://api.github.com/users/md-mahfujur-rahman-sujel",
         "https://api.github.com/users/md-mahfujur-rahman-sujel/repos?type=owner&per_page=100&sort=full_name"
       ],
-      "fetchedAt": "2026-11-11T11:10:15Z",
+      "fetchedAt": "2026-11-11T19:42:51Z",
       "errors": []
     },
     "contributions": {
@@ -15,7 +15,7 @@
       "urls": [
         "https://api.github.com/graphql"
       ],
-      "fetchedAt": "2026-11-11T11:10:15Z",
+      "fetchedAt": "2026-11-11T19:42:51Z",
       "errors": [],
       "selected": "https://api.github.com/graphql",
       "asOf": "2026-11-11"
@@ -30,7 +30,7 @@
         "https://api.github.com/repos/md-mahfujur-rahman-sujel/md-mahfujur-rahman-sujel.github.io/languages",
         "https://api.github.com/repos/md-mahfujur-rahman-sujel/Unrot/languages"
       ],
-      "fetchedAt": "2026-11-11T11:10:15Z",
+      "fetchedAt": "2026-11-11T19:42:51Z",
       "errors": []
     },
     "repos": {
@@ -40,7 +40,7 @@
         "https://api.github.com/repos/md-mahfujur-rahman-sujel/Unrot",
         "https://api.github.com/repos/masum-mir/Oppzy"
       ],
-      "fetchedAt": "2026-11-11T11:10:15Z",
+      "fetchedAt": "2026-11-11T19:42:51Z",
       "errors": []
     },
     "events": {
@@ -48,7 +48,7 @@
       "urls": [
         "https://api.github.com/users/md-mahfujur-rahman-sujel/events/public?per_page=100"
       ],
-      "fetchedAt": "2026-11-11T11:10:15Z",
+      "fetchedAt": "2026-11-11T19:42:51Z",
       "errors": [],
       "coverage": "Public events only; GitHub REST limits history to 300 events / 90 days"
     }
@@ -62,7 +62,7 @@
   },
   "contributions": {
     "asOf": "2026-11-11",
-    "total": 99,
+    "total": 101,
     "windowDays": 364,
     "activeDays": 22,
     "peak": {
@@ -1534,7 +1534,7 @@
       },
       {
         "date": "2026-11-11",
-        "count": 1
+        "count": 3
       }
     ],
     "weeks": [
@@ -1744,11 +1744,11 @@
       },
       {
         "start": "2026-11-05",
-        "count": 23
+        "count": 25
       }
     ],
     "types": {
-      "commits": 91,
+      "commits": 93,
       "issues": 0,
       "pullRequests": 2,
       "codeReviews": 0
@@ -1757,30 +1757,30 @@
   "languages": [
     {
       "name": "JavaScript",
-      "pct": 41.03
+      "pct": 40.97
     },
     {
       "name": "HTML",
-      "pct": 34.69
+      "pct": 34.84
     },
     {
       "name": "TypeScript",
-      "pct": 16.03
+      "pct": 16.1
     },
     {
       "name": "Kotlin",
-      "pct": 3.72
-    },
-    {
-      "name": "Python",
-      "pct": 2.36
+      "pct": 3.74
     },
     {
       "name": "CSS",
-      "pct": 2.17
+      "pct": 2.19
+    },
+    {
+      "name": "Python",
+      "pct": 2.15
     }
   ],
-  "bytesTotal": 5210396,
+  "bytesTotal": 5187051,
   "repos": [
     {
       "name": "Apex-Arcade",
@@ -1820,6 +1820,13 @@
     }
   ],
   "events": [
+    {
+      "id": "26856352176",
+      "type": "create",
+      "at": "2026-11-10T17:49:31Z",
+      "repo": "md-mahfujur-rahman-sujel/Game-Idea",
+      "summary": "Created branch main"
+    },
     {
       "id": "26658268815",
       "type": "push",
