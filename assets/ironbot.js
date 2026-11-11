@@ -13,35 +13,6 @@ var scrolling=false,scrollTimer=0,slowTime=0,slowFrames=0,drag=null,suppressClic
 var particles=[],spin=null,bounds={},parked=false;
 var touchAction=btn.style.touchAction;
 var prevX=pos.x,prevY=pos.y,driftX=0;
-// 3D Ironbot: the GLB renders inside this same button, desktop only, after first
-// paint and only while WebGL exists. Every failure path drops back to the SVG.
-var bot3d=null,bot3dState='idle',bot3dFailed=false,painted=false;
-function webglOk(){
-  if(webglOk.ok===undefined){
-    try{var probe=document.createElement('canvas');webglOk.ok=!!(probe.getContext('webgl2')||probe.getContext('webgl'));}
-    catch(err){webglOk.ok=false;}
-  }
-  return webglOk.ok;
-}
-function want3d(){return painted&&!compact&&!bot3dFailed&&webglOk()&&isOn();}
-function drop3d(){
-  if(bot3d){bot3d.dispose();bot3d=null;}
-  bot3dState='idle';
-  svg.style.display='';
-}
-function sync3d(){
-  if(want3d()&&bot3dState==='idle'){
-    bot3dState='loading';
-    import(new URL('assets/ironbot3d.bundle.js',document.baseURI).href).then(function(mod){
-      if(!want3d()){bot3dState='idle';return;}
-      var api=mod.mount(btn,function(){bot3dFailed=true;drop3d();});
-      if(!api){bot3dFailed=true;bot3dState='idle';return;}
-      bot3d=api;bot3dState='on';
-    },function(){bot3dFailed=true;bot3dState='idle';});
-  }else if(!want3d()&&bot3dState==='on'){
-    drop3d();
-  }
-}
 function rnd(a,b){return a+Math.random()*(b-a);}
 function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
 function reduced(){return reduce.matches||document.documentElement.dataset.motion==='reduced';}
@@ -145,9 +116,8 @@ function tick(t){
   raf=0;
   if(!canRun()){sync();return;}
   var elapsed=last===null?0:t-last;last=t;
-  // Measure actual frame spacing before limiting the physics step. The 3D renderer
-  // costs real GPU time on desktop, so it joins the phone in the slow-frame watchdog.
-  if((compact||bot3d)&&elapsed>24){slowTime+=elapsed;slowFrames++;}
+  // Measure actual frame spacing before limiting the physics step.
+  if(compact&&elapsed>24){slowTime+=elapsed;slowFrames++;}
   else{slowTime=0;slowFrames=0;}
   if(slowTime>=3000&&slowFrames>=3){autoOff=true;sync();return;}
   var dt=elapsed?Math.min(elapsed/1000,0.05):0.016;
@@ -182,7 +152,6 @@ function tick(t){
   svg.style.transform='rotateY('+(face*16).toFixed(2)+'deg) scaleX('+(1-sway*0.05).toFixed(3)+')';
   shade.style.transform='translateX('+(-face*5).toFixed(1)+'px) scaleX('+(1-sway*0.3).toFixed(2)+')';
   shade.style.opacity=(0.8-sway*0.2).toFixed(2);
-  if(bot3d){bot3d.frame(t);}
   if(speed>60&&t>sparkAt){sparkAt=t+150;dot(pos.x,pos.y+(compact?23:34),rnd(-6,6),rnd(18,38),460,Math.random()<0.5?'#FBCA03':'#AA0505');}
   place();
   raf=requestAnimationFrame(tick);
@@ -220,7 +189,6 @@ function sync(){
   flames.forEach(function(flame){flame.style.animationPlayState=running?'running':'paused';});
   root.hidden=!on||parked;btn.disabled=!on||paused||parked;
   updateControls(on,motionReduced);
-  sync3d();
   if(running&&!raf){
     measure();place();
     // Resume the current destination from wherever the pause left the bot, so
@@ -301,12 +269,6 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mode==='fol
 document.addEventListener('visibilitychange',sync);
 document.addEventListener('motionchange',sync);
 document.addEventListener('explorerchange',sync);
-document.addEventListener('ironbot:react',function(e){if(bot3d&&bot3d.react){bot3d.react(e.detail&&e.detail.kind||'wave');}});
-// The 3D bundle is only worth fetching once the page has painted and gone idle.
-window.addEventListener('load',function(){
-  var idle=window.requestIdleCallback||function(cb){setTimeout(cb,400);};
-  idle(function(){if(!painted){painted=true;sync();}});
-});
 if(reduce.addEventListener){reduce.addEventListener('change',sync);}else if(reduce.addListener){reduce.addListener(sync);}
 if(compactQuery){
   if(compactQuery.addEventListener){compactQuery.addEventListener('change',resize);}else if(compactQuery.addListener){compactQuery.addListener(resize);}

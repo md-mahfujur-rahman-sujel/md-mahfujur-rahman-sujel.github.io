@@ -102,7 +102,6 @@
     render();
     dlg.showModal();
     input.focus();
-    document.dispatchEvent(new CustomEvent('ironbot:react', { detail: { kind: 'wave' } }));
   };
   dlg.addEventListener('close', () => { if (returnTo && returnTo.focus) returnTo.focus(); });
   dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });

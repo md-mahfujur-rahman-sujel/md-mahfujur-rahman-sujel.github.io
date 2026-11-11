@@ -24,7 +24,6 @@
   };
 
   const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; };
-  const react = () => document.dispatchEvent(new CustomEvent('ironbot:react', { detail: { kind: 'think' } }));
 
   // Floating button + panel
   const fab = el('button', 'ast-fab');
@@ -86,9 +85,8 @@
       chips.append(b);
     });
   };
-  const answerItem = (it) => { react(); say('you', it.q); say('bot', it.a, it.links); setChips(data.items.filter((x) => x.id !== it.id).slice(0, 4)); };
+  const answerItem = (it) => { say('you', it.q); say('bot', it.a, it.links); setChips(data.items.filter((x) => x.id !== it.id).slice(0, 4)); };
   const ask = (text) => {
-    react();
     say('you', text);
     const { best, near } = match(text);
     if (best) { say('bot', best.a, best.links); setChips(data.items.filter((x) => x.id !== best.id).slice(0, 4)); }
