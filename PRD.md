@@ -112,3 +112,6 @@ Generated artifacts are committed and verified by drift checks, mirroring the pa
 
 - No backend, no CMS, no build step required to serve: the repository root is the site.
 - No server-side assistant; the FAQ matcher is deliberately a keyword table over committed facts.
+- No 3D or WebGL mascot: a desktop 3D layer shipped briefly and was removed in November 2026 because
+  software-WebGL frame times in CI tripped the Ironbot watchdog and made its test flaky. The SVG art
+  is the whole mascot, on every surface.
