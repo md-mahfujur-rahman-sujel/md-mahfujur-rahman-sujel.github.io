@@ -13,7 +13,7 @@ for (const [width, height] of [[320,568],[360,800],[390,844],[412,915],[430,932]
     await expect(page.locator('.mobile-workspace')).toBeVisible();
     await expect(page.locator('.tech-chip')).toHaveCount(15);
     await expect(page.locator('.week-bar')).toHaveCount(52);
-    await expect(page.locator('.repo-card')).toHaveCount(3);
+    await expect(page.locator('.repo-card')).toHaveCount(4);
     for (const id of ['top','projects','stack','telemetry','repositories','activity']) {
       await page.locator(`#${id}`).evaluate(node => node.scrollIntoView({ behavior: 'instant' }));
       expect(await overflow(page)).toEqual([]);
@@ -71,11 +71,11 @@ test('filters, chart keyboard input, grouped activity and raw JSON work', async 
   await page.setViewportSize({ width: 390, height: 844 });
   await mockData(page); await ready(page);
   await page.getByRole('button', { name: 'OWNED', exact: true }).click();
-  await expect(page.locator('.repo-card:visible')).toHaveCount(2);
+  await expect(page.locator('.repo-card:visible')).toHaveCount(3);
   await page.getByRole('button', { name: 'COLLAB', exact: true }).click();
   await expect(page.locator('.repo-card:visible')).toHaveCount(1);
   await page.getByRole('button', { name: 'ALL', exact: true }).click();
-  await expect(page.locator('.repo-card:visible')).toHaveCount(3);
+  await expect(page.locator('.repo-card:visible')).toHaveCount(4);
   await page.getByRole('button', { name: 'LANGS', exact: true }).click();
   await expect(page.locator('.language-legend')).toBeVisible();
   const slider = page.getByRole('slider'); await slider.focus(); await page.keyboard.press('Home');
@@ -148,12 +148,12 @@ test('desktop renders the live components with the unified design system', async
   await expect(page.locator('#telemetry .data-notice')).not.toBeVisible();
   await expect(page.locator('.metric-card')).toHaveCount(4);
   await expect(page.locator('.week-bar')).toHaveCount(52);
-  await expect(page.locator('.repo-card')).toHaveCount(3);
+  await expect(page.locator('.repo-card')).toHaveCount(4);
   await expect(page.locator('.tech-chip')).toHaveCount(15);
-  await expect(page.locator('.cards .card')).toHaveCount(3);
+  await expect(page.locator('.cards .card')).toHaveCount(4);
   await expect(page.locator('.cards .card img')).toHaveCount(0);
   expect(await page.locator('.head-in').evaluate(node => getComputedStyle(node).flexDirection)).toBe('row');
-  expect(await page.locator('.cards').evaluate(node => getComputedStyle(node).gridTemplateColumns.split(' ').length)).toBe(3);
+  expect(await page.locator('.cards').evaluate(node => getComputedStyle(node).gridTemplateColumns.split(' ').length)).toBe(2);
   expect(await page.locator('.repo-list').evaluate(node => getComputedStyle(node).gridTemplateColumns.split(' ').length)).toBe(3);
 });
 test('the phone and desktop intros present the same copy and links', async ({ page }) => {
@@ -190,7 +190,7 @@ test('desktop without JavaScript keeps the SVG fallbacks readable', async ({ bro
   await page.goto('/');
   await expect(page.locator('#telemetry .panel-fallback')).toBeVisible();
   await expect(page.locator('#telemetry-component')).not.toBeVisible();
-  await expect(page.locator('.cards .card')).toHaveCount(3);
+  await expect(page.locator('.cards .card')).toHaveCount(4);
   await expect(page.locator('.stack-component')).toBeVisible();
   expect(await overflow(page)).toEqual([]);
   await context.close();
@@ -275,7 +275,7 @@ test('partial data keeps the unavailable contribution snapshot visible', async (
   await expect(page.locator('#telemetry-component img')).toBeVisible();
   await expect(page.locator('.sync-line')).toContainText('PARTIAL SYNC');
   await expect(page.locator('.activity-card')).toContainText('Activity mix is unavailable');
-  await expect(page.locator('.contributed-list a')).toHaveCount(3);
+  await expect(page.locator('.contributed-list a')).toHaveCount(4);
 });
 test('zero contribution mix stays honest and keeps valid geometry', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
@@ -297,7 +297,7 @@ test('activity overview shows the contribution mix and contributed repositories'
   await expect(card).toContainText('95%');
   await expect(card).toContainText('Commits');
   await expect(card.locator('.radar-shape')).toHaveCount(1);
-  await expect(card.locator('.contributed-list a')).toHaveCount(3);
+  await expect(card.locator('.contributed-list a')).toHaveCount(4);
   await card.scrollIntoViewIfNeeded();
   expect(await overflow(page)).toEqual([]);
 });
@@ -308,7 +308,7 @@ test('activity overview degrades honestly without a type breakdown', async ({ pa
   const card = page.locator('.activity-card');
   await expect(card).toContainText('authenticated data refresh');
   await expect(card.locator('.radar-svg')).toHaveCount(0);
-  await expect(card.locator('.contributed-list a')).toHaveCount(3);
+  await expect(card.locator('.contributed-list a')).toHaveCount(4);
   await card.scrollIntoViewIfNeeded();
   expect(await overflow(page)).toEqual([]);
 });

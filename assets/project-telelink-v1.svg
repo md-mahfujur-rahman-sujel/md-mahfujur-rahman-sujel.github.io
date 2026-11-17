@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="TeleLink — local-network phone-to-TV remote system for Android TV">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2=".8" y2="1"><stop offset="0" stop-color="#0B1322"/><stop offset="1" stop-color="#080E1A"/></linearGradient>
+<radialGradient id="bloom"><stop offset="0" stop-color="#6C9FE0" stop-opacity=".20"/><stop offset="1" stop-color="#6C9FE0" stop-opacity="0"/></radialGradient>
+<clipPath id="frame"><rect width="400" height="300" rx="18"/></clipPath>
+<style>
+.s{font-family:'Segoe UI',system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif}
+.m{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+</style>
+</defs>
+<g clip-path="url(#frame)">
+<rect width="400" height="300" fill="url(#bg)"/>
+<ellipse cx="40" cy="10" rx="240" ry="150" fill="url(#bloom)"/>
+<g fill="none" stroke="#E4EDF9" stroke-opacity=".10"><path d="M400 0L352 58M400 0L332 40M400 0L330 22"/></g>
+<g opacity=".5" fill="none" stroke="#A8B5C7" stroke-width="1" stroke-linecap="round">
+<g transform="translate(352 20) rotate(18) scale(.5)">
+<path d="M-4.5 -6 C-11 -11 -13.5 -17.5 -9 -22.5"/><path d="M-5.2 -2.4 C-12.5 -5 -16.5 -9.5 -19 -14"/><path d="M-5 1.2 C-13 3.4 -17.5 8.5 -19.5 13.5"/><path d="M-4.2 5.2 C-11 10 -12.5 16.5 -8.5 21.5"/><path d="M4.5 -6 C11 -11 13.5 -17.5 9 -22.5"/><path d="M5.2 -2.4 C12.5 -5 16.5 -9.5 19 -14"/><path d="M5 1.2 C13 3.4 17.5 8.5 19.5 13.5"/><path d="M4.2 5.2 C11 10 12.5 16.5 8.5 21.5"/>
+<ellipse cx="0" cy="1" rx="5.4" ry="7.4" fill="#A8B5C7" stroke="none"/><circle cx="0" cy="-7.6" r="3.2" fill="#A8B5C7" stroke="none"/>
+</g>
+</g>
+<g>
+<rect x="30" y="0" width="64" height="3" fill="#6C9FE0"/>
+<circle cx="52" cy="62" r="24" fill="#6C9FE0" fill-opacity=".12" stroke="#6C9FE0" stroke-opacity=".55"/>
+<g transform="translate(36 45)" fill="none" stroke="#6C9FE0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<rect x="1" y="3" width="20" height="13" rx="2.2"/><path d="M7 20h8M11 16v4"/><rect x="24" y="5" width="8" height="15" rx="1.7"/><path d="M27 17h2"/>
+<path d="M21 8c2-1 2-1 3 0M21 12c2-1 2-1 3 0"/>
+</g>
+<text class="m" x="368" y="58" text-anchor="end" font-size="10" letter-spacing="2" fill="#8FA1B6">ANDROID TV</text>
+<text class="s" x="30" y="136" font-size="24" font-weight="700" fill="#F5F8FC">TeleLink</text>
+<text class="s" x="30" y="168" font-size="15" fill="#B9C6D8">Control Android TV over your local</text>
+<text class="s" x="30" y="190" font-size="15" fill="#B9C6D8">network from a paired Android phone.</text>
+<text class="m" x="30" y="226" font-size="11.5" letter-spacing="1.2" fill="#9FC3EF">ANDROID / KOTLIN / LOCAL NETWORK</text>
+<rect x="30" y="248" width="340" height="1" fill="#1E2C48" fill-opacity=".8"/>
+<text class="m" x="30" y="276" font-size="12" letter-spacing="1.6" fill="#E7EEF7">OPEN REPOSITORY</text>
+<path d="M352 272h14M360 267l5 5-5 5" fill="none" stroke="#6C9FE0" stroke-width="1.8" stroke-linecap="round"/>
+</g>
+<rect x=".5" y=".5" width="399" height="299" rx="18" fill="none" stroke="#1E2C48" stroke-opacity=".55"/>
+</g>
+</svg>

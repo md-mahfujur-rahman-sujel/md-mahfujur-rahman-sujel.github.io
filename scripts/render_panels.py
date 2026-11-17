@@ -29,8 +29,8 @@ LEVEL_COLORS = {0: '#111B27', 1: '#244C7D', 2: '#2F6BC0', 3: '#3B82F6', 4: '#FBC
 BAR_COLORS = ('#3B82F6', '#67C7EB', '#FBCA03', '#4F8DFF')
 BAR_TEXT_COLORS = ('#93C5FD', '#67C7EB', '#FBCA03', '#BFDBFE')
 STRIP_COLORS = ('#A9C7FF', '#4F8DFF', '#67C7EB')
-CARD_ACCENTS = ('#A9C7FF', '#67C7EB', '#E10F19')
-CARD_OPEN_COLORS = ('#A9C7FF', '#67C7EB', '#FF8B80')
+CARD_ACCENTS = ('#A9C7FF', '#67C7EB', '#E10F19', '#FBCA03')
+CARD_OPEN_COLORS = ('#A9C7FF', '#67C7EB', '#FF8B80', '#FFD66B')
 LANGUAGE_COLORS = {
     'HTML': '#FBCA03', 'CSS': '#A9C7FF', 'JavaScript': '#A9C7FF', 'TypeScript': '#67C7EB',
     'Java': '#BFDBFE', 'Kotlin': '#E10F19', 'Python': '#67C7EB', 'SCSS': '#4F8DFF',
@@ -380,7 +380,7 @@ def activity_panel(stats):
 
 def repo_cards(repos, ref):
     parts = []
-    for index, repo in enumerate(repos[:3]):
+    for index, repo in enumerate(repos[:4]):
         top = 100.0 + 96 * index
         accent = CARD_ACCENTS[index]
         open_color = CARD_OPEN_COLORS[index]
@@ -433,7 +433,7 @@ def repos_panel(stats):
     owned = sum(1 for repo in usable if repo.get('role') == 'owner')
     collab = sum(1 for repo in usable if repo.get('role') == 'collaborator')
     languages = {repo.get('language') for repo in usable if repo.get('language')}
-    shown = len(usable[:3])
+    shown = len(usable[:4])
     lead = f'{shown} of {len(usable)} repositories' if len(usable) > shown else f'{len(usable)} repositories'
     values = {
         'stamp': stamp(ref),

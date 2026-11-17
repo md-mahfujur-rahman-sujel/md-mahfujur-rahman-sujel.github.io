@@ -98,8 +98,8 @@ class RenderTests(unittest.TestCase):
         markup = files["repos"].read_text(encoding="utf-8")
         repos = STATS["repos"]
         owned = sum(1 for repo in repos if repo.get("role") == "owner")
-        self.assertEqual(len(re.findall(r'<g class="rise"', markup)), min(3, len(repos)))
-        for repo in repos[:3]:
+        self.assertEqual(len(re.findall(r'<g class="rise"', markup)), min(4, len(repos)))
+        for repo in repos[:4]:
             self.assertIn(f'>{repo["name"]}<', markup)
         self.assertIn("UPDATED ", markup)
         self.assertIn(f'{len(repos)} repositories · {owned} owned', markup)

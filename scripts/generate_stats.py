@@ -20,6 +20,7 @@ CONTRIBUTIONS_URL = f"https://github-contributions-api.jogruber.de/v4/{USERNAME}
 WINDOW_DAYS = 364
 DEFAULT_OUTPUT = Path(__file__).resolve().parents[1] / "data" / "stats.json"
 CURATED_REPOS = (
+    (f"{USERNAME}/TeleLink", "owner", "ANDROID"),
     (f"{USERNAME}/Apex-Arcade", "owner", "WEB"),
     (f"{USERNAME}/Unrot", "owner", "ANDROID"),
     ("masum-mir/Oppzy", "collaborator", "WEB"),

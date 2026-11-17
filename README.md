@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="#readme"><img src="./assets/hero-v4.svg" width="100%" alt="Md Mahfujur Rahman Sujel — BSc in Computer Science & Engineering at East West University" /></a>
+<a href="#readme"><img src="./assets/hero-v4.svg" width="100%" alt="Md Mahfujur Rahman Sujel — Computer Science & Engineering student at East West University" /></a>
 
 <a href="#readme"><img src="./assets/flight-v4.svg" width="100%" alt="Ironbot, the profile mascot, flying across the page" /></a>
 
@@ -16,16 +16,17 @@
 
 ## About
 
-BSc in Computer Science & Engineering at East West University, Bangladesh. I turn product ideas into working systems: from the first sketch in Figma to a shipped, polished release.
+Computer Science & Engineering student at East West University (EWU), Bangladesh. I’m interested in software engineering and UI/UX, and enjoy turning product ideas into simple, useful apps. I’m working toward building products of my own through tech entrepreneurship.
 
 <a href="#readme"><img src="./assets/divider-v4.svg" width="100%" alt="" /></a>
 
 ## Projects
 
 <p align="center">
-<a href="https://github.com/md-mahfujur-rahman-sujel/Apex-Arcade" target="_blank" rel="noopener noreferrer"><img src="./assets/project-apex-v4.svg" width="32%" alt="Apex Arcade — React launcher for 50 browser games" /></a>
-<a href="https://github.com/md-mahfujur-rahman-sujel/Unrot" target="_blank" rel="noopener noreferrer"><img src="./assets/project-unrot-v4.svg" width="32%" alt="Unrot — Android app blocker with a focus timer" /></a>
-<a href="https://github.com/masum-mir/Oppzy" target="_blank" rel="noopener noreferrer"><img src="./assets/project-oppzy-v4.svg" width="32%" alt="Oppzy — internship and research matching platform" /></a>
+<a href="https://github.com/md-mahfujur-rahman-sujel/TeleLink" target="_blank" rel="noopener noreferrer"><img src="./assets/project-telelink-v1.svg" width="48%" alt="TeleLink — local-network Android TV remote system" /></a>
+<a href="https://github.com/md-mahfujur-rahman-sujel/Apex-Arcade" target="_blank" rel="noopener noreferrer"><img src="./assets/project-apex-v4.svg" width="48%" alt="Apex Arcade — browser arcade with 50 games" /></a>
+<a href="https://github.com/md-mahfujur-rahman-sujel/Unrot" target="_blank" rel="noopener noreferrer"><img src="./assets/project-unrot-v4.svg" width="48%" alt="Unrot — Android app blocker with a focus timer" /></a>
+<a href="https://github.com/masum-mir/Oppzy" target="_blank" rel="noopener noreferrer"><img src="./assets/project-oppzy-v4.svg" width="48%" alt="Oppzy — internship and research matching platform" /></a>
 </p>
 
 <a href="#readme"><img src="./assets/divider-v4.svg" width="100%" alt="" /></a>
@@ -44,10 +45,11 @@ BSc in Computer Science & Engineering at East West University, Bangladesh. I tur
 
 ## Repositories
 
-<a href="https://github.com/md-mahfujur-rahman-sujel?tab=repositories" target="_blank" rel="noopener noreferrer"><img src="./assets/repos.svg" width="100%" alt="Repository index with metadata for Apex-Arcade, Unrot and Oppzy" /></a>
+<a href="https://github.com/md-mahfujur-rahman-sujel?tab=repositories" target="_blank" rel="noopener noreferrer"><img src="./assets/repos.svg" width="100%" alt="Repository index with metadata for TeleLink, Apex Arcade, Unrot and Oppzy" /></a>
 
 <p align="center">
 <sub>
+<a href="https://github.com/md-mahfujur-rahman-sujel/TeleLink" target="_blank" rel="noopener noreferrer"><b>TeleLink</b></a> ·
 <a href="https://github.com/md-mahfujur-rahman-sujel/Apex-Arcade" target="_blank" rel="noopener noreferrer"><b>Apex-Arcade</b></a> ·
 <a href="https://github.com/md-mahfujur-rahman-sujel/Unrot" target="_blank" rel="noopener noreferrer"><b>Unrot</b></a> ·
 <a href="https://github.com/masum-mir/Oppzy" target="_blank" rel="noopener noreferrer"><b>Oppzy</b></a>
