@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T14:24:48Z",
+  "generatedAt": "2026-11-17T16:12:18Z",
   "sources": {
     "profile": {
       "status": "ok",
@@ -7,17 +7,17 @@
         "https://api.github.com/users/md-mahfujur-rahman-sujel",
         "https://api.github.com/users/md-mahfujur-rahman-sujel/repos?type=owner&per_page=100&sort=full_name"
       ],
-      "fetchedAt": "2026-11-17T14:24:48Z",
+      "fetchedAt": "2026-11-17T16:12:18Z",
       "errors": []
     },
     "contributions": {
       "status": "ok",
       "urls": [
-        "https://github-contributions-api.jogruber.de/v4/md-mahfujur-rahman-sujel?y=last"
+        "https://api.github.com/graphql"
       ],
-      "fetchedAt": "2026-11-17T14:24:48Z",
+      "fetchedAt": "2026-11-17T16:12:18Z",
       "errors": [],
-      "selected": "https://github-contributions-api.jogruber.de/v4/md-mahfujur-rahman-sujel?y=last",
+      "selected": "https://api.github.com/graphql",
       "asOf": "2026-11-17"
     },
     "languages": {
@@ -31,7 +31,7 @@
         "https://api.github.com/repos/md-mahfujur-rahman-sujel/TeleLink/languages",
         "https://api.github.com/repos/md-mahfujur-rahman-sujel/Unrot/languages"
       ],
-      "fetchedAt": "2026-11-17T14:24:48Z",
+      "fetchedAt": "2026-11-17T16:12:18Z",
       "errors": []
     },
     "repos": {
@@ -42,7 +42,7 @@
         "https://api.github.com/repos/md-mahfujur-rahman-sujel/Unrot",
         "https://api.github.com/repos/masum-mir/Oppzy"
       ],
-      "fetchedAt": "2026-11-17T14:24:48Z",
+      "fetchedAt": "2026-11-17T16:12:18Z",
       "errors": []
     },
     "events": {
@@ -50,7 +50,7 @@
       "urls": [
         "https://api.github.com/users/md-mahfujur-rahman-sujel/events/public?per_page=100"
       ],
-      "fetchedAt": "2026-11-17T14:24:48Z",
+      "fetchedAt": "2026-11-17T16:12:18Z",
       "errors": [],
       "coverage": "Public events only; GitHub REST limits history to 300 events / 90 days"
     }
@@ -64,22 +64,22 @@
   },
   "contributions": {
     "asOf": "2026-11-17",
-    "total": 130,
+    "total": 133,
     "windowDays": 364,
-    "activeDays": 27,
+    "activeDays": 28,
     "peak": {
       "date": "2026-11-15",
       "count": 19
     },
     "currentStreak": {
-      "days": 22,
+      "days": 23,
       "from": "2026-10-26",
-      "to": "2026-11-16"
+      "to": "2026-11-17"
     },
     "longestStreak": {
-      "days": 22,
+      "days": 23,
       "from": "2026-10-26",
-      "to": "2026-11-16"
+      "to": "2026-11-17"
     },
     "days": [
       {
@@ -1536,7 +1536,7 @@
       },
       {
         "date": "2026-11-17",
-        "count": 0
+        "count": 3
       }
     ],
     "weeks": [
@@ -1746,22 +1746,28 @@
       },
       {
         "start": "2026-11-11",
-        "count": 32
+        "count": 35
       }
-    ]
+    ],
+    "types": {
+      "commits": 124,
+      "issues": 0,
+      "pullRequests": 2,
+      "codeReviews": 0
+    }
   },
   "languages": [
     {
       "name": "JavaScript",
-      "pct": 39.12
+      "pct": 39.11
     },
     {
       "name": "HTML",
-      "pct": 32.18
+      "pct": 32.19
     },
     {
       "name": "TypeScript",
-      "pct": 14.88
+      "pct": 14.87
     },
     {
       "name": "Kotlin",
@@ -1784,7 +1790,7 @@
       "pct": 0.0
     }
   ],
-  "bytesTotal": 5616411,
+  "bytesTotal": 5617753,
   "repos": [
     {
       "name": "TeleLink",
