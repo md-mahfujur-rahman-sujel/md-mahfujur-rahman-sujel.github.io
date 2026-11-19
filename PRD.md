@@ -79,13 +79,16 @@ from committed HTML/SVG; only motion, the palette, the assistant and the Ironbot
 
 ### 3.5 Glass finish and pointer effects
 
-- `assets/glass.css` adds translucent, softly bordered surfaces to the header, dashboard cards,
-  contact panel, mobile dock, command palette and Explorer/assistant panels. Blur is progressive
-  enhancement: surfaces remain opaque enough to read when `backdrop-filter` is unavailable.
-- A soft blue aurora adds depth behind content using one fixed decorative layer.
+- `assets/glass.css` uses two glass materials: clearer cards with visible background detail and
+  frosted surfaces with stronger blur and a bright inner rim. It styles the header, dashboard,
+  mobile dock, dialogs, assistant and repository filters. Blur is progressive enhancement, with
+  readable fallbacks when `backdrop-filter` is unavailable.
+- A soft blue aurora adds depth behind content using one fixed decorative layer; panel tilt and
+  the aurora stop under system and in-page reduced-motion settings.
 - `assets/fx.js` adds pointer-tracked specular highlights to glass surfaces, including dashboard
-  cards rendered after the initial page load. It only runs for fine pointers and is disabled when
-  reduced motion is active. It has no network requests or continuous animation loop.
+  cards rendered after the initial page load, plus a restrained tilt that settles as the pointer
+  leaves. It only runs for fine pointers and is disabled when reduced motion is active. It has no
+  network requests or continuous animation loop.
 - Rollback: remove the `glass.css` and `fx.js` references in `index.html` (including the `noscript`
   stylesheet reference) and delete the two assets. No content or data depends on this layer.
 

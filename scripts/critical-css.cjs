@@ -40,7 +40,9 @@ const COLLECT = ({ fold, force }) => {
     if (rule instanceof CSSStyleRule) {
       return { selector: rule.selectorText, text: rule.cssText, lossy: /:\s*;/.test(rule.cssText), hit: hits(rule.selectorText) };
     }
-    if (rule instanceof CSSKeyframesRule) return { keyframes: rule.cssText };
+    if (rule instanceof CSSKeyframesRule) {
+      return { keyframes: rule.cssText.replace(/\{\s*/, '{\n').replace(/\s*\}$/, '\n}') };
+    }
     if (rule instanceof CSSMediaRule) return { media: rule.conditionText, kids: walk(rule.cssRules) };
     if (rule.cssRules) return { media: '', kids: walk(rule.cssRules) };
     return { text: rule.cssText, hit: false };

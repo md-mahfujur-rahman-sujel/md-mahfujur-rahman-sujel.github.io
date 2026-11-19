@@ -10,8 +10,12 @@
   }
   function clear(node) {
     node.classList.remove('fx-lit');
+    node.classList.remove('fx-tilt');
+    clearTimeout(node.__fxTimer);
     node.style.removeProperty('--fx-x');
     node.style.removeProperty('--fx-y');
+    node.style.removeProperty('--fx-rotate-x');
+    node.style.removeProperty('--fx-rotate-y');
     node.style.removeProperty('--fx-alpha');
   }
   function enable() {
@@ -27,12 +31,12 @@
       node.__fxBound = true;
       node.addEventListener('pointermove', function (event) {
         if (reduced()) return;
+        clearTimeout(node.__fxTimer);
         var rect = node.getBoundingClientRect();
-        node.style.setProperty('--fx-x', (event.clientX - rect.left) + 'px');
-        node.style.setProperty('--fx-y', (event.clientY - rect.top) + 'px');
+        setPointerStyle(node, event, rect);
       }, { passive: true });
       node.addEventListener('pointerleave', function () {
-        node.style.removeProperty('--fx-alpha');
+        resetPointerStyle(node);
       }, { passive: true });
     }
     targets.forEach(bind);
@@ -56,13 +60,28 @@
     node.__fxBound = true;
     node.addEventListener('pointermove', function (event) {
       if (reduced()) return;
+      clearTimeout(node.__fxTimer);
       var rect = node.getBoundingClientRect();
-      node.style.setProperty('--fx-x', (event.clientX - rect.left) + 'px');
-      node.style.setProperty('--fx-y', (event.clientY - rect.top) + 'px');
+      setPointerStyle(node, event, rect);
     }, { passive: true });
     node.addEventListener('pointerleave', function () {
-      node.style.removeProperty('--fx-alpha');
+      resetPointerStyle(node);
     }, { passive: true });
+  }
+  function setPointerStyle(node, event, rect) {
+    var x = (event.clientX - rect.left) / Math.max(rect.width, 1);
+    var y = (event.clientY - rect.top) / Math.max(rect.height, 1);
+    node.style.setProperty('--fx-x', (x * rect.width) + 'px');
+    node.style.setProperty('--fx-y', (y * rect.height) + 'px');
+    node.style.setProperty('--fx-rotate-x', ((.5 - y) * 7).toFixed(2) + 'deg');
+    node.style.setProperty('--fx-rotate-y', ((x - .5) * 9).toFixed(2) + 'deg');
+    node.classList.add('fx-tilt');
+  }
+  function resetPointerStyle(node) {
+    node.style.removeProperty('--fx-alpha');
+    node.style.setProperty('--fx-rotate-x', '0deg');
+    node.style.setProperty('--fx-rotate-y', '0deg');
+    node.__fxTimer = setTimeout(function () { node.classList.remove('fx-tilt'); }, 280);
   }
   if (reducedQuery) {
     if (reducedQuery.addEventListener) reducedQuery.addEventListener('change', enable);
