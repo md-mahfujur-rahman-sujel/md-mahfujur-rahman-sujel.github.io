@@ -1,0 +1,160 @@
+/* SUJEL.OS glass layer. Loaded after the shell and assistant styles. */
+:root {
+  --glass: rgba(11, 20, 31, .68);
+  --glass-strong: rgba(9, 16, 25, .86);
+  --glass-edge: rgba(166, 205, 255, .17);
+  --glass-shadow: 0 24px 64px -42px rgba(0, 0, 0, .9), 0 1px 0 rgba(255,255,255,.045) inset;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  inset: -22vh -18vw;
+  pointer-events: none;
+  opacity: .34;
+  background:
+    radial-gradient(ellipse at 24% 36%, rgba(45, 114, 224, .18), transparent 36%),
+    radial-gradient(ellipse at 76% 24%, rgba(91, 194, 232, .11), transparent 32%),
+    radial-gradient(ellipse at 62% 78%, rgba(69, 103, 203, .12), transparent 35%);
+  filter: blur(34px);
+  transform: translate3d(0,0,0);
+}
+
+.site-head {
+  background: rgba(7, 13, 21, .68);
+  border-bottom-color: rgba(166, 205, 255, .13);
+  box-shadow: 0 12px 36px -30px rgba(0,0,0,.85);
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  .site-head { backdrop-filter: blur(20px) saturate(145%); -webkit-backdrop-filter: blur(20px) saturate(145%); }
+}
+
+.hero-stage,
+.contact-card,
+.metric-card,
+.stack-component,
+.contribution-card,
+.calendar-card,
+.language-card,
+.weekly-card,
+.streak-card,
+.activity-component,
+.activity-card,
+.repo-card,
+.card {
+  position: relative;
+  isolation: isolate;
+  border-color: var(--glass-edge);
+  background-color: var(--glass);
+  box-shadow: var(--glass-shadow);
+}
+
+.hero-stage,
+.contact-card { overflow: hidden; }
+
+@supports (backdrop-filter: blur(1px)) {
+  .hero-stage,
+  .contact-card,
+  .metric-card,
+  .stack-component,
+  .contribution-card,
+  .calendar-card,
+  .language-card,
+  .weekly-card,
+  .streak-card,
+  .activity-component,
+  .activity-card,
+  .repo-card,
+  .card {
+    backdrop-filter: blur(16px) saturate(130%);
+    -webkit-backdrop-filter: blur(16px) saturate(130%);
+  }
+}
+
+/* Pointer light stays decorative and never obscures card content. */
+.fx-lit::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: var(--fx-alpha, 0);
+  background: radial-gradient(460px circle at var(--fx-x, 50%) var(--fx-y, 50%), rgba(132, 192, 255, .14), transparent 58%);
+  transition: opacity 220ms ease;
+}
+.fx-lit > * { position: relative; z-index: 1; }
+.fx-lit:hover::after,
+.fx-lit:focus-within::after { --fx-alpha: 1; }
+
+.card,
+.repo-card,
+.contact-card,
+.hero-stage,
+.metric-card,
+.stack-component,
+.contribution-card,
+.calendar-card,
+.language-card,
+.weekly-card,
+.streak-card,
+.activity-component,
+.activity-card {
+  border-radius: 16px;
+  transition: border-color 240ms ease, box-shadow 240ms ease, background-color 240ms ease;
+}
+
+.card:hover,
+.repo-card:hover,
+.contact-card:hover,
+.hero-stage:hover {
+  border-color: rgba(151, 204, 255, .32);
+  box-shadow: 0 26px 58px -40px rgba(49, 127, 237, .48), 0 1px 0 rgba(255,255,255,.07) inset;
+}
+
+.cta,
+.nav .nav-btn,
+.os-search,
+.icon-button,
+.mobile-dock {
+  box-shadow: 0 12px 30px -24px rgba(75, 148, 255, .75);
+}
+.cta { transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease, border-color 220ms ease; }
+.cta:hover { transform: translateY(-2px); box-shadow: 0 12px 28px -16px rgba(59,130,246,.65); }
+
+.os-palette,
+#explorer,
+.ast-panel {
+  border-color: rgba(166, 205, 255, .2);
+  background: var(--glass-strong);
+  box-shadow: 0 32px 90px -28px rgba(0,0,0,.86), 0 1px 0 rgba(255,255,255,.06) inset;
+}
+@supports (backdrop-filter: blur(1px)) {
+  .os-palette,
+  #explorer,
+  .ast-panel { backdrop-filter: blur(26px) saturate(145%); -webkit-backdrop-filter: blur(26px) saturate(145%); }
+}
+
+@media (max-width: 900px) {
+  body::after { inset: -10vh -30vw; opacity: .22; filter: blur(24px); }
+  .mobile-dock {
+    background: rgba(8, 15, 24, .76);
+    border-top-color: rgba(166,205,255,.18);
+  }
+  @supports (backdrop-filter: blur(1px)) {
+    .mobile-dock { backdrop-filter: blur(20px) saturate(145%); -webkit-backdrop-filter: blur(20px) saturate(145%); }
+  }
+  .card,.repo-card,.contact-card,.hero-stage,.metric-card,.stack-component,
+  .contribution-card,.calendar-card,.language-card,.weekly-card,.streak-card,
+  .activity-component,.activity-card { border-radius: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fx-lit::after,.cta { transition: none; }
+  .cta:hover { transform: none; }
+}
+html[data-motion="reduced"] .fx-lit::after,
+html[data-motion="reduced"] .cta { transition: none; }
+html[data-motion="reduced"] .cta:hover { transform: none; }

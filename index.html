@@ -271,6 +271,27 @@ h2 { font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.02em; margin-bottom: 
   0% { opacity: 0; transform: translateY(10px) scale(0.98); }
   100% { opacity: 1; transform: none; }
 }
+
+/* glass.css */
+:root { --glass: rgba(11, 20, 31, .68); --glass-strong: rgba(9, 16, 25, .86); --glass-edge: rgba(166, 205, 255, .17); --glass-shadow: 0 24px 64px -42px rgba(0, 0, 0, .9), 0 1px 0 rgba(255,255,255,.045) inset; }
+body::after { content: ""; position: fixed; z-index: 0; inset: -22vh -18vw; pointer-events: none; opacity: 0.34; background: radial-gradient(at 24% 36%, rgba(45, 114, 224, 0.18), transparent 36%), radial-gradient(at 76% 24%, rgba(91, 194, 232, 0.11), transparent 32%), radial-gradient(at 62% 78%, rgba(69, 103, 203, 0.12), transparent 35%); filter: blur(34px); transform: translate3d(0px, 0px, 0px); }
+.site-head { background: rgba(7, 13, 21, 0.68); border-bottom-color: rgba(166, 205, 255, 0.13); box-shadow: rgba(0, 0, 0, 0.85) 0px 12px 36px -30px; }
+  .site-head { backdrop-filter: blur(20px) saturate(145%); }
+.hero-stage, .contact-card, .metric-card, .stack-component, .contribution-card, .calendar-card, .language-card, .weekly-card, .streak-card, .activity-component, .activity-card, .repo-card, .card { position: relative; isolation: isolate; border-color: var(--glass-edge); background-color: var(--glass); box-shadow: var(--glass-shadow); }
+.hero-stage, .contact-card { overflow: hidden; }
+  .hero-stage, .contact-card, .metric-card, .stack-component, .contribution-card, .calendar-card, .language-card, .weekly-card, .streak-card, .activity-component, .activity-card, .repo-card, .card { backdrop-filter: blur(16px) saturate(130%); }
+.card, .repo-card, .contact-card, .hero-stage, .metric-card, .stack-component, .contribution-card, .calendar-card, .language-card, .weekly-card, .streak-card, .activity-component, .activity-card { border-radius: 16px; transition: border-color 240ms, box-shadow 240ms, background-color 240ms; }
+.cta, .nav .nav-btn, .os-search, .icon-button, .mobile-dock { box-shadow: rgba(75, 148, 255, 0.75) 0px 12px 30px -24px; }
+.cta { transition: transform 220ms, box-shadow 220ms, background-color 220ms, border-color 220ms; }
+@media (max-width: 900px) {
+  body::after { inset: -10vh -30vw; opacity: 0.22; filter: blur(24px); }
+  .mobile-dock { background: rgba(8, 15, 24, 0.76); border-top-color: rgba(166, 205, 255, 0.18); }
+    .mobile-dock { backdrop-filter: blur(20px) saturate(145%); }
+  .card, .repo-card, .contact-card, .hero-stage, .metric-card, .stack-component, .contribution-card, .calendar-card, .language-card, .weekly-card, .streak-card, .activity-component, .activity-card { border-radius: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fx-lit::after, .cta { transition: none; }
+}
 /* critical-css:end */</style>
 <link rel="stylesheet" href="assets/site.css" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="assets/mobile.css" media="print" onload="this.media='all'">
@@ -278,9 +299,11 @@ h2 { font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.02em; margin-bottom: 
 <link rel="stylesheet" href="assets/polish.css" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="assets/os.css" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="assets/assistant.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="assets/glass.css" media="print" onload="this.media='all'">
 <script src="assets/os.js" defer></script>
 <script src="assets/assistant.js" defer></script>
-<noscript><link rel="stylesheet" href="assets/site.css"><link rel="stylesheet" href="assets/mobile.css"><link rel="stylesheet" href="assets/motion-extras.css"><link rel="stylesheet" href="assets/polish.css"><link rel="stylesheet" href="assets/os.css"><link rel="stylesheet" href="assets/assistant.css"></noscript>
+<script src="assets/fx.js" defer></script>
+<noscript><link rel="stylesheet" href="assets/site.css"><link rel="stylesheet" href="assets/mobile.css"><link rel="stylesheet" href="assets/motion-extras.css"><link rel="stylesheet" href="assets/polish.css"><link rel="stylesheet" href="assets/os.css"><link rel="stylesheet" href="assets/assistant.css"><link rel="stylesheet" href="assets/glass.css"></noscript>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Md Mahfujur Rahman Sujel","url":"https://md-mahfujur-rahman-sujel.github.io/","image":"https://md-mahfujur-rahman-sujel.github.io/assets/og-card.png","jobTitle":"Software engineering student","affiliation":{"@type":"CollegeOrUniversity","name":"East West University"},"sameAs":["https://github.com/md-mahfujur-rahman-sujel","https://linkedin.com/in/md-mahfujur-rahman-sujel"]}</script>
 </head>
 <body id="top">
