@@ -272,29 +272,77 @@ h2 { font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.02em; margin-bottom: 
   100% { opacity: 1; transform: none; }
 }
 
-/* glass.css */
-:root { --glass: rgba(127, 177, 228, .105); --glass-frosted: rgba(104, 151, 200, .16); --glass-strong: rgba(15, 28, 43, .62); --glass-edge: rgba(224, 242, 255, .36); --glass-shadow: 0 26px 68px -42px rgba(0, 0, 0, .72), 0 1px 0 rgba(255,255,255,.24) inset, 0 -1px 0 rgba(212,235,255,.08) inset; }
-body::after { content: ""; position: fixed; z-index: 0; inset: -28vh -24vw; pointer-events: none; opacity: 0.68; background: radial-gradient(at 19% 36%, rgba(55, 129, 238, 0.34), transparent 37%), radial-gradient(at 77% 24%, rgba(92, 198, 236, 0.24), transparent 34%), radial-gradient(at 62% 78%, rgba(85, 114, 210, 0.28), transparent 38%); filter: blur(46px); transform: translate3d(0px, 0px, 0px); animation: 30s ease-in-out 0s infinite alternate none running glass-aurora; }
-@keyframes glass-aurora {
-100% { transform: translate3d(2.5%, -1.5%, 0px) scale(1.035); }
+/* glass-v2.css */
+:root { --glass-fill: rgba(8,14,25,.62); --glass-line: rgba(255,255,255,.15); --glass-line-soft: rgba(255,255,255,.08); --glass-blur: blur(22px) saturate(170%); --dim: #93A6BA; --bg: #03050A; --bg2: #060A10; --chrome: #050910; --rim: #142033; --kicker: #8DB8FF; --fx-ease: cubic-bezier(.2,.7,.2,1); --fx-spring: cubic-bezier(.34,1.4,.64,1); }
+body::after { content: ""; position: fixed; inset: 0px; z-index: 0; pointer-events: none; background-image: radial-gradient(36% 30% at 18% 22%, rgba(59, 130, 246, 0.17), transparent 70%), radial-gradient(30% 28% at 84% 16%, rgba(103, 199, 235, 0.1), transparent 70%), radial-gradient(38% 34% at 74% 80%, rgba(99, 102, 241, 0.13), transparent 70%), radial-gradient(28% 26% at 20% 84%, rgba(56, 189, 248, 0.08), transparent 70%); }
+@keyframes fx-aurora {
+0% { transform: translate3d(0px, 0px, 0px) rotate(0deg) scale(1); }
+  50% { transform: translate3d(3%, -4%, 0px) rotate(6deg) scale(1.08); }
+  100% { transform: translate3d(-4%, 3%, 0px) rotate(-5deg) scale(1.04); }
 }
-.site-head { background: rgba(15, 28, 43, 0.42); border-bottom-color: rgba(221, 241, 255, 0.2); box-shadow: rgba(0, 0, 0, 0.85) 0px 12px 36px -30px; }
-  .site-head { backdrop-filter: blur(18px) saturate(170%); }
-.hero-stage, .contact-card, .metric-card, .stack-component, .contribution-card, .calendar-card, .language-card, .weekly-card, .streak-card, .activity-component, .activity-card, .repo-card, .card { position: relative; isolation: isolate; border-color: var(--glass-edge); background-color: var(--glass-frosted); box-shadow: var(--glass-shadow); }
-.hero-stage, .contact-card { overflow: hidden; }
-  .hero-stage, .contact-card, .metric-card, .stack-component, .contribution-card, .calendar-card, .language-card, .weekly-card, .streak-card, .activity-component, .activity-card, .repo-card, .card { backdrop-filter: blur(15px) saturate(175%) contrast(108%); }
-.card, .repo-card, .contact-card, .hero-stage, .metric-card, .stack-component, .contribution-card, .calendar-card, .language-card, .weekly-card, .streak-card, .activity-component, .activity-card { border-radius: 16px; transition: border-color 240ms, box-shadow 240ms, background-color 240ms; }
-.cta, .nav .nav-btn, .os-search, .icon-button, .mobile-dock { box-shadow: rgba(75, 148, 255, 0.75) 0px 12px 30px -24px; }
-.cta { transition: transform 220ms, box-shadow 220ms, background-color 220ms, border-color 220ms; }
+@keyframes fx-float {
+0% { transform: translate3d(0px, 0px, 0px) scale(1); }
+  100% { transform: translate3d(-18px, 26px, 0px) scale(1.08); }
+}
+@keyframes fx-bob {
+0% { transform: translate3d(0px, -5px, 0px); }
+  100% { transform: translate3d(0px, 6px, 0px); }
+}
+@keyframes fx-sheen {
+100% { background-position: 100% 50%; }
+}
+@keyframes fx-rise {
+0% { opacity: 0; transform: translate3d(0px, 22px, 0px); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes fx-fade {
+0% { opacity: 0; transform: translate3d(0px, 14px, 0px); }
+  100% { opacity: 1; transform: none; }
+}
+#projects, #stack, #telemetry, #repositories, #contact, .hero-grid { position: relative; }
+.card, .repo-card, .metric-card, .stack-component, .contribution-card, .calendar-card, .language-card, .weekly-card, .streak-card, .activity-component, .activity-card, .contact-card, .hero-stage { background-color: var(--glass-fill); background-image: linear-gradient(155deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02) 42%, rgba(255, 255, 255, 0) 70%); border-color: var(--glass-line); border-radius: 20px; box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(255, 255, 255, 0.03) 0px -1px 0px inset, rgba(2, 8, 20, 0.85) 0px 24px 48px -28px; position: relative; isolation: isolate; backdrop-filter: var(--glass-blur); }
+.hero-stage { border-radius: 28px; background-color: rgba(6, 10, 18, 0.55); background-image: radial-gradient(circle at 50% 46%, rgba(79, 141, 255, 0.22), transparent 62%), linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(155deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0) 55%); background-size: auto, 32px 32px, 32px 32px, auto; }
+.card::before, .repo-card::before, .metric-card::before, .stack-component::before, .streak-card::before, .contact-card::before, .hero-stage::before { content: ""; position: absolute; inset: 0px; z-index: -1; border-radius: inherit; pointer-events: none; opacity: 0; background-image: radial-gradient(320px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.17),rgba(120,170,255,.06) 42%,transparent 70%); transition: opacity 0.35s; }
+.member-line, .tech-track, .bytes-total, .intro-facts, footer { border-top-color: rgba(255, 255, 255, 0.09); }
+.kicker { display: inline-flex; align-items: center; gap: 9px; padding: 7px 13px; border-radius: 999px; color: var(--kicker); background-color: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.09); box-shadow: rgba(255, 255, 255, 0.12) 0px 1px 0px inset; }
+.kicker::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background-color: rgb(141, 184, 255); box-shadow: rgb(79, 141, 255) 0px 0px 10px; }
+.intro-kicker { color: var(--kicker); }
+.intro h1 { color: rgb(241, 245, 250); background-image: linear-gradient(100deg, rgb(255, 255, 255) 0%, rgb(220, 232, 255) 38%, rgb(143, 185, 255) 68%, rgb(255, 255, 255) 100%); background-size: 220% auto; background-clip: text; -webkit-text-fill-color: transparent; }
+.cta { color: rgb(255, 255, 255); background-color: rgb(29, 78, 216); background-image: linear-gradient(rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0) 60%); border-color: rgba(255, 255, 255, 0.28); box-shadow: rgba(255, 255, 255, 0.4) 0px 1px 0px inset, rgba(59, 130, 246, 0.9) 0px 10px 26px -12px; }
+.cta.ghost { color: var(--text); background-color: rgba(255, 255, 255, 0.07); background-image: linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0)); border-color: var(--glass-line); box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 0px inset; backdrop-filter: blur(14px) saturate(160%); }
+.hero-reactor { translate: calc(var(--fx-px,0) * -10px) calc(var(--fx-py,0) * -10px); transition: translate 0.3s ease-out; }
+@media (min-width: 901px) {
+  body::after { inset: -20%; animation: 38s ease-in-out 0s infinite alternate none running fx-aurora; will-change: transform; }
+  .site-head { background: transparent; border-bottom: 0px; backdrop-filter: none; padding-top: 12px; pointer-events: none; }
+  .head-in { pointer-events: auto; padding: 9px 12px 9px 22px; border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 999px; background-color: rgba(6, 10, 18, 0.66); background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); box-shadow: rgba(255, 255, 255, 0.24) 0px 1px 0px inset, rgba(2, 8, 20, 0.9) 0px 18px 44px -22px; backdrop-filter: blur(24px) saturate(180%); }
+  .nav { position: relative; }
+  .nav a { position: relative; z-index: 1; }
+  .nav .nav-btn { background-color: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.14); border-radius: 999px; position: relative; z-index: 1; }
+  .hero-grid::before { content: ""; position: absolute; z-index: -1; pointer-events: none; right: 0px; top: -6%; width: min(520px, 46vw); aspect-ratio: 1 / 1; border-radius: 50%; background-image: radial-gradient(circle at 35% 35%, rgba(103, 199, 235, 0.5), rgba(59, 130, 246, 0.34) 42%, rgba(99, 102, 241, 0.18) 62%, transparent 72%); animation: 16s ease-in-out 0s infinite alternate none running fx-float; }
+  .hero .intro > * { animation: fx-rise .9s var(--fx-ease) backwards; }
+  .hero .intro > :nth-child(2) { animation-delay: 0.08s; }
+  .hero .intro > :nth-child(3) { animation-delay: 0.16s; }
+  .hero .intro > :nth-child(4) { animation-delay: 0.24s; }
+  .hero .intro > :nth-child(5) { animation-delay: 0.32s; }
+  .hero .hero-stage { animation: fx-fade 1s var(--fx-ease) .2s backwards; }
+  .hero .intro h1 { animation: fx-rise .9s var(--fx-ease) backwards,fx-sheen 9s ease-in-out infinite alternate; }
+}
 @media (max-width: 900px) {
-  body::after { inset: -10vh -30vw; opacity: 0.22; filter: blur(24px); }
-  .mobile-dock { background: rgba(14, 28, 43, 0.52); border-top-color: rgba(224, 242, 255, 0.3); }
-    .mobile-dock { backdrop-filter: blur(18px) saturate(170%); }
-  .card, .repo-card, .contact-card, .hero-stage, .metric-card, .stack-component, .contribution-card, .calendar-card, .language-card, .weekly-card, .streak-card, .activity-component, .activity-card { border-radius: 14px; }
+  .site-head { background-color: rgba(4, 8, 14, 0.7); border-bottom-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px) saturate(170%); }
+  .mobile-dock { background-color: rgba(5, 9, 16, 0.74); border-top-color: rgba(255, 255, 255, 0.14); border-radius: 20px 20px 0px 0px; box-shadow: rgba(255, 255, 255, 0.12) 0px 1px 0px inset, rgba(2, 8, 20, 0.9) 0px -14px 40px -22px; backdrop-filter: blur(24px) saturate(180%); }
+  .mobile-dock a[aria-current] { color: rgb(255, 255, 255); }
+  .dock-indicator { background-color: rgb(141, 184, 255); box-shadow: rgba(141, 184, 255, 0.9) 0px 0px 12px; }
+  .card, .repo-card, .metric-card, .stack-component, .contribution-card, .calendar-card, .language-card, .weekly-card, .streak-card, .activity-component, .activity-card, .contact-card, .hero-stage { border-radius: 18px; box-shadow: rgba(255, 255, 255, 0.18) 0px 1px 0px inset, rgba(2, 8, 20, 0.85) 0px 12px 28px -18px; backdrop-filter: blur(14px) saturate(150%); }
+  .hero-stage { border-radius: 22px; }
+  .icon-button { background-color: rgba(255, 255, 255, 0.06); border-color: var(--glass-line); border-radius: 12px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  body::after { animation: auto ease 0s 1 normal none running none; }
-  .fx-lit::after, .cta { transition: none; }
+  .fx-chip, .hero-reactor { translate: none !important; }
+}
+body::before { opacity: 0.55; }
+@media (min-width: 901px) {
+  section { padding: 84px 0px 8px; }
+  .hero { margin-top: 52px; }
 }
 /* critical-css:end */</style>
 <link rel="stylesheet" href="assets/site.css" media="print" onload="this.media='all'">
@@ -303,11 +351,11 @@ body::after { content: ""; position: fixed; z-index: 0; inset: -28vh -24vw; poin
 <link rel="stylesheet" href="assets/polish.css" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="assets/os.css" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="assets/assistant.css" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="assets/glass.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="assets/glass-v2.css" media="print" onload="this.media='all'">
 <script src="assets/os.js" defer></script>
 <script src="assets/assistant.js" defer></script>
-<script src="assets/fx.js" defer></script>
-<noscript><link rel="stylesheet" href="assets/site.css"><link rel="stylesheet" href="assets/mobile.css"><link rel="stylesheet" href="assets/motion-extras.css"><link rel="stylesheet" href="assets/polish.css"><link rel="stylesheet" href="assets/os.css"><link rel="stylesheet" href="assets/assistant.css"><link rel="stylesheet" href="assets/glass.css"></noscript>
+<script src="assets/fx-v2.js" defer></script>
+<noscript><link rel="stylesheet" href="assets/site.css"><link rel="stylesheet" href="assets/mobile.css"><link rel="stylesheet" href="assets/motion-extras.css"><link rel="stylesheet" href="assets/polish.css"><link rel="stylesheet" href="assets/os.css"><link rel="stylesheet" href="assets/assistant.css"><link rel="stylesheet" href="assets/glass-v2.css"></noscript>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Md Mahfujur Rahman Sujel","url":"https://md-mahfujur-rahman-sujel.github.io/","image":"https://md-mahfujur-rahman-sujel.github.io/assets/og-card.png","jobTitle":"Software engineering student","affiliation":{"@type":"CollegeOrUniversity","name":"East West University"},"sameAs":["https://github.com/md-mahfujur-rahman-sujel","https://linkedin.com/in/md-mahfujur-rahman-sujel"]}</script>
 </head>
 <body id="top">
@@ -447,6 +495,12 @@ body::after { content: ""; position: fixed; z-index: 0; inset: -28vh -24vw; poin
     <h2 id="about-h">Building products end to end</h2>
     <p class="lead">I study Computer Science &amp; Engineering at <strong>East West University, Bangladesh</strong>.
     I’m interested in software engineering and UI/UX, and enjoy turning real problems into useful apps. I like the whole loop: understand the need, design the interface, then build and ship the product. Long term, I’m aiming to build products of my own through tech entrepreneurship.</p>
+    <ol class="loop" aria-label="How I work">
+      <li><span class="loop-n">01</span><strong>Understand</strong><p>Start from the real problem and the people who have it.</p></li>
+      <li><span class="loop-n">02</span><strong>Design</strong><p>Shape the interface before writing the code behind it.</p></li>
+      <li><span class="loop-n">03</span><strong>Build</strong><p>Front end, API and database, kept consistent end to end.</p></li>
+      <li><span class="loop-n">04</span><strong>Ship</strong><p>Release it, then learn from how it is actually used.</p></li>
+    </ol>
   </section>
 
   <section id="projects" aria-labelledby="projects-h">

@@ -79,18 +79,27 @@ from committed HTML/SVG; only motion, the palette, the assistant and the Ironbot
 
 ### 3.5 Glass finish and pointer effects
 
-- `assets/glass.css` uses two glass materials: clearer cards with visible background detail and
-  frosted surfaces with stronger blur and a bright inner rim. It styles the header, dashboard,
-  mobile dock, dialogs, assistant and repository filters. Blur is progressive enhancement, with
-  readable fallbacks when `backdrop-filter` is unavailable.
-- A soft blue aurora adds depth behind content using one fixed decorative layer; panel tilt and
-  the aurora stop under system and in-page reduced-motion settings.
-- `assets/fx.js` adds pointer-tracked specular highlights to glass surfaces, including dashboard
-  cards rendered after the initial page load, plus a restrained tilt that settles as the pointer
-  leaves. It only runs for fine pointers and is disabled when reduced motion is active. It has no
-  network requests or continuous animation loop.
-- Rollback: remove the `glass.css` and `fx.js` references in `index.html` (including the `noscript`
-  stylesheet reference) and delete the two assets. No content or data depends on this layer.
+- `assets/glass-v2.css` (loaded last) renders panels, header, mobile dock, Explorer sheet, command
+  palette and assistant as frosted glass: translucent fill, a 1px specular rim and a blur-plus-saturate
+  backdrop. On desktop the menu bar becomes a floating pill. A slowly drifting blue aurora and local
+  colour pools sit behind the cards so the frost has something to refract. Phones use a lighter blur
+  and blur only the large surfaces; dense data panels stay flat translucent. Blur is progressive
+  enhancement: the translucent fills stay readable without `backdrop-filter`.
+- Motion: hero entrance, a slow light sweep across the name, floating glass chips around the reactor,
+  scroll reveals on section headings and the contact card, and a sliding pill behind the active menu
+  item. Every looping animation is desktop-only. On phones the only looping motion is the existing
+  `.x-orb` ambient glows (one added), which the mobile motion-budget test exempts.
+- `assets/fx-v2.js`: cursor light, pointer-following specular glare, card tilt, magnetic buttons and
+  hero parallax. Fine pointer, hover and 901px+ only; no network requests; one rAF loop that runs only
+  while the pointer is moving. Everything is off under reduced motion and nothing is left hidden.
+- Tooling constraints: no `@supports`, `@layer` or nesting in the CSS (`critical-css.cjs` flattens
+  them) and no `var()` inside a shorthand that shares a rule with its longhands. Hover keeps a real
+  transform when motion is on (os-shell test) and the 24px window chrome stays.
+- History: replaces the first glass layer (`assets/glass.css`, `assets/fx.js`; commits "Add
+  glassmorphism and pointer effects" and "Refine clear glass interface"), which stays in git history.
+- Rollback: remove the `glass-v2.css` and `fx-v2.js` references in `index.html` (including the
+  `noscript` stylesheet), delete the two assets and run `npm run critical`. No content or data
+  depends on this layer.
 
 ## 4. Non-functional requirements
 
