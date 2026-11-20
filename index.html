@@ -77,7 +77,32 @@
       </div>
 
       <div class="stage" aria-hidden="true">
-        <div class="reactor" aria-hidden="true"><i class="reactor-ring r-a"></i><i class="reactor-ring r-b"></i><i class="reactor-ring r-c"></i><i class="reactor-core"></i><span class="reactor-label">ARC · 100%</span></div>
+        <svg class="reactor arc-reactor" viewBox="-60 -60 120 120" role="img" aria-label="Arc reactor emblem">
+          <defs>
+            <linearGradient id="hero-ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3B82F6"/><stop offset=".5" stop-color="#A9C7FF"/><stop offset="1" stop-color="#67C7EB"/></linearGradient>
+            <radialGradient id="hero-coilGrad" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="33"><stop offset="0" stop-color="#4F8DFF"/><stop offset=".48" stop-color="#93C5FD"/><stop offset=".74" stop-color="#BFDBFE"/><stop offset="1" stop-color="#EEF6FF"/></radialGradient>
+            <radialGradient id="hero-coreGrad"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".5" stop-color="#EEF6FF"/><stop offset=".68" stop-color="#BFDBFE"/><stop offset=".84" stop-color="#4F8DFF"/><stop offset=".95" stop-color="#16263A"/><stop offset="1" stop-color="#080D13"/></radialGradient>
+            <radialGradient id="hero-coreGlow"><stop offset="0" stop-color="#EEF6FF" stop-opacity=".75"/><stop offset=".55" stop-color="#67C7EB" stop-opacity=".28"/><stop offset="1" stop-color="#67C7EB" stop-opacity="0"/></radialGradient>
+            <radialGradient id="hero-bloom"><stop offset="0" stop-color="#67C7EB" stop-opacity=".5"/><stop offset=".5" stop-color="#3B82F6" stop-opacity=".22"/><stop offset="1" stop-color="#3B82F6" stop-opacity="0"/></radialGradient>
+            <filter id="hero-glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="hero-soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="1.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <g class="hero-art">
+            <circle class="rc-bloom" r="54" fill="url(#hero-bloom)"/>
+            <path d="M0 -50 L43.3 -25 L43.3 25 L0 50 L-43.3 25 L-43.3 -25 Z" fill="none" stroke="#16263A" stroke-dasharray="4 5" stroke-opacity=".85"/>
+            <path d="M0 -46 L39.8 -23 L39.8 23 L0 46 L-39.8 23 L-39.8 -23 Z" fill="#070C12" stroke="url(#hero-ring)" stroke-width="1.4"/>
+            <g class="rc-ring" fill="none"><circle r="41.6" stroke="url(#hero-ring)" stroke-width="1" stroke-dasharray="9 23" opacity=".9"/></g>
+            <g class="rc-ring2" fill="none"><circle r="39.6" stroke="#67C7EB" stroke-width="1.2" stroke-dasharray="2.5 14" opacity=".7"/></g>
+            <circle r="38" fill="#05080D" stroke="#16263A" stroke-width="1.6"/><circle r="35.4" fill="none" stroke="#16263A" stroke-width="3"/>
+            <circle r="31" fill="url(#hero-bloom)" opacity=".75"/><circle r="33.4" fill="none" stroke="#3B82F6" stroke-opacity=".22" stroke-width="7" filter="url(#hero-glow)"/>
+            <g fill="#16263A" opacity=".6"><path d="M5.81-19.14 6.54-18.9 10.8-31.82 9.96-32.09Z M15.95-12.06 16.4-11.44 27.44-19.39 26.92-20.1Z M20-.38 20 .38 33.6 .44 33.6-.44Z M16.4 11.44 15.95 12.06 26.92 20.1 27.44 19.39Z M6.54 18.9 5.81 19.14 9.96 32.09 10.8 31.82Z M-5.81 19.14-6.54 18.9-10.8 31.82-9.96 32.09Z M-15.95 12.06-16.4 11.44-27.44 19.39-26.92 20.1Z M-20 .38-20-.38-33.6-.44-33.6.44Z M-16.4-11.44-15.95-12.06-26.92-20.1-27.44-19.39Z M-6.54-18.9-5.81-19.14-9.96-32.09-10.8-31.82Z"/></g>
+            <circle r="19.6" fill="none" stroke="#16263A" stroke-width="2.6"/>
+            <g fill="url(#hero-coilGrad)" stroke="#0D1622" stroke-width=".7" stroke-linejoin="round" filter="url(#hero-soft)"><path d="M-4.97-19.37 4.97-19.37 5.96-32.46-5.96-32.46Z M7.36-18.6 15.41-12.75 23.9-22.76 14.26-29.76Z M16.89-10.72 19.96-1.26 32.71-4.36 29.03-15.7Z M19.96 1.26 16.89 10.72 29.03 15.7 32.71 4.36Z M15.41 12.75 7.36 18.6 14.26 29.76 23.9 22.76Z M4.97 19.37-4.97 19.37-5.96 32.46 5.96 32.46Z M-7.36 18.6-15.41 12.75-23.9 22.76-14.26 29.76Z M-16.89 10.72-19.96 1.26-32.71 4.36-29.03 15.7Z M-19.96-1.26-16.89-10.72-29.03-15.7-32.71-4.36Z M-15.41-12.75-7.36-18.6-14.26-29.76-23.9-22.76Z"/></g>
+            <circle r="23" fill="url(#hero-coreGlow)" opacity=".5"/><circle r="19.4" fill="#05080D" stroke="#16263A" stroke-width="2.2"/>
+            <g><circle r="16.4" fill="url(#hero-coreGrad)"/><path d="M0-11.5 9.96 5.75-9.96 5.75Z" fill="none" stroke="#3B82F6" stroke-width="2.2" stroke-linejoin="round"/><path d="M0-7.6 6.58 3.8-6.58 3.8Z" fill="none" stroke="#A9C7FF" stroke-width="1.1" stroke-linejoin="round"/></g>
+            <g class="orbit"><circle cx="46" r="3.2" fill="#67C7EB" filter="url(#hero-glow)"/></g><g class="orbit2"><circle cy="-48" r="2.4" fill="#3B82F6"/></g>
+          </g>
+        </svg>
         <div class="obj o-orb" style="--d:14"><span class="float"><i class="orb"></i></span></div>
         <div class="obj o-s1" style="--d:22"><span class="float"><i class="orb pink"></i></span></div>
         <div class="obj o-s2" style="--d:18"><span class="float"><i class="orb"></i></span></div>
@@ -88,6 +113,7 @@
         <div class="obj o-c1" style="--d:24"><span class="float"><span class="chip glass">React · TypeScript</span></span></div>
         <div class="obj o-c2" style="--d:16"><span class="float"><span class="chip glass">Kotlin · Android</span></span></div>
         <div class="obj o-c3" style="--d:20"><span class="float"><span class="chip glass">Spring Boot · MySQL</span></span></div>
+        <div class="obj o-c4" style="--d:18"><span class="float"><span class="chip glass">Figma · UI/UX</span></span></div>
       </div>
     </div>
   </section>
