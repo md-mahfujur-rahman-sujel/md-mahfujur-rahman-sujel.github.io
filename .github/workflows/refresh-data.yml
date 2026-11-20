@@ -1,4 +1,4 @@
-name: Refresh dashboard data
+name: Refresh portfolio snapshot
 
 on:
   schedule:
@@ -35,12 +35,9 @@ jobs:
           # anything higher is a hard failure.
           if [ "$status" -gt 1 ]; then exit "$status"; fi
 
-      - name: Render desktop panels
-        run: python scripts/render_panels.py
-
       - name: Commit changed snapshot
         run: |
-          files="data/stats.json assets/telemetry.svg assets/activity.svg assets/repos.svg"
+          files="data/stats.json"
           if [ ! -f data/stats.json ]; then
             echo "::error::data/stats.json is missing; refusing to commit."
             exit 1
@@ -55,5 +52,5 @@ jobs:
           git add -- $files
           git -c user.name='github-actions[bot]' \
               -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
-              commit -m 'Refresh dashboard snapshot and panels'
+              commit -m 'Refresh portfolio snapshot'
           git push

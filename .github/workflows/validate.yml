@@ -24,8 +24,6 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m unittest discover -s tests -p "test_*.py"
-      - name: Check desktop panels are current
-        run: python scripts/render_panels.py --check
 
   browser:
     name: Browser and accessibility tests
@@ -39,7 +37,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx playwright install --with-deps chromium
-      - name: Check the inlined critical layer is current
+      - name: Check the critical CSS and JS budget
         run: npm run test:critical
       - run: npm test
       - uses: actions/upload-artifact@v4
