@@ -93,7 +93,7 @@ test('without JavaScript every view remains in the document and theme follows sy
     await expect(page.locator('.theme-toggle')).toBeHidden();
     for (const id of views) await expect(page.locator(`#${id}`)).toBeVisible();
     const background = await page.locator('body').evaluate(node => getComputedStyle(node).backgroundColor);
-    expect(background).toBe(theme === 'light' ? 'rgb(238, 243, 255)' : 'rgb(5, 8, 13)');
+    expect(background).toBe(theme === 'light' ? 'rgb(238, 243, 255)' : 'rgb(3, 6, 15)');
     await context.close();
   }
 });
