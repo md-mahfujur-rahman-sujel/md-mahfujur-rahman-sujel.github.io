@@ -7,7 +7,7 @@
   "use strict";
 
   var VIEWS = ["home", "work", "about", "stats", "contact"];
-  var THEME_COLOR = { dark: "#060B22", light: "#D8E3FA" };
+  var THEME_COLOR = { dark: "#03060F", light: "#D8E3FA" };
   var root = document.documentElement;
   var reduceMQ = window.matchMedia("(prefers-reduced-motion: reduce)");
   var fineMQ = window.matchMedia("(hover: hover) and (pointer: fine)");
