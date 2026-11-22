@@ -23,12 +23,12 @@
 <meta name="twitter:title" content="Md Mahfujur Rahman Sujel — software engineering student">
 <meta name="twitter:description" content="Computer Science &amp; Engineering student at East West University in Bangladesh, interested in software engineering, UI/UX and building useful products.">
 <meta name="twitter:image" content="https://md-mahfujur-rahman-sujel.github.io/assets/og-card.png">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
 <script>
 (function(){var d=document.documentElement,m=document.querySelector('meta[name="theme-color"]'),t=null;try{t=localStorage.getItem('sujel-theme')}catch(e){}if(t!=="light"&&t!=="dark")t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';d.setAttribute('data-theme',t);d.className='js';if(m)m.content=t==='light'?'#D8E3FA':'#03060F';})();
 </script>
-<link rel="stylesheet" href="assets/liquid.css">
-<script src="assets/liquid.js" defer></script>
+<link rel="stylesheet" href="assets/liquid.min.css">
+<script src="assets/liquid.min.js" defer></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Md Mahfujur Rahman Sujel","url":"https://md-mahfujur-rahman-sujel.github.io/","image":"https://md-mahfujur-rahman-sujel.github.io/assets/og-card.png","jobTitle":"Software engineering student","affiliation":{"@type":"CollegeOrUniversity","name":"East West University"},"sameAs":["https://github.com/md-mahfujur-rahman-sujel","https://linkedin.com/in/md-mahfujur-rahman-sujel"]}</script>
 </head>
 <body>
@@ -243,7 +243,7 @@
       <p class="lead">Product ideas, UI problems, or a role worth talking about — email me, or find me on LinkedIn or GitHub.</p>
       <div class="actions">
         <a class="btn white" href="mailto:mdmahfujurrahmansujel@gmail.com">Email me <span aria-hidden="true">→</span></a>
-        <a class="btn glass" href="assets/CV%20of%20Md%20Mahfujur%20Rahman%20Sujel.pdf" target="_blank" rel="noopener noreferrer">View CV <span aria-hidden="true">↗</span></a>
+        <a class="btn glass" data-cv href="assets/CV%20of%20Md%20Mahfujur%20Rahman%20Sujel.pdf" target="_blank" rel="noopener noreferrer">View CV <span aria-hidden="true">↗</span></a>
         <a class="btn glass" href="https://linkedin.com/in/md-mahfujur-rahman-sujel" target="_blank" rel="noopener noreferrer me">LinkedIn <span aria-hidden="true">↗</span></a>
         <a class="btn glass" href="https://github.com/md-mahfujur-rahman-sujel" target="_blank" rel="noopener noreferrer me">GitHub <span aria-hidden="true">↗</span></a>
       </div>
@@ -261,6 +261,15 @@
   <a href="#stats" data-view="stats"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V11m7 9V4m7 16v-7"/></svg>Stats</a>
   <a href="#contact" data-view="contact"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 8 8 6 8-6"/></svg>Contact</a>
 </nav>
+
+<dialog class="cvbox" id="cv" aria-labelledby="cv-t">
+  <div class="cv-bar">
+    <h2 id="cv-t">CV</h2>
+    <a class="btn glass sm" href="assets/CV%20of%20Md%20Mahfujur%20Rahman%20Sujel.pdf" target="_blank" rel="noopener noreferrer">Open in new tab <span aria-hidden="true">↗</span></a>
+    <button class="btn glass sm" type="button" data-close>Close</button>
+  </div>
+  <iframe class="cv-frame" title="CV of Md Mahfujur Rahman Sujel"></iframe>
+</dialog>
 
 </body>
 </html>

@@ -13,6 +13,7 @@ const TYPES = {
   '.jpg': 'image/jpeg',
   '.webp': 'image/webp',
   '.ico': 'image/x-icon',
+  '.pdf': 'application/pdf',
   '.md': 'text/plain; charset=utf-8'
 };
 

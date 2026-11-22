@@ -379,6 +379,23 @@
       }
     }
     hit.addEventListener("click", toggle);
+    /* touch screens: the reactor leans toward the finger (the mouse does the same on desktop) */
+    var stage = document.querySelector(".stage");
+    if (stage) {
+      var lean = function (e) {
+        if (reduced() || wideMQ.matches || !e.touches.length) return;
+        var t = e.touches[0], r = rx.getBoundingClientRect();
+        var dx = (t.clientX - (r.left + r.width / 2)) / (window.innerWidth / 2);
+        var dy = (t.clientY - (r.top + r.height / 2)) / (window.innerHeight / 3);
+        stage.style.setProperty("--px", Math.max(-1, Math.min(1, dx)).toFixed(3));
+        stage.style.setProperty("--py", Math.max(-1, Math.min(1, dy)).toFixed(3));
+      };
+      var rest = function () { stage.style.setProperty("--px", "0"); stage.style.setProperty("--py", "0"); };
+      stage.addEventListener("touchstart", lean, { passive: true });
+      stage.addEventListener("touchmove", lean, { passive: true });
+      stage.addEventListener("touchend", rest, { passive: true });
+      stage.addEventListener("touchcancel", rest, { passive: true });
+    }
     document.addEventListener("keydown", function (e) {
       if ((e.key !== "p" && e.key !== "P") || e.ctrlKey || e.metaKey || e.altKey) return;
       var t = e.target;
@@ -387,12 +404,29 @@
     });
   }
 
+  /* ---------------- CV viewer: modal on desktop; phones and no-JS fall back to a new tab ---------------- */
+  function initCv() {
+    var box = document.getElementById("cv"), link = document.querySelector("a[data-cv]");
+    if (!box || !link || typeof box.showModal !== "function") return;
+    var frame = box.querySelector("iframe");
+    link.addEventListener("click", function (e) {
+      if (!wideMQ.matches || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+      e.preventDefault();
+      if (!frame.getAttribute("src")) frame.setAttribute("src", link.getAttribute("href")); /* load the PDF only when asked */
+      box.showModal();
+      root.style.overflow = "hidden";
+    });
+    box.addEventListener("click", function (e) { if (e.target === box || e.target.hasAttribute("data-close")) box.close(); });
+    box.addEventListener("close", function () { root.style.overflow = ""; });
+  }
+
   /* ---------------- boot ---------------- */
   function boot() {
     initReveal();
     initReactor();
     initStatsCountUp();
     initHeatTip();
+    initCv();
     onScroll();
     requestAnimationFrame(function () {
       placeAllPills(false);
