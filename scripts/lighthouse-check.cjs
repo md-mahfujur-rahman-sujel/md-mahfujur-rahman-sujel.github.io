@@ -46,7 +46,10 @@ const BUDGETS = {
         const output = path.join(root, '.validation', `lighthouse-${theme}-report.json`);
         fs.mkdirSync(path.dirname(output), { recursive: true });
         fs.writeFileSync(output, JSON.stringify(report));
-        results[theme] = { scores, metrics, report: path.relative(root, output) };
+        /* when CLS is high, list the elements that moved so the cause is visible in the CI log */
+        const shiftItems = (report.audits['layout-shifts'] && report.audits['layout-shifts'].details && report.audits['layout-shifts'].details.items) || [];
+        const shifts = shiftItems.slice(0, 6).map(item => ({ score: Number(((item && item.score) || 0).toFixed(4)), element: item && item.node ? (item.node.selector || item.node.nodeLabel) : null }));
+        results[theme] = { scores, metrics, ...(metrics.cls > 0 ? { shifts } : {}), report: path.relative(root, output) };
       } finally { await chrome.kill(); }
     }
     console.log(JSON.stringify({ results, budgets: BUDGETS, failures }, null, 2));

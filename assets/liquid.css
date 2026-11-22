@@ -177,7 +177,7 @@ ul,ol{padding:0;list-style:none}
 .brand .mk{height:30px;width:auto;flex:none;color:var(--cyan);filter:drop-shadow(0 0 7px var(--cyan))}
 [data-theme="light"] .brand .mk{filter:none}
 .topbar .btn{justify-self:end}
-.top-actions{justify-self:end;display:flex;align-items:center;gap:10px}
+.top-actions{justify-self:end;display:flex;align-items:center;gap:10px;min-height:46px} /* reserve the toggle's height so the bar never grows when JS reveals it */
 .theme-toggle{display:grid;place-items:center;width:46px;height:46px;padding:0;border:1px solid var(--line);border-radius:50%;background:var(--glass-base);color:var(--ink);font:600 23px/1 var(--sans);cursor:pointer;backdrop-filter:blur(12px);transition:background-color .24s,color .24s,border-color .24s,transform .24s}
 .theme-toggle:hover{transform:translateY(-1px)}
 .theme-toggle[hidden]{display:none}
