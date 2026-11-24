@@ -521,9 +521,8 @@ h2{font:700 clamp(34px,4.2vw,56px)/1.05 var(--sans);letter-spacing:-.04em;text-w
 html[data-hidden="true"] *{animation-play-state:paused!important}
 
 @media(max-width:900px){
-  /* phones: skip the heavy blurred blobs (the .scene washes still give colour) and the idle bobbing */
+  /* phones: skip only the heavy blurred blobs (the .scene washes still give colour); the cheap transform animations keep running */
   .blob,.ribbon{display:none!important;animation:none!important}
-  .float,.cube,.ring,.rx-ring,.rx-chase,.g-spin,.hexchip,.mchip,.h-t,.h-d,.h-s{animation:none!important}
   .rx-hint{font-size:14px}
   .rx[data-power="on"] .rx-hint::before{content:"Online"}
   .rx{scale:.72}
