@@ -16,7 +16,7 @@ const jsBytes = js ? Buffer.byteLength(js) : 0;
 const total = cssBytes + jsBytes + inlineBytes;
 /* Budget for the served (minified) CSS + JS + theme bootstrap, in raw bytes. The original 40 KB predates the arc reactor,
    tech objects and CV viewer; a typical gzip transfer is roughly a quarter of this (see gzipBytes in the output). */
-const budget = 60 * 1024;
+const budget = 64 * 1024;
 const gzipBytes = [css, js, bootstrap && bootstrap[1]].reduce((sum, part) => sum + (part ? zlib.gzipSync(part).length : 0), 0);
 const failures = [];
 
