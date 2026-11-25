@@ -1,5 +1,5 @@
 /* liquid.css — SUJEL.OS "Liquid Glass".
-   One idea: five short views (Home, Work, About, Stats, Contact), each fits one screen,
+   One long scrolling page (Home, Work, About, Stats, Contact),
    built from clear glass floating over a colourful aurora with CSS 3D objects.
    No third-party requests. Motion is removed under prefers-reduced-motion.
 
@@ -212,6 +212,9 @@ main{position:relative;z-index:1}
 .js .rv:not(.in){opacity:0}
 .js .rv.in{animation:rise 1s var(--ease) backwards;animation-delay:calc(var(--i,0) * 90ms)}
 @keyframes rise{from{opacity:0;translate:0 34px;filter:blur(14px)}}
+/* hero copy is the first thing painted (it is the LCP element), so it only slides: no opacity or blur gate, text is visible at first paint */
+@keyframes rise-t{from{translate:0 26px}}
+.js .home-copy{animation:rise-t .9s var(--ease) backwards}
 .view:focus,main:focus{outline:0}
 .tabbar a,.nav a{-webkit-tap-highlight-color:transparent}
 

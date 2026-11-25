@@ -77,10 +77,15 @@
       load("assets/vendor/ScrollTrigger.min.js", init);
     });
   }
-  function whenIdle() {
-    if (window.requestIdleCallback) requestIdleCallback(start, { timeout: 2500 });
-    else setTimeout(start, 400);
+  /* Start on the first scroll or touch, not at load: the page is complete without this script, and keeping it out of the
+     load window protects first paint, TBT and the Lighthouse budgets. It is local files, so it is ready in a blink. */
+  var started = false, EVENTS = ["scroll", "wheel", "touchstart", "keydown", "pointerdown"];
+  function go() {
+    if (started) return;
+    started = true;
+    EVENTS.forEach(function (n) { window.removeEventListener(n, go); });
+    start();
   }
-  if (document.readyState === "complete") whenIdle();
-  else window.addEventListener("load", whenIdle);
+  EVENTS.forEach(function (n) { window.addEventListener(n, go, { passive: true }); });
+  if ((window.scrollY || 0) > 0) go(); /* the browser restored a scroll position */
 })();

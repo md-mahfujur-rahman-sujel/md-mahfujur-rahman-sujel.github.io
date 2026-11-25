@@ -150,7 +150,7 @@
   });
 
   /* ---------------- scroll reveal: fade + rise + blur-in ---------------- */
-  var REVEAL = ".home-copy,.stage,.head,.about .lead,.loop li,.about .panel,.card,.stat,.stats-2 .panel,.cc,.foot";
+  var REVEAL = ".stage,.head,.about .lead,.loop li,.about .panel,.card,.stat,.stats-2 .panel,.cc,.foot";
   function initReveal() {
     if (!("IntersectionObserver" in window)) return; /* everything simply stays visible */
     var els = [].slice.call(document.querySelectorAll(REVEAL));
