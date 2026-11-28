@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T23:31:11Z",
+  "generatedAt": "2026-11-28T08:00:02Z",
   "sources": {
     "profile": {
       "status": "ok",
@@ -7,7 +7,7 @@
         "https://api.github.com/users/md-mahfujur-rahman-sujel",
         "https://api.github.com/users/md-mahfujur-rahman-sujel/repos?type=owner&per_page=100&sort=full_name"
       ],
-      "fetchedAt": "2026-11-27T23:31:11Z",
+      "fetchedAt": "2026-11-28T08:00:02Z",
       "errors": []
     },
     "contributions": {
@@ -15,10 +15,10 @@
       "urls": [
         "https://api.github.com/graphql"
       ],
-      "fetchedAt": "2026-11-27T23:31:11Z",
+      "fetchedAt": "2026-11-28T08:00:02Z",
       "errors": [],
       "selected": "https://api.github.com/graphql",
-      "asOf": "2026-11-27"
+      "asOf": "2026-11-28"
     },
     "languages": {
       "status": "ok",
@@ -26,12 +26,13 @@
         "https://api.github.com/users/md-mahfujur-rahman-sujel/repos?type=owner&per_page=100&sort=full_name",
         "https://api.github.com/repos/md-mahfujur-rahman-sujel/Apex-Arcade/languages",
         "https://api.github.com/repos/md-mahfujur-rahman-sujel/Game-Idea/languages",
+        "https://api.github.com/repos/md-mahfujur-rahman-sujel/Lamina-Studio/languages",
         "https://api.github.com/repos/md-mahfujur-rahman-sujel/md-mahfujur-rahman-sujel/languages",
         "https://api.github.com/repos/md-mahfujur-rahman-sujel/md-mahfujur-rahman-sujel.github.io/languages",
         "https://api.github.com/repos/md-mahfujur-rahman-sujel/TeleLink/languages",
         "https://api.github.com/repos/md-mahfujur-rahman-sujel/Unrot/languages"
       ],
-      "fetchedAt": "2026-11-27T23:31:11Z",
+      "fetchedAt": "2026-11-28T08:00:02Z",
       "errors": []
     },
     "repos": {
@@ -42,7 +43,7 @@
         "https://api.github.com/repos/md-mahfujur-rahman-sujel/Unrot",
         "https://api.github.com/repos/masum-mir/Oppzy"
       ],
-      "fetchedAt": "2026-11-27T23:31:11Z",
+      "fetchedAt": "2026-11-28T08:00:02Z",
       "errors": []
     },
     "events": {
@@ -50,31 +51,31 @@
       "urls": [
         "https://api.github.com/users/md-mahfujur-rahman-sujel/events/public?per_page=100"
       ],
-      "fetchedAt": "2026-11-27T23:31:11Z",
+      "fetchedAt": "2026-11-28T08:00:02Z",
       "errors": [],
       "coverage": "Public events only; GitHub REST limits history to 300 events / 90 days"
     }
   },
   "profile": {
-    "repos": 6,
+    "repos": 7,
     "stars": 0,
     "followers": 4,
     "following": 5,
     "memberSince": "2026-07"
   },
   "contributions": {
-    "asOf": "2026-11-27",
-    "total": 153,
+    "asOf": "2026-11-28",
+    "total": 155,
     "windowDays": 364,
-    "activeDays": 36,
+    "activeDays": 37,
     "peak": {
       "date": "2026-11-15",
       "count": 19
     },
     "currentStreak": {
-      "days": 0,
-      "from": null,
-      "to": null
+      "days": 1,
+      "from": "2026-11-28",
+      "to": "2026-11-28"
     },
     "longestStreak": {
       "days": 31,
@@ -82,10 +83,6 @@
       "to": "2026-11-25"
     },
     "days": [
-      {
-        "date": "2025-11-29",
-        "count": 0
-      },
       {
         "date": "2025-11-30",
         "count": 0
@@ -1537,220 +1534,224 @@
       {
         "date": "2026-11-27",
         "count": 0
+      },
+      {
+        "date": "2026-11-28",
+        "count": 2
       }
     ],
     "weeks": [
       {
-        "start": "2025-11-29",
+        "start": "2025-11-30",
         "count": 0
       },
       {
-        "start": "2025-12-06",
+        "start": "2025-12-07",
         "count": 0
       },
       {
-        "start": "2025-12-13",
+        "start": "2025-12-14",
         "count": 0
       },
       {
-        "start": "2025-12-20",
+        "start": "2025-12-21",
         "count": 0
       },
       {
-        "start": "2025-12-27",
+        "start": "2025-12-28",
         "count": 0
       },
       {
-        "start": "2026-01-03",
+        "start": "2026-01-04",
         "count": 0
       },
       {
-        "start": "2026-01-10",
+        "start": "2026-01-11",
         "count": 0
       },
       {
-        "start": "2026-01-17",
+        "start": "2026-01-18",
         "count": 0
       },
       {
-        "start": "2026-01-24",
+        "start": "2026-01-25",
         "count": 0
       },
       {
-        "start": "2026-01-31",
+        "start": "2026-02-01",
         "count": 0
       },
       {
-        "start": "2026-02-07",
+        "start": "2026-02-08",
         "count": 0
       },
       {
-        "start": "2026-02-14",
+        "start": "2026-02-15",
         "count": 0
       },
       {
-        "start": "2026-02-21",
+        "start": "2026-02-22",
         "count": 0
       },
       {
-        "start": "2026-02-28",
+        "start": "2026-03-01",
         "count": 0
       },
       {
-        "start": "2026-03-07",
+        "start": "2026-03-08",
         "count": 0
       },
       {
-        "start": "2026-03-14",
+        "start": "2026-03-15",
         "count": 0
       },
       {
-        "start": "2026-03-21",
+        "start": "2026-03-22",
         "count": 0
       },
       {
-        "start": "2026-03-28",
+        "start": "2026-03-29",
         "count": 0
       },
       {
-        "start": "2026-04-04",
+        "start": "2026-04-05",
         "count": 0
       },
       {
-        "start": "2026-04-11",
+        "start": "2026-04-12",
         "count": 0
       },
       {
-        "start": "2026-04-18",
+        "start": "2026-04-19",
         "count": 0
       },
       {
-        "start": "2026-04-25",
+        "start": "2026-04-26",
         "count": 0
       },
       {
-        "start": "2026-05-02",
+        "start": "2026-05-03",
         "count": 0
       },
       {
-        "start": "2026-05-09",
+        "start": "2026-05-10",
         "count": 0
       },
       {
-        "start": "2026-05-16",
+        "start": "2026-05-17",
         "count": 0
       },
       {
-        "start": "2026-05-23",
+        "start": "2026-05-24",
         "count": 0
       },
       {
-        "start": "2026-05-30",
+        "start": "2026-05-31",
         "count": 0
       },
       {
-        "start": "2026-06-06",
+        "start": "2026-06-07",
         "count": 0
       },
       {
-        "start": "2026-06-13",
+        "start": "2026-06-14",
         "count": 0
       },
       {
-        "start": "2026-06-20",
+        "start": "2026-06-21",
         "count": 0
       },
       {
-        "start": "2026-06-27",
+        "start": "2026-06-28",
         "count": 0
       },
       {
-        "start": "2026-07-04",
+        "start": "2026-07-05",
         "count": 0
       },
       {
-        "start": "2026-07-11",
+        "start": "2026-07-12",
         "count": 0
       },
       {
-        "start": "2026-07-18",
+        "start": "2026-07-19",
         "count": 0
       },
       {
-        "start": "2026-07-25",
+        "start": "2026-07-26",
         "count": 1
       },
       {
-        "start": "2026-08-01",
+        "start": "2026-08-02",
         "count": 0
       },
       {
-        "start": "2026-08-08",
+        "start": "2026-08-09",
         "count": 3
       },
       {
-        "start": "2026-08-15",
+        "start": "2026-08-16",
         "count": 2
       },
       {
-        "start": "2026-08-22",
+        "start": "2026-08-23",
         "count": 0
       },
       {
-        "start": "2026-08-29",
+        "start": "2026-08-30",
         "count": 0
       },
       {
-        "start": "2026-09-05",
+        "start": "2026-09-06",
         "count": 0
       },
       {
-        "start": "2026-09-12",
+        "start": "2026-09-13",
         "count": 0
       },
       {
-        "start": "2026-09-19",
+        "start": "2026-09-20",
         "count": 0
       },
       {
-        "start": "2026-09-26",
+        "start": "2026-09-27",
         "count": 0
       },
       {
-        "start": "2026-10-03",
+        "start": "2026-10-04",
         "count": 0
       },
       {
-        "start": "2026-10-10",
+        "start": "2026-10-11",
         "count": 0
       },
       {
-        "start": "2026-10-17",
+        "start": "2026-10-18",
         "count": 5
       },
       {
-        "start": "2026-10-24",
-        "count": 43
+        "start": "2026-10-25",
+        "count": 47
       },
       {
-        "start": "2026-10-31",
-        "count": 31
+        "start": "2026-11-01",
+        "count": 28
       },
       {
-        "start": "2026-11-07",
-        "count": 19
+        "start": "2026-11-08",
+        "count": 21
       },
       {
-        "start": "2026-11-14",
-        "count": 34
+        "start": "2026-11-15",
+        "count": 33
       },
       {
-        "start": "2026-11-21",
+        "start": "2026-11-22",
         "count": 15
       }
     ],
     "types": {
-      "commits": 144,
+      "commits": 145,
       "issues": 0,
       "pullRequests": 2,
       "codeReviews": 0
@@ -1759,38 +1760,38 @@
   "languages": [
     {
       "name": "JavaScript",
-      "pct": 38.91
-    },
-    {
-      "name": "HTML",
-      "pct": 31.73
-    },
-    {
-      "name": "TypeScript",
-      "pct": 14.34
+      "pct": 28.3
     },
     {
       "name": "Kotlin",
-      "pct": 9.07
+      "pct": 27.98
+    },
+    {
+      "name": "HTML",
+      "pct": 23.11
+    },
+    {
+      "name": "TypeScript",
+      "pct": 16.27
     },
     {
       "name": "CSS",
-      "pct": 3.93
+      "pct": 2.87
     },
     {
       "name": "Python",
-      "pct": 1.92
+      "pct": 1.4
     },
     {
       "name": "PowerShell",
-      "pct": 0.09
+      "pct": 0.07
     },
     {
       "name": "Java",
       "pct": 0.0
     }
   ],
-  "bytesTotal": 5827516,
+  "bytesTotal": 8010767,
   "repos": [
     {
       "name": "TeleLink",
